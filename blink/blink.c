@@ -17,7 +17,8 @@ int16_t main(void) {
     uint16_t rope = &D[0];
     pin_digitalIn(rope);
 
-
+// test for Saarth
+   
     while (1) {
         uint16_t value = pin_read(rope);
         if(value == 0){
