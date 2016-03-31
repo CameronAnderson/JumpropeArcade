@@ -22,7 +22,8 @@ env.Program('segment7', ['segment7.c',
                       '../lib/pin.c',
                       '../lib/uart.c',
                       '../lib/spi.c',
-                      '../lib/common.c'])
+                      '../lib/common.c',
+                      '../lib/segment.c'])
 
 print('Creating builder to load hex file via bootloader...')
 # def load_function(target, source, env):
