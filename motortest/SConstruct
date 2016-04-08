@@ -20,7 +20,8 @@ env.Program('motortest', ['motortest.c',
                       '../lib/timer.c',
                       '../lib/ui.c',
                       '../lib/pin.c',
-                      '../lib/oc.c'])
+                      '../lib/oc.c',
+                      '../lib/uart.c'])
 
 print('Creating builder to load hex file via bootloader...')
 # def load_function(target, source, env):

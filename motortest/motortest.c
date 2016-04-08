@@ -11,18 +11,51 @@
 
 _PIN *dirpin, *pwmpin, *potentiometer;
 
-#define Kp 0.1
-#define Right 23104
-#define Left -16704
+#define Kp .5
+#define Right 22528
+#define Left 48832
 
-float PIDcalc(float set_point, float actual_position){
-    float error;
-    float output; 
+uint16_t PIDcalc(uint16_t set_point, uint16_t actual_position){
+    uint16_t error;
+    uint16_t duty; 
+    uint16_t threshold = 3000;
 
-    error = set_point - actual_position;
-    output = Kp * error; 
+    error = abs((set_point - actual_position));
+    if (error > threshold){
+        duty = (Kp * error);
+        oc_pwm(&oc1, pwmpin, &timer5, 1e3, duty);
+        PIDcalc(set_point, pin_read(potentiometer));  
+    } 
+}
 
-    return output;
+void swing(uint8_t direction_flag, uint16_t actual_position){
+
+    if (direction_flag == 0){;
+        pin_clear(dirpin);
+        PIDcalc(Left, actual_position);
+        direction_flag = 1;
+        wait_second();
+        swing(direction_flag, actual_position); 
+    }
+    else{
+        pin_set(dirpin);
+        PIDcalc(Right, actual_position);
+        direction_flag = 0;
+        wait_second();
+        swing(direction_flag, actual_position);         
+    }
+}
+
+void wait_second(){
+    timer_setPeriod(&timer2, .5);
+    timer_start(&timer2);
+
+    while(1){
+        if (timer_flag(&timer2)) {
+        timer_lower(&timer2);
+        break;
+        }
+    }  
 }
 
 int16_t main(void) {
@@ -56,34 +89,17 @@ int16_t main(void) {
     timer_setPeriod(&timer2, .5);
     timer_start(&timer2);
 
+    uint8_t direction_flag = 0;
+
+
     while (1) {
 
         actual_position = pin_read(potentiometer);
-        oc_pwm(&oc1, pwmpin, &timer5, 1e3, duty*.1);
+        swing(direction_flag, actual_position);
+        //PIDcalc(0, actual_position);
+        // oc_pwm(&oc1, pwmpin, &timer5, 1e3, duty*.1);
+        // printf("TEST1 %u\n\r",  actual_position);
 
-        if (timer_flag(&timer2)) {
-            timer_lower(&timer2);
-            led_toggle(&led1);
-            printf("TEST1 %u\n\r",  actual_position);
-        }
-
-        // led_off(&led2);
-        // led_off(&led3);
-
-
-        actual_position = pin_read(potentiometer);
-
-        // while (!sw_read(&sw2)){
-        //     led_on(&led2);
-        //     pin_clear(dirpin);
-        //     oc_pwm(&oc1, pwmpin, &timer5, 1e3, duty);
-        // }
-
-        // while (!sw_read(&sw3)){
-        //     led_on(&led3);
-        //     pin_set(dirpin);
-        //     oc_pwm(&oc1, pwmpin, &timer5, 1e3, duty);
-        //     }
 
     }
 }
