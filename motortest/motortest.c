@@ -18,11 +18,13 @@ _PIN *dirpin, *pwmpin, *potentiometer;
 uint16_t PIDcalc(uint16_t set_point, uint16_t actual_position){
     uint16_t error;
     uint16_t duty; 
-    uint16_t threshold = 3000;
-
+    uint16_t threshold = 500;
+    // printf("actual_position %u\n\r",  actual_position);
     error = abs((set_point - actual_position));
+    // printf("error %u\n\r",  error);
     if (error > threshold){
         duty = (Kp * error);
+        // printf("duty %u\n\r",  duty);
         oc_pwm(&oc1, pwmpin, &timer5, 1e3, duty);
         PIDcalc(set_point, pin_read(potentiometer));  
     } 
