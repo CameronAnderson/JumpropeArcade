@@ -16,7 +16,7 @@ uint16_t actual_position = 0;
 uint16_t duty = 0xffff;
 
 void init_motor_swing(void){
-	dirpin = &D[8];  //set direction control pin as pin 8
+    dirpin = &D[8];  //set direction control pin as pin 8
     pwmpin = &D[9];  //set PWM pin as pin 9 
     potentiometer = &A[5];  //read potentiometer pin as pin 5
     
@@ -31,7 +31,8 @@ void init_motor_swing(void){
     pin_clear(pwmpin);
 }
 
-uint16_t PIDcalc(uint16_t set_point, uint16_t actual_position){
+uint16_t PIDcalc(uint16_t set_point){
+    actual_position = pin_read(potentiometer);
     uint16_t error;
     uint16_t duty; 
     uint16_t threshold = 500;
@@ -42,24 +43,30 @@ uint16_t PIDcalc(uint16_t set_point, uint16_t actual_position){
         duty = (Kp * error);
         // printf("duty %u\n\r",  duty);
         oc_pwm(&oc1, pwmpin, &timer5, 1e3, duty);
-        PIDcalc(set_point, pin_read(potentiometer));  
+        PIDcalc(set_point);  
     } 
 }
 
+void clear_dirpin(void){
+    pin_clear(dirpin);    
+}
+
+void set_dirpin(void){
+    pin_set(dirpin);
+}
 
 void swing(uint8_t direction_flag){
 
-    actual_position = pin_read(potentiometer);
     if (direction_flag == 0){;
-        pin_clear(dirpin);
-        PIDcalc(Left, actual_position);
+        clear_dirpin();
+        PIDcalc(Left);
         direction_flag = 1;
         wait_period(.5);
         swing(direction_flag); 
     }
     else{
-        pin_set(dirpin);
-        PIDcalc(Right, actual_position);
+        set_dirpin();
+        PIDcalc(Right);
         direction_flag = 0;
         wait_period(.5);
         swing(direction_flag);         

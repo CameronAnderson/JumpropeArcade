@@ -12,6 +12,13 @@
 #define Right 22528
 #define Left 48832
 
+//PIN DEFINITIONS   dirpin = &D[8]
+//                  pwmpin = &D[9]
+//                  potentiometer = &A[5]
+//                  segmentClock = &D[0];
+//                  segmentLatch = &D[1];
+//                  segmentData = &D[2];  
+
 typedef void (*STATE_HANDLER_T)(void);
 
 void pre_game(void);
@@ -33,6 +40,8 @@ float period_value;
 
 _LED *green_led, *red_led, *blue_led;
 
+
+
 void pre_game(void){
 
     // Stuff to do when entering the state
@@ -45,8 +54,9 @@ void pre_game(void){
 
     //State Tasks
 
-    if (sw_read(&sw1) == 0){
-        rope_connected = 1;  
+    if (pin_read(&D[13]) != 0){
+        rope_connected = 1;
+        led_on(blue_led);  
     }
     if (pin_read(&D[7]) == 0){
         coin_entered = 1;
@@ -117,7 +127,8 @@ void gameplay(void){
         PIDcalc(Left);
         direction_flag1 = 1;
         score_counter ++;
-        showNumber(score_counter);        
+        showNumber(score_counter);
+        wait_period(.5);        
         // if (period_value){
         //     period_value = (period_value - .25);
         //     wait_period(period_value);   
@@ -132,6 +143,7 @@ void gameplay(void){
         direction_flag1 = 0;
         score_counter ++;
         showNumber(score_counter);
+        wait_period(.5);  
         // if (period_value > 1){
         //     period_value = (period_value - .25);
         //     wait_period(period_value);   
@@ -144,7 +156,7 @@ void gameplay(void){
 
     //State Transistion
 
-    if(sw_read(&sw2) == 0){
+    if(pin_read(&D[13]) == 0){
         state = gameover;
 
     }
@@ -168,18 +180,27 @@ void gameover(void){
 
     //Perform State Tasks
 
+
     if (timer_flag(&timer1)) {
         timer_lower(&timer1);
         led_toggle(red_led);
         showNumber(score_counter);
         gameover_counter ++;
-
+        timer_stop(&timer1);
+        timer_start(&timer3);
     }
-    showNumber(000);
-
+    
+    if(timer_flag(&timer3)){
+        timer_lower(&timer3);
+        led_toggle(red_led);
+        showNumber(000);
+        gameover_counter ++;
+        timer_stop(&timer3);
+        timer_start(&timer1);
+    }
     //State Transistion
 
-    if (gameover_counter == 20){
+    if (gameover_counter == 10){
         state = pre_game;  
     }
 
@@ -189,6 +210,7 @@ void gameover(void){
         led_off(red_led);
         score_counter = 0;
         timer_stop(&timer1);
+        timer_stop(&timer3);
     }
 }
 
@@ -209,7 +231,7 @@ int16_t main(void) {
     blue_led = &led3;
 
     timer_setPeriod(&timer1, .5);
-    timer_setPeriod(&timer3, .25);
+    timer_setPeriod(&timer3, .5);
 
     state = pre_game;
     last_state = (STATE_HANDLER_T)NULL;

@@ -14,7 +14,7 @@ int16_t main(void) {
     init_pin();
     init_uart();
 
-    uint16_t rope = &D[0];
+    uint16_t rope = &D[13];
     pin_digitalIn(rope);
 
 // test for Saarth

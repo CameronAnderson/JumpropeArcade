@@ -26,9 +26,12 @@ int16_t main(void) {
             timer_lower(&timer2);
             led_toggle(&led1);
         
-            showNumber(number);
-            number = number + 1;
-            number %= 1000;
+            showNumber(999);
+/*            number = number + 1;
+            number %= 1000;*/
+        }
+        if (sw_read(&sw1) == 0){
+            showNumber(111);  
         }
     }
 }

@@ -7870,8 +7870,8 @@ int16_t main(void) {
 
 00003790 <.LSM6>:
 
-    uint16_t rope = &D[0];
-    3790:	40 83 20    	mov.w     #0x834, w0
+    uint16_t rope = &D[13];
+    3790:	20 95 20    	mov.w     #0x952, w0
     3792:	00 0f 78    	mov.w     w0, [w14]
 
 00003794 <.LSM7>:

@@ -21,7 +21,7 @@ Disassembly of section .text:
 
 00001122 <CORCON_RESET>:
     1122:	0c 00 07    	rcall     0x113c <__psv_init>
-    1124:	00 5e 23    	mov.w     #0x35e0, w0
+    1124:	c0 5d 23    	mov.w     #0x35dc, w0
     1126:	01 00 20    	mov.w     #0x0, w1
     1128:	0f 00 07    	rcall     0x1148 <__data_init>
     112a:	00 00 20    	mov.w     #0x0, w0
@@ -751,141 +751,141 @@ Disassembly of section .application_ivt:
 00001000 <__DEFAULT_VECTOR-0x10c>:
     1000:	10 11 04    	goto      0x1110 <__resetPRI>
     1002:	00 00 00 
-    1004:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    1004:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     1006:	00 00 00 
-    1008:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    1008:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     100a:	00 00 00 
-    100c:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    100c:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     100e:	00 00 00 
-    1010:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    1010:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     1012:	00 00 00 
-    1014:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    1014:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     1016:	00 00 00 
-    1018:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    1018:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     101a:	00 00 00 
-    101c:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    101c:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     101e:	00 00 00 
-    1020:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    1020:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     1022:	00 00 00 
     1024:	36 23 04    	goto      0x2336 <__T1Interrupt>
     1026:	00 00 00 
-    1028:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    1028:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     102a:	00 00 00 
-    102c:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    102c:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     102e:	00 00 00 
     1030:	64 23 04    	goto      0x2364 <__T2Interrupt>
     1032:	00 00 00 
     1034:	92 23 04    	goto      0x2392 <__T3Interrupt>
     1036:	00 00 00 
-    1038:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    1038:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     103a:	00 00 00 
-    103c:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    103c:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     103e:	00 00 00 
     1040:	38 17 04    	goto      0x1738 <__U1RXInterrupt>
     1042:	00 00 00 
     1044:	0a 17 04    	goto      0x170a <__U1TXInterrupt>
     1046:	00 00 00 
-    1048:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    1048:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     104a:	00 00 00 
-    104c:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    104c:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     104e:	00 00 00 
-    1050:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    1050:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     1052:	00 00 00 
-    1054:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    1054:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     1056:	00 00 00 
-    1058:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    1058:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     105a:	00 00 00 
-    105c:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    105c:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     105e:	00 00 00 
-    1060:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    1060:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     1062:	00 00 00 
-    1064:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    1064:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     1066:	00 00 00 
-    1068:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    1068:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     106a:	00 00 00 
-    106c:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    106c:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     106e:	00 00 00 
     1070:	c0 23 04    	goto      0x23c0 <__T4Interrupt>
     1072:	00 00 00 
     1074:	ee 23 04    	goto      0x23ee <__T5Interrupt>
     1076:	00 00 00 
-    1078:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    1078:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     107a:	00 00 00 
     107c:	94 17 04    	goto      0x1794 <__U2RXInterrupt>
     107e:	00 00 00 
     1080:	66 17 04    	goto      0x1766 <__U2TXInterrupt>
     1082:	00 00 00 
-    1084:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    1084:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     1086:	00 00 00 
-    1088:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    1088:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     108a:	00 00 00 
-    108c:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    108c:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     108e:	00 00 00 
-    1090:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    1090:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     1092:	00 00 00 
-    1094:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    1094:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     1096:	00 00 00 
-    1098:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    1098:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     109a:	00 00 00 
-    109c:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    109c:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     109e:	00 00 00 
-    10a0:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    10a0:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     10a2:	00 00 00 
-    10a4:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    10a4:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     10a6:	00 00 00 
-    10a8:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    10a8:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     10aa:	00 00 00 
-    10ac:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    10ac:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     10ae:	00 00 00 
-    10b0:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    10b0:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     10b2:	00 00 00 
-    10b4:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    10b4:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     10b6:	00 00 00 
-    10b8:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    10b8:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     10ba:	00 00 00 
-    10bc:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    10bc:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     10be:	00 00 00 
-    10c0:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    10c0:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     10c2:	00 00 00 
-    10c4:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    10c4:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     10c6:	00 00 00 
-    10c8:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    10c8:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     10ca:	00 00 00 
-    10cc:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    10cc:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     10ce:	00 00 00 
-    10d0:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    10d0:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     10d2:	00 00 00 
-    10d4:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    10d4:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     10d6:	00 00 00 
-    10d8:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    10d8:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     10da:	00 00 00 
     10dc:	f0 17 04    	goto      0x17f0 <__U3RXInterrupt>
     10de:	00 00 00 
     10e0:	c2 17 04    	goto      0x17c2 <__U3TXInterrupt>
     10e2:	00 00 00 
-    10e4:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    10e4:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     10e6:	00 00 00 
-    10e8:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    10e8:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     10ea:	00 00 00 
-    10ec:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    10ec:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     10ee:	00 00 00 
-    10f0:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    10f0:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     10f2:	00 00 00 
     10f4:	4c 18 04    	goto      0x184c <__U4RXInterrupt>
     10f6:	00 00 00 
     10f8:	1e 18 04    	goto      0x181e <__U4TXInterrupt>
     10fa:	00 00 00 
-    10fc:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    10fc:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     10fe:	00 00 00 
-    1100:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    1100:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     1102:	00 00 00 
-    1104:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    1104:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     1106:	00 00 00 
-    1108:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    1108:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     110a:	00 00 00 
 
 0000110c <__DEFAULT_VECTOR>:
-    110c:	44 36 04    	goto      0x3644 <__DefaultInterrupt>
+    110c:	40 36 04    	goto      0x3640 <__DefaultInterrupt>
     110e:	00 00 00 
 Disassembly of section .ivt:
 
@@ -3923,20 +3923,28 @@ void uart_gets(_UART *self, uint8_t *str, uint16_t len) {
     22e2:	00 00 06    	return    
 
 000022e4 <_timer_serviceInterrupt>:
+
+_TIMER timer1, timer2, timer3, timer4, timer5;
+float timer_multipliers[4] = { TCY, 8.*TCY, 64.*TCY, 256.*TCY };
+
+void timer_serviceInterrupt(_TIMER *self) {
     22e4:	02 00 fa    	lnk       #0x2
     22e6:	00 0f 78    	mov.w     w0, [w14]
 
 000022e8 <.LSM1>:
+    timer_lower(self);
     22e8:	1e 00 78    	mov.w     [w14], w0
     22ea:	01 02 07    	rcall     0x26ee <_timer_lower>
 
 000022ec <.LSM2>:
+    if (self->every) {
     22ec:	1e 00 78    	mov.w     [w14], w0
     22ee:	10 08 90    	mov.w     [w0+18], w0
     22f0:	00 00 e0    	cp0.w     w0
     22f2:	05 00 32    	bra       Z, 0x22fe <.L2>
 
 000022f4 <.LSM3>:
+        self->every(self);
     22f4:	1e 00 78    	mov.w     [w14], w0
     22f6:	90 08 90    	mov.w     [w0+18], w1
     22f8:	1e 00 78    	mov.w     [w14], w0
@@ -3944,24 +3952,28 @@ void uart_gets(_UART *self, uint8_t *str, uint16_t len) {
     22fc:	1a 00 37    	bra       0x2332 <.L1>
 
 000022fe <.L2>:
+    } else if (self->after) {
     22fe:	1e 00 78    	mov.w     [w14], w0
     2300:	20 08 90    	mov.w     [w0+20], w0
     2302:	00 00 e0    	cp0.w     w0
     2304:	14 00 32    	bra       Z, 0x232e <.L4>
 
 00002306 <.LSM5>:
+        if (self->aftercount) {
     2306:	1e 00 78    	mov.w     [w14], w0
     2308:	00 08 90    	mov.w     [w0+16], w0
     230a:	00 00 e0    	cp0.w     w0
     230c:	0a 00 32    	bra       Z, 0x2322 <.L5>
 
 0000230e <.LSM6>:
+            self->after(self);
     230e:	1e 00 78    	mov.w     [w14], w0
     2310:	a0 08 90    	mov.w     [w0+20], w1
     2312:	1e 00 78    	mov.w     [w14], w0
     2314:	01 00 01    	call      w1
 
 00002316 <.LSM7>:
+            self->aftercount--;
     2316:	1e 00 78    	mov.w     [w14], w0
     2318:	00 08 90    	mov.w     [w0+16], w0
     231a:	80 00 e9    	dec.w     w0, w1
@@ -3970,24 +3982,34 @@ void uart_gets(_UART *self, uint8_t *str, uint16_t len) {
     2320:	08 00 37    	bra       0x2332 <.L1>
 
 00002322 <.L5>:
+        } else {
+            timer_disableInterrupt(self);
     2322:	1e 00 78    	mov.w     [w14], w0
     2324:	0c 02 07    	rcall     0x273e <_timer_disableInterrupt>
 
 00002326 <.LSM9>:
+            self->after = NULL;
     2326:	1e 00 78    	mov.w     [w14], w0
     2328:	80 00 eb    	clr.w     w1
     232a:	21 08 98    	mov.w     w1, [w0+20]
     232c:	02 00 37    	bra       0x2332 <.L1>
 
 0000232e <.L4>:
+        }
+    } else {
+        timer_disableInterrupt(self);
     232e:	1e 00 78    	mov.w     [w14], w0
     2330:	06 02 07    	rcall     0x273e <_timer_disableInterrupt>
 
 00002332 <.L1>:
+    }
+}
     2332:	00 80 fa    	ulnk      
     2334:	00 00 06    	return    
 
 00002336 <__T1Interrupt>:
+
+void __attribute__((interrupt, auto_psv)) _T1Interrupt(void) {
     2336:	36 00 f8    	push      0x36
     2338:	80 9f be    	mov.d     w0, [w15++]
     233a:	82 9f be    	mov.d     w2, [w15++]
@@ -4002,10 +4024,12 @@ void uart_gets(_UART *self, uint8_t *str, uint16_t len) {
     234c:	00 00 fa    	lnk       #0x0
 
 0000234e <.LSM13>:
+    timer_serviceInterrupt(&timer1);
     234e:	e0 b0 20    	mov.w     #0xb0e, w0
     2350:	c9 ff 07    	rcall     0x22e4 <_timer_serviceInterrupt>
 
 00002352 <.LSM14>:
+}
     2352:	00 80 fa    	ulnk      
     2354:	34 00 f9    	pop       0x34
     2356:	32 00 f9    	pop       0x32
@@ -4017,6 +4041,8 @@ void uart_gets(_UART *self, uint8_t *str, uint16_t len) {
     2362:	00 40 06    	retfie    
 
 00002364 <__T2Interrupt>:
+
+void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
     2364:	36 00 f8    	push      0x36
     2366:	80 9f be    	mov.d     w0, [w15++]
     2368:	82 9f be    	mov.d     w2, [w15++]
@@ -4031,10 +4057,12 @@ void uart_gets(_UART *self, uint8_t *str, uint16_t len) {
     237a:	00 00 fa    	lnk       #0x0
 
 0000237c <.LSM16>:
+    timer_serviceInterrupt(&timer2);
     237c:	40 b2 20    	mov.w     #0xb24, w0
     237e:	b2 ff 07    	rcall     0x22e4 <_timer_serviceInterrupt>
 
 00002380 <.LSM17>:
+}
     2380:	00 80 fa    	ulnk      
     2382:	34 00 f9    	pop       0x34
     2384:	32 00 f9    	pop       0x32
@@ -4046,6 +4074,8 @@ void uart_gets(_UART *self, uint8_t *str, uint16_t len) {
     2390:	00 40 06    	retfie    
 
 00002392 <__T3Interrupt>:
+
+void __attribute__((interrupt, auto_psv)) _T3Interrupt(void) {
     2392:	36 00 f8    	push      0x36
     2394:	80 9f be    	mov.d     w0, [w15++]
     2396:	82 9f be    	mov.d     w2, [w15++]
@@ -4060,10 +4090,12 @@ void uart_gets(_UART *self, uint8_t *str, uint16_t len) {
     23a8:	00 00 fa    	lnk       #0x0
 
 000023aa <.LSM19>:
+    timer_serviceInterrupt(&timer3);
     23aa:	a0 b3 20    	mov.w     #0xb3a, w0
     23ac:	9b ff 07    	rcall     0x22e4 <_timer_serviceInterrupt>
 
 000023ae <.LSM20>:
+}
     23ae:	00 80 fa    	ulnk      
     23b0:	34 00 f9    	pop       0x34
     23b2:	32 00 f9    	pop       0x32
@@ -4075,6 +4107,8 @@ void uart_gets(_UART *self, uint8_t *str, uint16_t len) {
     23be:	00 40 06    	retfie    
 
 000023c0 <__T4Interrupt>:
+
+void __attribute__((interrupt, auto_psv)) _T4Interrupt(void) {
     23c0:	36 00 f8    	push      0x36
     23c2:	80 9f be    	mov.d     w0, [w15++]
     23c4:	82 9f be    	mov.d     w2, [w15++]
@@ -4089,10 +4123,12 @@ void uart_gets(_UART *self, uint8_t *str, uint16_t len) {
     23d6:	00 00 fa    	lnk       #0x0
 
 000023d8 <.LSM22>:
+    timer_serviceInterrupt(&timer4);
     23d8:	00 b5 20    	mov.w     #0xb50, w0
     23da:	84 ff 07    	rcall     0x22e4 <_timer_serviceInterrupt>
 
 000023dc <.LSM23>:
+}
     23dc:	00 80 fa    	ulnk      
     23de:	34 00 f9    	pop       0x34
     23e0:	32 00 f9    	pop       0x32
@@ -4104,6 +4140,8 @@ void uart_gets(_UART *self, uint8_t *str, uint16_t len) {
     23ec:	00 40 06    	retfie    
 
 000023ee <__T5Interrupt>:
+
+void __attribute__((interrupt, auto_psv)) _T5Interrupt(void) {
     23ee:	36 00 f8    	push      0x36
     23f0:	80 9f be    	mov.d     w0, [w15++]
     23f2:	82 9f be    	mov.d     w2, [w15++]
@@ -4118,10 +4156,12 @@ void uart_gets(_UART *self, uint8_t *str, uint16_t len) {
     2404:	00 00 fa    	lnk       #0x0
 
 00002406 <.LSM25>:
+    timer_serviceInterrupt(&timer5);
     2406:	60 b6 20    	mov.w     #0xb66, w0
     2408:	6d ff 07    	rcall     0x22e4 <_timer_serviceInterrupt>
 
 0000240a <.LSM26>:
+}
     240a:	00 80 fa    	ulnk      
     240c:	34 00 f9    	pop       0x34
     240e:	32 00 f9    	pop       0x32
@@ -4133,9 +4173,12 @@ void uart_gets(_UART *self, uint8_t *str, uint16_t len) {
     241a:	00 40 06    	retfie    
 
 0000241c <_init_timer>:
+
+void init_timer(void) {
     241c:	00 00 fa    	lnk       #0x0
 
 0000241e <.LSM28>:
+    timer_init(&timer1, (uint16_t *)&T1CON, (uint16_t *)&PR1, (uint16_t *)&TMR1, 
     241e:	b0 00 20    	mov.w     #0xb, w0
     2420:	80 1f 78    	mov.w     w0, [w15++]
     2422:	47 00 20    	mov.w     #0x4, w7
@@ -4150,6 +4193,8 @@ void uart_gets(_UART *self, uint8_t *str, uint16_t len) {
     2434:	8f 87 e9    	dec2.w    w15, w15
 
 00002436 <.LSM29>:
+               (uint16_t *)&IFS0, (uint16_t *)&IEC0, 3, 4, 11);
+    timer_init(&timer2, (uint16_t *)&T2CON, (uint16_t *)&PR2, (uint16_t *)&TMR2, 
     2436:	c0 00 20    	mov.w     #0xc, w0
     2438:	80 1f 78    	mov.w     w0, [w15++]
     243a:	80 03 eb    	clr.w     w7
@@ -4164,6 +4209,8 @@ void uart_gets(_UART *self, uint8_t *str, uint16_t len) {
     244c:	8f 87 e9    	dec2.w    w15, w15
 
 0000244e <.LSM30>:
+               (uint16_t *)&IFS0, (uint16_t *)&IEC0, 7, 0, 12);
+    timer_init(&timer3, (uint16_t *)&T3CON, (uint16_t *)&PR3, (uint16_t *)&TMR3, 
     244e:	d0 00 20    	mov.w     #0xd, w0
     2450:	80 1f 78    	mov.w     w0, [w15++]
     2452:	17 00 20    	mov.w     #0x1, w7
@@ -4178,6 +4225,8 @@ void uart_gets(_UART *self, uint8_t *str, uint16_t len) {
     2464:	8f 87 e9    	dec2.w    w15, w15
 
 00002466 <.LSM31>:
+               (uint16_t *)&IFS0, (uint16_t *)&IEC0, 8, 1, 13);
+    timer_init(&timer4, (uint16_t *)&T4CON, (uint16_t *)&PR4, (uint16_t *)&TMR4, 
     2466:	e0 00 20    	mov.w     #0xe, w0
     2468:	80 1f 78    	mov.w     w0, [w15++]
     246a:	27 00 20    	mov.w     #0x2, w7
@@ -4192,6 +4241,8 @@ void uart_gets(_UART *self, uint8_t *str, uint16_t len) {
     247c:	8f 87 e9    	dec2.w    w15, w15
 
 0000247e <.LSM32>:
+               (uint16_t *)&IFS1, (uint16_t *)&IEC1, 11, 2, 14);
+    timer_init(&timer5, (uint16_t *)&T5CON, (uint16_t *)&PR5, (uint16_t *)&TMR5, 
     247e:	f0 00 20    	mov.w     #0xf, w0
     2480:	80 1f 78    	mov.w     w0, [w15++]
     2482:	37 00 20    	mov.w     #0x3, w7
@@ -4206,10 +4257,16 @@ void uart_gets(_UART *self, uint8_t *str, uint16_t len) {
     2494:	8f 87 e9    	dec2.w    w15, w15
 
 00002496 <.LSM33>:
+               (uint16_t *)&IFS1, (uint16_t *)&IEC1, 12, 3, 15);
+}
     2496:	00 80 fa    	ulnk      
     2498:	00 00 06    	return    
 
 0000249a <_timer_init>:
+
+void timer_init(_TIMER *self, uint16_t *TxCON, uint16_t *PRx, 
+                uint16_t *TMRx, uint16_t *IFSy, uint16_t *IECy, 
+                uint8_t flagbit, uint16_t octselnum, uint16_t ocsyncselnum) {
     249a:	10 00 fa    	lnk       #0x10
     249c:	00 0f 78    	mov.w     w0, [w14]
     249e:	11 07 98    	mov.w     w1, [w14+2]
@@ -4221,65 +4278,79 @@ void uart_gets(_UART *self, uint8_t *str, uint16_t len) {
     24aa:	77 07 98    	mov.w     w7, [w14+14]
 
 000024ac <.LSM35>:
+    self->TxCON = TxCON;
     24ac:	1e 00 78    	mov.w     [w14], w0
     24ae:	9e 00 90    	mov.w     [w14+2], w1
     24b0:	01 08 78    	mov.w     w1, [w0]
 
 000024b2 <.LSM36>:
+    self->PRx = PRx;
     24b2:	1e 00 78    	mov.w     [w14], w0
     24b4:	ae 00 90    	mov.w     [w14+4], w1
     24b6:	11 00 98    	mov.w     w1, [w0+2]
 
 000024b8 <.LSM37>:
+    self->TMRx = TMRx;
     24b8:	1e 00 78    	mov.w     [w14], w0
     24ba:	be 00 90    	mov.w     [w14+6], w1
     24bc:	21 00 98    	mov.w     w1, [w0+4]
 
 000024be <.LSM38>:
+    self->IFSy = IFSy;
     24be:	1e 00 78    	mov.w     [w14], w0
     24c0:	ce 00 90    	mov.w     [w14+8], w1
     24c2:	31 00 98    	mov.w     w1, [w0+6]
 
 000024c4 <.LSM39>:
+    self->IECy = IECy;
     24c4:	1e 00 78    	mov.w     [w14], w0
     24c6:	de 00 90    	mov.w     [w14+10], w1
     24c8:	41 00 98    	mov.w     w1, [w0+8]
 
 000024ca <.LSM40>:
+    self->flagbit = flagbit;
     24ca:	1e 00 78    	mov.w     [w14], w0
     24cc:	ce 48 90    	mov.b     [w14+12], w1
     24ce:	21 48 98    	mov.b     w1, [w0+10]
 
 000024d0 <.LSM41>:
+    self->octselnum = octselnum;
     24d0:	1e 00 78    	mov.w     [w14], w0
     24d2:	fe 00 90    	mov.w     [w14+14], w1
     24d4:	61 00 98    	mov.w     w1, [w0+12]
 
 000024d6 <.LSM42>:
+    self->ocsyncselnum = ocsyncselnum;
     24d6:	1e 00 78    	mov.w     [w14], w0
     24d8:	ce b8 97    	mov.w     [w14-8], w1
     24da:	71 00 98    	mov.w     w1, [w0+14]
 
 000024dc <.LSM43>:
+    self->aftercount = 0;
     24dc:	1e 00 78    	mov.w     [w14], w0
     24de:	80 00 eb    	clr.w     w1
     24e0:	01 08 98    	mov.w     w1, [w0+16]
 
 000024e2 <.LSM44>:
+    self->every = NULL;
     24e2:	1e 00 78    	mov.w     [w14], w0
     24e4:	80 00 eb    	clr.w     w1
     24e6:	11 08 98    	mov.w     w1, [w0+18]
 
 000024e8 <.LSM45>:
+    self->after = NULL;
     24e8:	1e 00 78    	mov.w     [w14], w0
     24ea:	80 00 eb    	clr.w     w1
     24ec:	21 08 98    	mov.w     w1, [w0+20]
 
 000024ee <.LSM46>:
+}
     24ee:	00 80 fa    	ulnk      
     24f0:	00 00 06    	return    
 
 000024f2 <_timer_setPeriod>:
+
+void timer_setPeriod(_TIMER *self, float period) {
     24f2:	06 00 fa    	lnk       #0x6
     24f4:	88 1f 78    	mov.w     w8, [w15++]
     24f6:	00 0f 78    	mov.w     w0, [w14]
@@ -4287,6 +4358,7 @@ void uart_gets(_UART *self, uint8_t *str, uint16_t len) {
     24fa:	23 07 98    	mov.w     w3, [w14+4]
 
 000024fc <.LSM48>:
+    if (period>(256.*65536.*TCY)) {
     24fc:	18 c0 b3    	mov.b     #0x1, w8
     24fe:	d2 7b 23    	mov.w     #0x37bd, w2
     2500:	63 f8 23    	mov.w     #0x3f86, w3
@@ -4302,6 +4374,8 @@ void uart_gets(_UART *self, uint8_t *str, uint16_t len) {
     2510:	69 00 3a    	bra       NZ, 0x25e4 <.L23>
 
 00002512 <.LSM49>:
+        return;
+    } else if (period>(64.*65536.*TCY)) {
     2512:	18 c0 b3    	mov.b     #0x1, w8
     2514:	d2 7b 23    	mov.w     #0x37bd, w2
     2516:	63 e8 23    	mov.w     #0x3e86, w3
@@ -4317,16 +4391,19 @@ void uart_gets(_UART *self, uint8_t *str, uint16_t len) {
     2526:	12 00 32    	bra       Z, 0x254c <.L18>
 
 00002528 <.LSM50>:
+        timer_stop(self);
     2528:	1e 00 78    	mov.w     [w14], w0
     252a:	c4 00 07    	rcall     0x26b4 <_timer_stop>
 
 0000252c <.LSM51>:
+        poke(self->TxCON, 0x0030);
     252c:	1e 00 78    	mov.w     [w14], w0
     252e:	10 00 78    	mov.w     [w0], w0
     2530:	01 03 20    	mov.w     #0x30, w1
     2532:	01 08 78    	mov.w     w1, [w0]
 
 00002534 <.LSM52>:
+        poke(self->PRx, (uint16_t)(period*(FCY/256.))-1);
     2534:	1e 00 78    	mov.w     [w14], w0
     2536:	10 04 90    	mov.w     [w0+2], w8
     2538:	02 40 22    	mov.w     #0x2400, w2
@@ -4341,6 +4418,7 @@ void uart_gets(_UART *self, uint8_t *str, uint16_t len) {
     254a:	4d 00 37    	bra       0x25e6 <.L13>
 
 0000254c <.L18>:
+    } else if (period>(8.*65536.*TCY)) {
     254c:	18 c0 b3    	mov.b     #0x1, w8
     254e:	d2 7b 23    	mov.w     #0x37bd, w2
     2550:	63 d0 23    	mov.w     #0x3d06, w3
@@ -4356,16 +4434,19 @@ void uart_gets(_UART *self, uint8_t *str, uint16_t len) {
     2560:	12 00 32    	bra       Z, 0x2586 <.L20>
 
 00002562 <.LSM54>:
+        timer_stop(self);
     2562:	1e 00 78    	mov.w     [w14], w0
     2564:	a7 00 07    	rcall     0x26b4 <_timer_stop>
 
 00002566 <.LSM55>:
+        poke(self->TxCON, 0x0020);
     2566:	1e 00 78    	mov.w     [w14], w0
     2568:	10 00 78    	mov.w     [w0], w0
     256a:	01 02 20    	mov.w     #0x20, w1
     256c:	01 08 78    	mov.w     w1, [w0]
 
 0000256e <.LSM56>:
+        poke(self->PRx, (uint16_t)(period*(FCY/64.))-1);
     256e:	1e 00 78    	mov.w     [w14], w0
     2570:	10 04 90    	mov.w     [w0+2], w8
     2572:	02 40 22    	mov.w     #0x2400, w2
@@ -4380,6 +4461,7 @@ void uart_gets(_UART *self, uint8_t *str, uint16_t len) {
     2584:	30 00 37    	bra       0x25e6 <.L13>
 
 00002586 <.L20>:
+    } else if (period>(65536.*TCY)) {
     2586:	18 c0 b3    	mov.b     #0x1, w8
     2588:	d2 7b 23    	mov.w     #0x37bd, w2
     258a:	63 b8 23    	mov.w     #0x3b86, w3
@@ -4395,16 +4477,19 @@ void uart_gets(_UART *self, uint8_t *str, uint16_t len) {
     259a:	12 00 32    	bra       Z, 0x25c0 <.L22>
 
 0000259c <.LSM58>:
+        timer_stop(self);
     259c:	1e 00 78    	mov.w     [w14], w0
     259e:	8a 00 07    	rcall     0x26b4 <_timer_stop>
 
 000025a0 <.LSM59>:
+        poke(self->TxCON, 0x0010);
     25a0:	1e 00 78    	mov.w     [w14], w0
     25a2:	10 00 78    	mov.w     [w0], w0
     25a4:	01 01 20    	mov.w     #0x10, w1
     25a6:	01 08 78    	mov.w     w1, [w0]
 
 000025a8 <.LSM60>:
+        poke(self->PRx, (uint16_t)(period*(FCY/8.))-1);
     25a8:	1e 00 78    	mov.w     [w14], w0
     25aa:	10 04 90    	mov.w     [w0+2], w8
     25ac:	02 40 22    	mov.w     #0x2400, w2
@@ -4419,16 +4504,20 @@ void uart_gets(_UART *self, uint8_t *str, uint16_t len) {
     25be:	13 00 37    	bra       0x25e6 <.L13>
 
 000025c0 <.L22>:
+    } else {
+        timer_stop(self);
     25c0:	1e 00 78    	mov.w     [w14], w0
     25c2:	78 00 07    	rcall     0x26b4 <_timer_stop>
 
 000025c4 <.LSM62>:
+        poke(self->TxCON, 0x0000);
     25c4:	1e 00 78    	mov.w     [w14], w0
     25c6:	10 00 78    	mov.w     [w0], w0
     25c8:	80 00 eb    	clr.w     w1
     25ca:	01 08 78    	mov.w     w1, [w0]
 
 000025cc <.LSM63>:
+        poke(self->PRx, (uint16_t)(period*FCY)-1);
     25cc:	1e 00 78    	mov.w     [w14], w0
     25ce:	10 04 90    	mov.w     [w0+2], w8
     25d0:	02 40 22    	mov.w     #0x2400, w2
@@ -4446,16 +4535,21 @@ void uart_gets(_UART *self, uint8_t *str, uint16_t len) {
     25e4:	00 00 00    	nop       
 
 000025e6 <.L13>:
+    }
+}
     25e6:	4f 04 78    	mov.w     [--w15], w8
     25e8:	00 80 fa    	ulnk      
     25ea:	00 00 06    	return    
 
 000025ec <_timer_period>:
+
+float timer_period(_TIMER *self) {
     25ec:	04 00 fa    	lnk       #0x4
     25ee:	88 9f be    	mov.d     w8, [w15++]
     25f0:	10 07 98    	mov.w     w0, [w14+2]
 
 000025f2 <.LSM67>:
+    uint16_t prescalar = (peek(self->TxCON)&0x0030)>>4;
     25f2:	1e 00 90    	mov.w     [w14+2], w0
     25f4:	10 00 78    	mov.w     [w0], w0
     25f6:	90 00 78    	mov.w     [w0], w1
@@ -4465,6 +4559,8 @@ void uart_gets(_UART *self, uint8_t *str, uint16_t len) {
     25fe:	00 0f 78    	mov.w     w0, [w14]
 
 00002600 <.LSM68>:
+
+    return timer_multipliers[prescalar]*((float)peek(self->PRx)+1.);
     2600:	1e 00 78    	mov.w     [w14], w0
     2602:	c2 00 dd    	sl.w      w0, #0x2, w1
     2604:	e0 bb 20    	mov.w     #0xbbe, w0
@@ -4483,17 +4579,21 @@ void uart_gets(_UART *self, uint8_t *str, uint16_t len) {
     261e:	03 f7 07    	rcall     0x1426 <___mulsf3>
 
 00002620 <.LSM69>:
+}
     2620:	4f 04 be    	mov.d     [--w15], w8
     2622:	00 80 fa    	ulnk      
     2624:	00 00 06    	return    
 
 00002626 <_timer_setFreq>:
+
+void timer_setFreq(_TIMER *self, float freq) {
     2626:	06 00 fa    	lnk       #0x6
     2628:	00 0f 78    	mov.w     w0, [w14]
     262a:	12 07 98    	mov.w     w2, [w14+2]
     262c:	23 07 98    	mov.w     w3, [w14+4]
 
 0000262e <.LSM71>:
+    timer_setPeriod(self, 1./freq);
     262e:	1e 01 90    	mov.w     [w14+2], w2
     2630:	ae 01 90    	mov.w     [w14+4], w3
     2632:	00 00 20    	mov.w     #0x0, w0
@@ -4504,14 +4604,18 @@ void uart_gets(_UART *self, uint8_t *str, uint16_t len) {
     263c:	5a ff 07    	rcall     0x24f2 <_timer_setPeriod>
 
 0000263e <.LSM72>:
+}
     263e:	00 80 fa    	ulnk      
     2640:	00 00 06    	return    
 
 00002642 <_timer_freq>:
+
+float timer_freq(_TIMER *self) {
     2642:	02 00 fa    	lnk       #0x2
     2644:	00 0f 78    	mov.w     w0, [w14]
 
 00002646 <.LSM74>:
+    return 1./timer_period(self);
     2646:	1e 00 78    	mov.w     [w14], w0
     2648:	d1 ff 07    	rcall     0x25ec <_timer_period>
     264a:	00 01 be    	mov.d     w0, w2
@@ -4520,15 +4624,19 @@ void uart_gets(_UART *self, uint8_t *str, uint16_t len) {
     2650:	34 f6 07    	rcall     0x12ba <___divsf3>
 
 00002652 <.LSM75>:
+}
     2652:	00 80 fa    	ulnk      
     2654:	00 00 06    	return    
 
 00002656 <_timer_time>:
+
+float timer_time(_TIMER *self) {
     2656:	04 00 fa    	lnk       #0x4
     2658:	88 9f be    	mov.d     w8, [w15++]
     265a:	10 07 98    	mov.w     w0, [w14+2]
 
 0000265c <.LSM77>:
+    uint16_t prescalar = (peek(self->TxCON)&0x0030)>>4;
     265c:	1e 00 90    	mov.w     [w14+2], w0
     265e:	10 00 78    	mov.w     [w0], w0
     2660:	90 00 78    	mov.w     [w0], w1
@@ -4538,6 +4646,8 @@ void uart_gets(_UART *self, uint8_t *str, uint16_t len) {
     2668:	00 0f 78    	mov.w     w0, [w14]
 
 0000266a <.LSM78>:
+
+    return timer_multipliers[prescalar]*((float)peek(self->PRx)+1.);
     266a:	1e 00 78    	mov.w     [w14], w0
     266c:	c2 00 dd    	sl.w      w0, #0x2, w1
     266e:	e0 bb 20    	mov.w     #0xbbe, w0
@@ -4556,25 +4666,31 @@ void uart_gets(_UART *self, uint8_t *str, uint16_t len) {
     2688:	ce f6 07    	rcall     0x1426 <___mulsf3>
 
 0000268a <.LSM79>:
+}
     268a:	4f 04 be    	mov.d     [--w15], w8
     268c:	00 80 fa    	ulnk      
     268e:	00 00 06    	return    
 
 00002690 <_timer_start>:
+
+void timer_start(_TIMER *self) {
     2690:	02 00 fa    	lnk       #0x2
     2692:	00 0f 78    	mov.w     w0, [w14]
 
 00002694 <.LSM81>:
+    timer_lower(self);
     2694:	1e 00 78    	mov.w     [w14], w0
     2696:	2b 00 07    	rcall     0x26ee <_timer_lower>
 
 00002698 <.LSM82>:
+    poke(self->TMRx, 0);
     2698:	1e 00 78    	mov.w     [w14], w0
     269a:	20 00 90    	mov.w     [w0+4], w0
     269c:	80 00 eb    	clr.w     w1
     269e:	01 08 78    	mov.w     w1, [w0]
 
 000026a0 <.LSM83>:
+    bitset(self->TxCON, 15);
     26a0:	1e 00 78    	mov.w     [w14], w0
     26a2:	10 00 78    	mov.w     [w0], w0
     26a4:	9e 00 78    	mov.w     [w14], w1
@@ -4585,14 +4701,18 @@ void uart_gets(_UART *self, uint8_t *str, uint16_t len) {
     26ae:	01 08 78    	mov.w     w1, [w0]
 
 000026b0 <.LSM84>:
+}
     26b0:	00 80 fa    	ulnk      
     26b2:	00 00 06    	return    
 
 000026b4 <_timer_stop>:
+
+void timer_stop(_TIMER *self) {
     26b4:	02 00 fa    	lnk       #0x2
     26b6:	00 0f 78    	mov.w     w0, [w14]
 
 000026b8 <.LSM86>:
+    bitclear(self->TxCON, 15);
     26b8:	1e 00 78    	mov.w     [w14], w0
     26ba:	10 00 78    	mov.w     [w0], w0
     26bc:	9e 00 78    	mov.w     [w14], w1
@@ -4603,14 +4723,18 @@ void uart_gets(_UART *self, uint8_t *str, uint16_t len) {
     26c6:	01 08 78    	mov.w     w1, [w0]
 
 000026c8 <.LSM87>:
+}
     26c8:	00 80 fa    	ulnk      
     26ca:	00 00 06    	return    
 
 000026cc <_timer_flag>:
+
+uint16_t timer_flag(_TIMER *self) {
     26cc:	02 00 fa    	lnk       #0x2
     26ce:	00 0f 78    	mov.w     w0, [w14]
 
 000026d0 <.LSM89>:
+    return bitread(self->IFSy, self->flagbit);
     26d0:	1e 00 78    	mov.w     [w14], w0
     26d2:	30 00 90    	mov.w     [w0+6], w0
     26d4:	90 00 78    	mov.w     [w0], w1
@@ -4626,14 +4750,18 @@ void uart_gets(_UART *self, uint8_t *str, uint16_t len) {
     26e8:	4f 00 de    	lsr.w     w0, #0xf, w0
 
 000026ea <.LSM90>:
+}
     26ea:	00 80 fa    	ulnk      
     26ec:	00 00 06    	return    
 
 000026ee <_timer_lower>:
+
+void timer_lower(_TIMER *self) {
     26ee:	02 00 fa    	lnk       #0x2
     26f0:	00 0f 78    	mov.w     w0, [w14]
 
 000026f2 <.LSM92>:
+    bitclear(self->IFSy, self->flagbit);
     26f2:	1e 00 78    	mov.w     [w14], w0
     26f4:	30 00 90    	mov.w     [w0+6], w0
     26f6:	9e 00 78    	mov.w     [w14], w1
@@ -4649,27 +4777,35 @@ void uart_gets(_UART *self, uint8_t *str, uint16_t len) {
     270a:	01 08 78    	mov.w     w1, [w0]
 
 0000270c <.LSM93>:
+}
     270c:	00 80 fa    	ulnk      
     270e:	00 00 06    	return    
 
 00002710 <_timer_read>:
+
+uint16_t timer_read(_TIMER *self) {
     2710:	02 00 fa    	lnk       #0x2
     2712:	00 0f 78    	mov.w     w0, [w14]
 
 00002714 <.LSM95>:
+    return peek(self->TMRx);
     2714:	1e 00 78    	mov.w     [w14], w0
     2716:	20 00 90    	mov.w     [w0+4], w0
     2718:	10 00 78    	mov.w     [w0], w0
 
 0000271a <.LSM96>:
+}
     271a:	00 80 fa    	ulnk      
     271c:	00 00 06    	return    
 
 0000271e <_timer_enableInterrupt>:
+
+void timer_enableInterrupt(_TIMER *self) {
     271e:	02 00 fa    	lnk       #0x2
     2720:	00 0f 78    	mov.w     w0, [w14]
 
 00002722 <.LSM98>:
+    bitset(self->IECy, self->flagbit);
     2722:	1e 00 78    	mov.w     [w14], w0
     2724:	40 00 90    	mov.w     [w0+8], w0
     2726:	9e 00 78    	mov.w     [w14], w1
@@ -4684,14 +4820,18 @@ void uart_gets(_UART *self, uint8_t *str, uint16_t len) {
     2738:	01 08 78    	mov.w     w1, [w0]
 
 0000273a <.LSM99>:
+}
     273a:	00 80 fa    	ulnk      
     273c:	00 00 06    	return    
 
 0000273e <_timer_disableInterrupt>:
+
+void timer_disableInterrupt(_TIMER *self) {
     273e:	02 00 fa    	lnk       #0x2
     2740:	00 0f 78    	mov.w     w0, [w14]
 
 00002742 <.LSM101>:
+    bitclear(self->IECy, self->flagbit);
     2742:	1e 00 78    	mov.w     [w14], w0
     2744:	40 00 90    	mov.w     [w0+8], w0
     2746:	9e 00 78    	mov.w     [w14], w1
@@ -4707,10 +4847,13 @@ void uart_gets(_UART *self, uint8_t *str, uint16_t len) {
     275a:	01 08 78    	mov.w     w1, [w0]
 
 0000275c <.LSM102>:
+}
     275c:	00 80 fa    	ulnk      
     275e:	00 00 06    	return    
 
 00002760 <_timer_every>:
+
+void timer_every(_TIMER *self, float interval, void (*callback)(_TIMER *self)) {
     2760:	08 00 fa    	lnk       #0x8
     2762:	00 0f 78    	mov.w     w0, [w14]
     2764:	12 07 98    	mov.w     w2, [w14+2]
@@ -4718,43 +4861,54 @@ void uart_gets(_UART *self, uint8_t *str, uint16_t len) {
     2768:	31 07 98    	mov.w     w1, [w14+6]
 
 0000276a <.LSM104>:
+    timer_disableInterrupt(self);
     276a:	1e 00 78    	mov.w     [w14], w0
     276c:	e8 ff 07    	rcall     0x273e <_timer_disableInterrupt>
 
 0000276e <.LSM105>:
+    timer_setPeriod(self, interval);
     276e:	1e 01 90    	mov.w     [w14+2], w2
     2770:	ae 01 90    	mov.w     [w14+4], w3
     2772:	1e 00 78    	mov.w     [w14], w0
     2774:	be fe 07    	rcall     0x24f2 <_timer_setPeriod>
 
 00002776 <.LSM106>:
+    self->aftercount = 0;
     2776:	1e 00 78    	mov.w     [w14], w0
     2778:	80 00 eb    	clr.w     w1
     277a:	01 08 98    	mov.w     w1, [w0+16]
 
 0000277c <.LSM107>:
+    self->every = callback;
     277c:	1e 00 78    	mov.w     [w14], w0
     277e:	be 00 90    	mov.w     [w14+6], w1
     2780:	11 08 98    	mov.w     w1, [w0+18]
 
 00002782 <.LSM108>:
+    self->after = NULL;
     2782:	1e 00 78    	mov.w     [w14], w0
     2784:	80 00 eb    	clr.w     w1
     2786:	21 08 98    	mov.w     w1, [w0+20]
 
 00002788 <.LSM109>:
+    timer_enableInterrupt(self);
     2788:	1e 00 78    	mov.w     [w14], w0
     278a:	c9 ff 07    	rcall     0x271e <_timer_enableInterrupt>
 
 0000278c <.LSM110>:
+    timer_start(self);
     278c:	1e 00 78    	mov.w     [w14], w0
     278e:	80 ff 07    	rcall     0x2690 <_timer_start>
 
 00002790 <.LSM111>:
+}
     2790:	00 80 fa    	ulnk      
     2792:	00 00 06    	return    
 
 00002794 <_timer_after>:
+
+void timer_after(_TIMER *self, float delay, uint16_t num_times, 
+                 void (*callback)(_TIMER *self)) {
     2794:	0a 00 fa    	lnk       #0xa
     2796:	00 0f 78    	mov.w     w0, [w14]
     2798:	12 07 98    	mov.w     w2, [w14+2]
@@ -4763,74 +4917,91 @@ void uart_gets(_UART *self, uint8_t *str, uint16_t len) {
     279e:	44 07 98    	mov.w     w4, [w14+8]
 
 000027a0 <.LSM113>:
+    timer_disableInterrupt(self);
     27a0:	1e 00 78    	mov.w     [w14], w0
     27a2:	cd ff 07    	rcall     0x273e <_timer_disableInterrupt>
 
 000027a4 <.LSM114>:
+    timer_setPeriod(self, delay);
     27a4:	1e 01 90    	mov.w     [w14+2], w2
     27a6:	ae 01 90    	mov.w     [w14+4], w3
     27a8:	1e 00 78    	mov.w     [w14], w0
     27aa:	a3 fe 07    	rcall     0x24f2 <_timer_setPeriod>
 
 000027ac <.LSM115>:
+    self->aftercount = num_times;
     27ac:	1e 00 78    	mov.w     [w14], w0
     27ae:	be 00 90    	mov.w     [w14+6], w1
     27b0:	01 08 98    	mov.w     w1, [w0+16]
 
 000027b2 <.LSM116>:
+    self->every = NULL;
     27b2:	1e 00 78    	mov.w     [w14], w0
     27b4:	80 00 eb    	clr.w     w1
     27b6:	11 08 98    	mov.w     w1, [w0+18]
 
 000027b8 <.LSM117>:
+    self->after = callback;
     27b8:	1e 00 78    	mov.w     [w14], w0
     27ba:	ce 00 90    	mov.w     [w14+8], w1
     27bc:	21 08 98    	mov.w     w1, [w0+20]
 
 000027be <.LSM118>:
+    timer_enableInterrupt(self);
     27be:	1e 00 78    	mov.w     [w14], w0
     27c0:	ae ff 07    	rcall     0x271e <_timer_enableInterrupt>
 
 000027c2 <.LSM119>:
+    timer_start(self);
     27c2:	1e 00 78    	mov.w     [w14], w0
     27c4:	65 ff 07    	rcall     0x2690 <_timer_start>
 
 000027c6 <.LSM120>:
+}
     27c6:	00 80 fa    	ulnk      
     27c8:	00 00 06    	return    
 
 000027ca <_timer_cancel>:
+
+void timer_cancel(_TIMER *self) {
     27ca:	02 00 fa    	lnk       #0x2
     27cc:	00 0f 78    	mov.w     w0, [w14]
 
 000027ce <.LSM122>:
+    timer_disableInterrupt(self);
     27ce:	1e 00 78    	mov.w     [w14], w0
     27d0:	b6 ff 07    	rcall     0x273e <_timer_disableInterrupt>
 
 000027d2 <.LSM123>:
+    timer_lower(self);
     27d2:	1e 00 78    	mov.w     [w14], w0
     27d4:	8c ff 07    	rcall     0x26ee <_timer_lower>
 
 000027d6 <.LSM124>:
+    timer_stop(self);
     27d6:	1e 00 78    	mov.w     [w14], w0
     27d8:	6d ff 07    	rcall     0x26b4 <_timer_stop>
 
 000027da <.LSM125>:
+    self->aftercount = 0;
     27da:	1e 00 78    	mov.w     [w14], w0
     27dc:	80 00 eb    	clr.w     w1
     27de:	01 08 98    	mov.w     w1, [w0+16]
 
 000027e0 <.LSM126>:
+    self->every = NULL;
     27e0:	1e 00 78    	mov.w     [w14], w0
     27e2:	80 00 eb    	clr.w     w1
     27e4:	11 08 98    	mov.w     w1, [w0+18]
 
 000027e6 <.LSM127>:
+    self->after = NULL;
     27e6:	1e 00 78    	mov.w     [w14], w0
     27e8:	80 00 eb    	clr.w     w1
     27ea:	21 08 98    	mov.w     w1, [w0+20]
 
 000027ec <.LSM128>:
+}
     27ec:	00 80 fa    	ulnk      
     27ee:	00 00 06    	return    
 
@@ -5814,16 +5985,23 @@ uint8_t spi_transfer(_SPI *self, uint8_t val) {
     2cb6:	00 00 06    	return    
 
 00002cb8 <___digitalWrite>:
+#include "pin.h"
+
+_PIN D[14], A[6];
+
+void __digitalWrite(_PIN *self, uint16_t val) {
     2cb8:	04 00 fa    	lnk       #0x4
     2cba:	00 0f 78    	mov.w     w0, [w14]
     2cbc:	11 07 98    	mov.w     w1, [w14+2]
 
 00002cbe <.LSM1>:
+    if (val)
     2cbe:	1e 00 90    	mov.w     [w14+2], w0
     2cc0:	00 00 e0    	cp0.w     w0
     2cc2:	0d 00 32    	bra       Z, 0x2cde <.L2>
 
 00002cc4 <.LSM2>:
+        bitset(self->port, self->bit);
     2cc4:	1e 00 78    	mov.w     [w14], w0
     2cc6:	10 00 78    	mov.w     [w0], w0
     2cc8:	9e 00 78    	mov.w     [w14], w1
@@ -5839,6 +6017,8 @@ uint8_t spi_transfer(_SPI *self, uint8_t val) {
     2cdc:	0d 00 37    	bra       0x2cf8 <.L1>
 
 00002cde <.L2>:
+    else
+        bitclear(self->port, self->bit);
     2cde:	1e 00 78    	mov.w     [w14], w0
     2ce0:	10 00 78    	mov.w     [w0], w0
     2ce2:	9e 00 78    	mov.w     [w14], w1
@@ -5854,14 +6034,18 @@ uint8_t spi_transfer(_SPI *self, uint8_t val) {
     2cf6:	01 08 78    	mov.w     w1, [w0]
 
 00002cf8 <.L1>:
+}
     2cf8:	00 80 fa    	ulnk      
     2cfa:	00 00 06    	return    
 
 00002cfc <___digitalRead>:
+
+uint16_t __digitalRead(_PIN *self) {
     2cfc:	02 00 fa    	lnk       #0x2
     2cfe:	00 0f 78    	mov.w     w0, [w14]
 
 00002d00 <.LSM6>:
+    return bitread(self->port, self->bit);
     2d00:	1e 00 78    	mov.w     [w14], w0
     2d02:	10 00 78    	mov.w     [w0], w0
     2d04:	90 00 78    	mov.w     [w0], w1
@@ -5877,22 +6061,28 @@ uint8_t spi_transfer(_SPI *self, uint8_t val) {
     2d18:	4f 00 de    	lsr.w     w0, #0xf, w0
 
 00002d1a <.LSM7>:
+}
     2d1a:	00 80 fa    	ulnk      
     2d1c:	00 00 06    	return    
 
 00002d1e <___analogRead>:
+
+uint16_t __analogRead(_PIN *self) {
     2d1e:	02 00 fa    	lnk       #0x2
     2d20:	00 0f 78    	mov.w     w0, [w14]
 
 00002d22 <.LSM9>:
+    AD1CHS = self->annum;
     2d22:	1e 00 78    	mov.w     [w14], w0
     2d24:	40 00 90    	mov.w     [w0+8], w0
     2d26:	40 19 88    	mov.w     w0, 0x328
 
 00002d28 <.LSM10>:
+    AD1CON1bits.SAMP = 1;
     2d28:	20 23 a8    	bset.b    0x320, #0x1
 
 00002d2a <.LSM11>:
+    while (AD1CON1bits.DONE==0) {}
     2d2a:	00 00 00    	nop       
 
 00002d2c <.L6>:
@@ -5902,16 +6092,23 @@ uint8_t spi_transfer(_SPI *self, uint8_t val) {
     2d32:	fc ff 32    	bra       Z, 0x2d2c <.L6>
 
 00002d34 <.LSM12>:
+    return ADC1BUF0;
     2d34:	00 18 80    	mov.w     0x300, w0
 
 00002d36 <.LSM13>:
+}
     2d36:	00 80 fa    	ulnk      
     2d38:	00 00 06    	return    
 
 00002d3a <_init_pin>:
+
+void init_pin(void) {
     2d3a:	02 00 fa    	lnk       #0x2
 
 00002d3c <.LSM15>:
+    uint16_t i;
+
+    pin_init(&D[0], (uint16_t *)&PORTD, (uint16_t *)&TRISD, 
     2d3c:	40 6d 20    	mov.w     #0x6d4, w0
     2d3e:	80 1f 78    	mov.w     w0, [w15++]
     2d40:	47 01 20    	mov.w     #0x14, w7
@@ -5926,6 +6123,8 @@ uint8_t spi_transfer(_SPI *self, uint8_t val) {
     2d52:	8f 87 e9    	dec2.w    w15, w15
 
 00002d54 <.LSM16>:
+             (uint16_t *)NULL, 5, -1, 0, 20, (uint16_t *)&RPOR10);
+    pin_init(&D[1], (uint16_t *)&PORTD, (uint16_t *)&TRISD, 
     2d54:	80 6d 20    	mov.w     #0x6d8, w0
     2d56:	80 1f 78    	mov.w     w0, [w15++]
     2d58:	97 01 20    	mov.w     #0x19, w7
@@ -5940,6 +6139,8 @@ uint8_t spi_transfer(_SPI *self, uint8_t val) {
     2d6a:	8f 87 e9    	dec2.w    w15, w15
 
 00002d6c <.LSM17>:
+             (uint16_t *)NULL, 4, -1, 8, 25, (uint16_t *)&RPOR12);
+    pin_init(&D[2], (uint16_t *)&PORTF, (uint16_t *)&TRISF, 
     2d6c:	a0 6c 20    	mov.w     #0x6ca, w0
     2d6e:	80 1f 78    	mov.w     w0, [w15++]
     2d70:	a7 00 20    	mov.w     #0xa, w7
@@ -5954,6 +6155,8 @@ uint8_t spi_transfer(_SPI *self, uint8_t val) {
     2d82:	8f 87 e9    	dec2.w    w15, w15
 
 00002d84 <.LSM18>:
+             (uint16_t *)NULL, 4, -1, 0, 10, (uint16_t *)&RPOR5);
+    pin_init(&D[3], (uint16_t *)&PORTF, (uint16_t *)&TRISF, 
     2d84:	00 6d 20    	mov.w     #0x6d0, w0
     2d86:	80 1f 78    	mov.w     w0, [w15++]
     2d88:	17 01 20    	mov.w     #0x11, w7
@@ -5968,6 +6171,8 @@ uint8_t spi_transfer(_SPI *self, uint8_t val) {
     2d9a:	8f 87 e9    	dec2.w    w15, w15
 
 00002d9c <.LSM19>:
+             (uint16_t *)NULL, 5, -1, 8, 17, (uint16_t *)&RPOR8);
+    pin_init(&D[4], (uint16_t *)&PORTB, (uint16_t *)&TRISB, 
     2d9c:	c0 6d 20    	mov.w     #0x6dc, w0
     2d9e:	80 1f 78    	mov.w     w0, [w15++]
     2da0:	d7 01 20    	mov.w     #0x1d, w7
@@ -5982,6 +6187,8 @@ uint8_t spi_transfer(_SPI *self, uint8_t val) {
     2db2:	8f 87 e9    	dec2.w    w15, w15
 
 00002db4 <.LSM20>:
+             (uint16_t *)&ANSB, 15, 15, 8, 29, (uint16_t *)&RPOR14);
+    pin_init(&D[5], (uint16_t *)&PORTF, (uint16_t *)&TRISF, 
     2db4:	00 6d 20    	mov.w     #0x6d0, w0
     2db6:	80 1f 78    	mov.w     w0, [w15++]
     2db8:	07 01 20    	mov.w     #0x10, w7
@@ -5996,6 +6203,8 @@ uint8_t spi_transfer(_SPI *self, uint8_t val) {
     2dca:	8f 87 e9    	dec2.w    w15, w15
 
 00002dcc <.LSM21>:
+             (uint16_t *)NULL, 3, -1, 0, 16, (uint16_t *)&RPOR8);
+    pin_init(&D[6], (uint16_t *)&PORTD, (uint16_t *)&TRISD, 
     2dcc:	20 6c 20    	mov.w     #0x6c2, w0
     2dce:	80 1f 78    	mov.w     w0, [w15++]
     2dd0:	27 00 20    	mov.w     #0x2, w7
@@ -6010,6 +6219,8 @@ uint8_t spi_transfer(_SPI *self, uint8_t val) {
     2de2:	8f 87 e9    	dec2.w    w15, w15
 
 00002de4 <.LSM22>:
+             (uint16_t *)NULL, 8, -1, 0, 2, (uint16_t *)&RPOR1);
+    pin_init(&D[7], (uint16_t *)&PORTD, (uint16_t *)&TRISD, 
     2de4:	c0 6c 20    	mov.w     #0x6cc, w0
     2de6:	80 1f 78    	mov.w     w0, [w15++]
     2de8:	c7 00 20    	mov.w     #0xc, w7
@@ -6024,6 +6235,8 @@ uint8_t spi_transfer(_SPI *self, uint8_t val) {
     2dfa:	8f 87 e9    	dec2.w    w15, w15
 
 00002dfc <.LSM23>:
+             (uint16_t *)NULL, 11, -1, 0, 12, (uint16_t *)&RPOR6);
+    pin_init(&D[8], (uint16_t *)&PORTD, (uint16_t *)&TRISD, 
     2dfc:	40 6c 20    	mov.w     #0x6c4, w0
     2dfe:	80 1f 78    	mov.w     w0, [w15++]
     2e00:	47 00 20    	mov.w     #0x4, w7
@@ -6038,6 +6251,8 @@ uint8_t spi_transfer(_SPI *self, uint8_t val) {
     2e12:	8f 87 e9    	dec2.w    w15, w15
 
 00002e14 <.LSM24>:
+             (uint16_t *)NULL, 9, -1, 0, 4, (uint16_t *)&RPOR2);
+    pin_init(&D[9], (uint16_t *)&PORTD, (uint16_t *)&TRISD, 
     2e14:	20 6c 20    	mov.w     #0x6c2, w0
     2e16:	80 1f 78    	mov.w     w0, [w15++]
     2e18:	37 00 20    	mov.w     #0x3, w7
@@ -6052,6 +6267,8 @@ uint8_t spi_transfer(_SPI *self, uint8_t val) {
     2e2a:	8f 87 e9    	dec2.w    w15, w15
 
 00002e2c <.LSM25>:
+             (uint16_t *)NULL, 10, -1, 8, 3, (uint16_t *)&RPOR1);
+    pin_init(&D[10], (uint16_t *)&PORTD, (uint16_t *)&TRISD, 
     2e2c:	a0 6c 20    	mov.w     #0x6ca, w0
     2e2e:	80 1f 78    	mov.w     w0, [w15++]
     2e30:	b7 00 20    	mov.w     #0xb, w7
@@ -6066,6 +6283,8 @@ uint8_t spi_transfer(_SPI *self, uint8_t val) {
     2e42:	8f 87 e9    	dec2.w    w15, w15
 
 00002e44 <.LSM26>:
+             (uint16_t *)NULL, 0, -1, 8, 11, (uint16_t *)&RPOR5);
+    pin_init(&D[11], (uint16_t *)&PORTD, (uint16_t *)&TRISD, 
     2e44:	80 6d 20    	mov.w     #0x6d8, w0
     2e46:	80 1f 78    	mov.w     w0, [w15++]
     2e48:	87 01 20    	mov.w     #0x18, w7
@@ -6080,6 +6299,8 @@ uint8_t spi_transfer(_SPI *self, uint8_t val) {
     2e5a:	8f 87 e9    	dec2.w    w15, w15
 
 00002e5c <.LSM27>:
+             (uint16_t *)NULL, 1, -1, 0, 24, (uint16_t *)&RPOR12);
+    pin_init(&D[12], (uint16_t *)&PORTD, (uint16_t *)&TRISD, 
     2e5c:	60 6d 20    	mov.w     #0x6d6, w0
     2e5e:	80 1f 78    	mov.w     w0, [w15++]
     2e60:	77 01 20    	mov.w     #0x17, w7
@@ -6094,6 +6315,8 @@ uint8_t spi_transfer(_SPI *self, uint8_t val) {
     2e72:	8f 87 e9    	dec2.w    w15, w15
 
 00002e74 <.LSM28>:
+             (uint16_t *)NULL, 2, -1, 8, 23, (uint16_t *)&RPOR11);
+    pin_init(&D[13], (uint16_t *)&PORTD, (uint16_t *)&TRISD, 
     2e74:	60 6d 20    	mov.w     #0x6d6, w0
     2e76:	80 1f 78    	mov.w     w0, [w15++]
     2e78:	67 01 20    	mov.w     #0x16, w7
@@ -6108,6 +6331,8 @@ uint8_t spi_transfer(_SPI *self, uint8_t val) {
     2e8a:	8f 87 e9    	dec2.w    w15, w15
 
 00002e8c <.LSM29>:
+             (uint16_t *)NULL, 3, -1, 0, 22, (uint16_t *)&RPOR11);
+    pin_init(&A[5], (uint16_t *)&PORTB, (uint16_t *)&TRISB, 
     2e8c:	00 6c 20    	mov.w     #0x6c0, w0
     2e8e:	80 1f 78    	mov.w     w0, [w15++]
     2e90:	80 03 eb    	clr.w     w7
@@ -6122,6 +6347,8 @@ uint8_t spi_transfer(_SPI *self, uint8_t val) {
     2ea2:	8f 87 e9    	dec2.w    w15, w15
 
 00002ea4 <.LSM30>:
+             (uint16_t *)&ANSB, 0, 0, 0, 0, (uint16_t *)&RPOR0);
+    pin_init(&A[4], (uint16_t *)&PORTB, (uint16_t *)&TRISB, 
     2ea4:	00 6c 20    	mov.w     #0x6c0, w0
     2ea6:	80 1f 78    	mov.w     w0, [w15++]
     2ea8:	17 00 20    	mov.w     #0x1, w7
@@ -6136,6 +6363,8 @@ uint8_t spi_transfer(_SPI *self, uint8_t val) {
     2eba:	8f 87 e9    	dec2.w    w15, w15
 
 00002ebc <.LSM31>:
+             (uint16_t *)&ANSB, 1, 1, 8, 1, (uint16_t *)&RPOR0);
+    pin_init(&A[3], (uint16_t *)&PORTB, (uint16_t *)&TRISB, 
     2ebc:	c0 6c 20    	mov.w     #0x6cc, w0
     2ebe:	80 1f 78    	mov.w     w0, [w15++]
     2ec0:	d7 00 20    	mov.w     #0xd, w7
@@ -6150,6 +6379,8 @@ uint8_t spi_transfer(_SPI *self, uint8_t val) {
     2ed2:	8f 87 e9    	dec2.w    w15, w15
 
 00002ed4 <.LSM32>:
+             (uint16_t *)&ANSB, 2, 2, 8, 13, (uint16_t *)&RPOR6);
+    pin_init(&A[2], (uint16_t *)&PORTB, (uint16_t *)&TRISB, 
     2ed4:	00 00 eb    	clr.w     w0
     2ed6:	80 1f 78    	mov.w     w0, [w15++]
     2ed8:	80 83 eb    	setm.w    w7
@@ -6164,6 +6395,8 @@ uint8_t spi_transfer(_SPI *self, uint8_t val) {
     2eea:	8f 87 e9    	dec2.w    w15, w15
 
 00002eec <.LSM33>:
+             (uint16_t *)&ANSB, 3, 3, 0, -1, (uint16_t *)NULL);
+    pin_init(&A[1], (uint16_t *)&PORTB, (uint16_t *)&TRISB, 
     2eec:	c0 6d 20    	mov.w     #0x6dc, w0
     2eee:	80 1f 78    	mov.w     w0, [w15++]
     2ef0:	c7 01 20    	mov.w     #0x1c, w7
@@ -6178,6 +6411,8 @@ uint8_t spi_transfer(_SPI *self, uint8_t val) {
     2f02:	8f 87 e9    	dec2.w    w15, w15
 
 00002f04 <.LSM34>:
+             (uint16_t *)&ANSB, 4, 4, 0, 28, (uint16_t *)&RPOR14);
+    pin_init(&A[0], (uint16_t *)&PORTB, (uint16_t *)&TRISB, 
     2f04:	20 6d 20    	mov.w     #0x6d2, w0
     2f06:	80 1f 78    	mov.w     w0, [w15++]
     2f08:	27 01 20    	mov.w     #0x12, w7
@@ -6192,11 +6427,14 @@ uint8_t spi_transfer(_SPI *self, uint8_t val) {
     2f1a:	8f 87 e9    	dec2.w    w15, w15
 
 00002f1c <.LSM35>:
+             (uint16_t *)&ANSB, 5, 5, 0, 18, (uint16_t *)&RPOR9);
+    for (i = 0; i<14; i++)
     2f1c:	00 00 eb    	clr.w     w0
     2f1e:	00 0f 78    	mov.w     w0, [w14]
     2f20:	07 00 37    	bra       0x2f30 <.L8>
 
 00002f22 <.L9>:
+        pin_digitalIn(&D[i]);
     2f22:	1e 00 78    	mov.w     [w14], w0
     2f24:	76 00 b9    	mul.su    w0, #0x16, w0
     2f26:	80 00 78    	mov.w     w0, w1
@@ -6213,11 +6451,13 @@ uint8_t spi_transfer(_SPI *self, uint8_t val) {
     2f34:	f6 ff 36    	bra       LEU, 0x2f22 <.L9>
 
 00002f36 <.LSM38>:
+    for (i = 0; i<6; i++)
     2f36:	00 00 eb    	clr.w     w0
     2f38:	00 0f 78    	mov.w     w0, [w14]
     2f3a:	07 00 37    	bra       0x2f4a <.L10>
 
 00002f3c <.L11>:
+        pin_analogIn(&A[i]);
     2f3c:	1e 00 78    	mov.w     [w14], w0
     2f3e:	76 00 b9    	mul.su    w0, #0x16, w0
     2f40:	80 00 78    	mov.w     w0, w1
@@ -6234,27 +6474,45 @@ uint8_t spi_transfer(_SPI *self, uint8_t val) {
     2f4e:	f6 ff 36    	bra       LEU, 0x2f3c <.L11>
 
 00002f50 <.LSM41>:
+
+    // Configure and enable the ADC module: 
+    //   set output data format to fractional (FORM<1:0> = 0b10)
+    //   set conversion trigger source select bits to internal counter 
+    //     (SSRC<2:0> = 0b111)
+    //   set auto-sample time bits to 12*TAD (SAMC<4:0> = 12)
+    //   set conversion clock select bits to 64*TCY (ADCS<7:0> = 64)
+    //   set initial channel selection to AN0
+    AD1CON1 = 0x02E0; 
     2f50:	00 2e 20    	mov.w     #0x2e0, w0
     2f52:	00 19 88    	mov.w     w0, 0x320
 
 00002f54 <.LSM42>:
+    AD1CON2 = 0;
     2f54:	22 23 ef    	clr.w     0x322
 
 00002f56 <.LSM43>:
+    AD1CON3 = 0x0C40;
     2f56:	00 c4 20    	mov.w     #0xc40, w0
     2f58:	20 19 88    	mov.w     w0, 0x324
 
 00002f5a <.LSM44>:
+    AD1CHS = 0;
     2f5a:	28 23 ef    	clr.w     0x328
 
 00002f5c <.LSM45>:
+    AD1CON1bits.ADON = 1;
     2f5c:	21 e3 a8    	bset.b    0x321, #0x7
 
 00002f5e <.LSM46>:
+}
     2f5e:	00 80 fa    	ulnk      
     2f60:	00 00 06    	return    
 
 00002f62 <_pin_init>:
+
+void pin_init(_PIN *self, uint16_t *port, uint16_t *tris, 
+              uint16_t *ans, uint8_t bit, int annum, 
+              uint8_t rpshift, uint16_t rpnum, uint16_t *rpor) {
     2f62:	10 00 fa    	lnk       #0x10
     2f64:	00 0f 78    	mov.w     w0, [w14]
     2f66:	11 07 98    	mov.w     w1, [w14+2]
@@ -6266,75 +6524,91 @@ uint8_t spi_transfer(_SPI *self, uint8_t val) {
     2f72:	77 07 98    	mov.w     w7, [w14+14]
 
 00002f74 <.LSM48>:
+    self->port = port;
     2f74:	1e 00 78    	mov.w     [w14], w0
     2f76:	9e 00 90    	mov.w     [w14+2], w1
     2f78:	01 08 78    	mov.w     w1, [w0]
 
 00002f7a <.LSM49>:
+    self->tris = tris;
     2f7a:	1e 00 78    	mov.w     [w14], w0
     2f7c:	ae 00 90    	mov.w     [w14+4], w1
     2f7e:	11 00 98    	mov.w     w1, [w0+2]
 
 00002f80 <.LSM50>:
+    self->ans = ans;
     2f80:	1e 00 78    	mov.w     [w14], w0
     2f82:	be 00 90    	mov.w     [w14+6], w1
     2f84:	21 00 98    	mov.w     w1, [w0+4]
 
 00002f86 <.LSM51>:
+    self->bit = bit;
     2f86:	1e 00 78    	mov.w     [w14], w0
     2f88:	8e 48 90    	mov.b     [w14+8], w1
     2f8a:	61 40 98    	mov.b     w1, [w0+6]
 
 00002f8c <.LSM52>:
+    self->annum = annum;
     2f8c:	1e 00 78    	mov.w     [w14], w0
     2f8e:	de 00 90    	mov.w     [w14+10], w1
     2f90:	41 00 98    	mov.w     w1, [w0+8]
 
 00002f92 <.LSM53>:
+    self->rpshift = rpshift;
     2f92:	1e 00 78    	mov.w     [w14], w0
     2f94:	ce 48 90    	mov.b     [w14+12], w1
     2f96:	21 48 98    	mov.b     w1, [w0+10]
 
 00002f98 <.LSM54>:
+    self->rpnum = rpnum;
     2f98:	fe 00 90    	mov.w     [w14+14], w1
     2f9a:	1e 00 78    	mov.w     [w14], w0
     2f9c:	61 00 98    	mov.w     w1, [w0+12]
 
 00002f9e <.LSM55>:
+    self->rpor = rpor;
     2f9e:	1e 00 78    	mov.w     [w14], w0
     2fa0:	ce b8 97    	mov.w     [w14-8], w1
     2fa2:	71 00 98    	mov.w     w1, [w0+14]
 
 00002fa4 <.LSM56>:
+    self->owner = NULL;
     2fa4:	1e 00 78    	mov.w     [w14], w0
     2fa6:	80 00 eb    	clr.w     w1
     2fa8:	01 08 98    	mov.w     w1, [w0+16]
 
 00002faa <.LSM57>:
+    self->write = NULL;
     2faa:	1e 00 78    	mov.w     [w14], w0
     2fac:	80 00 eb    	clr.w     w1
     2fae:	11 08 98    	mov.w     w1, [w0+18]
 
 00002fb0 <.LSM58>:
+    self->read = NULL;
     2fb0:	1e 00 78    	mov.w     [w14], w0
     2fb2:	80 00 eb    	clr.w     w1
     2fb4:	21 08 98    	mov.w     w1, [w0+20]
 
 00002fb6 <.LSM59>:
+}
     2fb6:	00 80 fa    	ulnk      
     2fb8:	00 00 06    	return    
 
 00002fba <_pin_digitalIn>:
+
+void pin_digitalIn(_PIN *self) {
     2fba:	02 00 fa    	lnk       #0x2
     2fbc:	00 0f 78    	mov.w     w0, [w14]
 
 00002fbe <.LSM61>:
+    if (self->ans)
     2fbe:	1e 00 78    	mov.w     [w14], w0
     2fc0:	20 00 90    	mov.w     [w0+4], w0
     2fc2:	00 00 e0    	cp0.w     w0
     2fc4:	0d 00 32    	bra       Z, 0x2fe0 <.L14>
 
 00002fc6 <.LSM62>:
+        bitclear(self->ans, self->bit);
     2fc6:	1e 00 78    	mov.w     [w14], w0
     2fc8:	20 00 90    	mov.w     [w0+4], w0
     2fca:	9e 00 78    	mov.w     [w14], w1
@@ -6350,6 +6624,7 @@ uint8_t spi_transfer(_SPI *self, uint8_t val) {
     2fde:	01 08 78    	mov.w     w1, [w0]
 
 00002fe0 <.L14>:
+    bitset(self->tris, self->bit);
     2fe0:	1e 00 78    	mov.w     [w14], w0
     2fe2:	10 00 90    	mov.w     [w0+2], w0
     2fe4:	9e 00 78    	mov.w     [w14], w1
@@ -6364,30 +6639,37 @@ uint8_t spi_transfer(_SPI *self, uint8_t val) {
     2ff6:	01 08 78    	mov.w     w1, [w0]
 
 00002ff8 <.LSM64>:
+    self->write = NULL;
     2ff8:	1e 00 78    	mov.w     [w14], w0
     2ffa:	80 00 eb    	clr.w     w1
     2ffc:	11 08 98    	mov.w     w1, [w0+18]
 
 00002ffe <.LSM65>:
+    self->read = __digitalRead;    
     2ffe:	1e 00 78    	mov.w     [w14], w0
     3000:	c1 cf 22    	mov.w     #0x2cfc, w1
     3002:	21 08 98    	mov.w     w1, [w0+20]
 
 00003004 <.LSM66>:
+}
     3004:	00 80 fa    	ulnk      
     3006:	00 00 06    	return    
 
 00003008 <_pin_digitalOut>:
+
+void pin_digitalOut(_PIN *self) {
     3008:	02 00 fa    	lnk       #0x2
     300a:	00 0f 78    	mov.w     w0, [w14]
 
 0000300c <.LSM68>:
+    if (self->ans)
     300c:	1e 00 78    	mov.w     [w14], w0
     300e:	20 00 90    	mov.w     [w0+4], w0
     3010:	00 00 e0    	cp0.w     w0
     3012:	0d 00 32    	bra       Z, 0x302e <.L16>
 
 00003014 <.LSM69>:
+        bitclear(self->ans, self->bit);
     3014:	1e 00 78    	mov.w     [w14], w0
     3016:	20 00 90    	mov.w     [w0+4], w0
     3018:	9e 00 78    	mov.w     [w14], w1
@@ -6403,6 +6685,7 @@ uint8_t spi_transfer(_SPI *self, uint8_t val) {
     302c:	01 08 78    	mov.w     w1, [w0]
 
 0000302e <.L16>:
+    bitclear(self->port, self->bit);
     302e:	1e 00 78    	mov.w     [w14], w0
     3030:	10 00 78    	mov.w     [w0], w0
     3032:	9e 00 78    	mov.w     [w14], w1
@@ -6418,6 +6701,7 @@ uint8_t spi_transfer(_SPI *self, uint8_t val) {
     3046:	01 08 78    	mov.w     w1, [w0]
 
 00003048 <.LSM71>:
+    bitclear(self->tris, self->bit);
     3048:	1e 00 78    	mov.w     [w14], w0
     304a:	10 00 90    	mov.w     [w0+2], w0
     304c:	9e 00 78    	mov.w     [w14], w1
@@ -6433,30 +6717,38 @@ uint8_t spi_transfer(_SPI *self, uint8_t val) {
     3060:	01 08 78    	mov.w     w1, [w0]
 
 00003062 <.LSM72>:
+    self->write = __digitalWrite;
     3062:	1e 00 78    	mov.w     [w14], w0
     3064:	81 cb 22    	mov.w     #0x2cb8, w1
     3066:	11 08 98    	mov.w     w1, [w0+18]
 
 00003068 <.LSM73>:
+    self->read = __digitalRead;
     3068:	1e 00 78    	mov.w     [w14], w0
     306a:	c1 cf 22    	mov.w     #0x2cfc, w1
     306c:	21 08 98    	mov.w     w1, [w0+20]
 
 0000306e <.LSM74>:
+}
     306e:	00 80 fa    	ulnk      
     3070:	00 00 06    	return    
 
 00003072 <_pin_analogIn>:
+
+void pin_analogIn(_PIN *self) {
     3072:	02 00 fa    	lnk       #0x2
     3074:	00 0f 78    	mov.w     w0, [w14]
 
 00003076 <.LSM76>:
+    if (!(self->ans))
     3076:	1e 00 78    	mov.w     [w14], w0
     3078:	20 00 90    	mov.w     [w0+4], w0
     307a:	00 00 e0    	cp0.w     w0
     307c:	1f 00 32    	bra       Z, 0x30bc <.L20>
 
 0000307e <.LSM77>:
+        return;
+    bitset(self->tris, self->bit);
     307e:	1e 00 78    	mov.w     [w14], w0
     3080:	10 00 90    	mov.w     [w0+2], w0
     3082:	9e 00 78    	mov.w     [w14], w1
@@ -6471,6 +6763,7 @@ uint8_t spi_transfer(_SPI *self, uint8_t val) {
     3094:	01 08 78    	mov.w     w1, [w0]
 
 00003096 <.LSM78>:
+    bitset(self->ans, self->bit);
     3096:	1e 00 78    	mov.w     [w14], w0
     3098:	20 00 90    	mov.w     [w0+4], w0
     309a:	9e 00 78    	mov.w     [w14], w1
@@ -6485,11 +6778,13 @@ uint8_t spi_transfer(_SPI *self, uint8_t val) {
     30ac:	01 08 78    	mov.w     w1, [w0]
 
 000030ae <.LSM79>:
+    self->write = NULL;
     30ae:	1e 00 78    	mov.w     [w14], w0
     30b0:	80 00 eb    	clr.w     w1
     30b2:	11 08 98    	mov.w     w1, [w0+18]
 
 000030b4 <.LSM80>:
+    self->read = __analogRead;
     30b4:	1e 00 78    	mov.w     [w14], w0
     30b6:	e1 d1 22    	mov.w     #0x2d1e, w1
     30b8:	21 08 98    	mov.w     w1, [w0+20]
@@ -6499,14 +6794,18 @@ uint8_t spi_transfer(_SPI *self, uint8_t val) {
     30bc:	00 00 00    	nop       
 
 000030be <.L17>:
+}
     30be:	00 80 fa    	ulnk      
     30c0:	00 00 06    	return    
 
 000030c2 <_pin_set>:
+
+void pin_set(_PIN *self) {
     30c2:	02 00 fa    	lnk       #0x2
     30c4:	00 0f 78    	mov.w     w0, [w14]
 
 000030c6 <.LSM84>:
+    if (self->write==__digitalWrite)
     30c6:	1e 00 78    	mov.w     [w14], w0
     30c8:	90 08 90    	mov.w     [w0+18], w1
     30ca:	80 cb 22    	mov.w     #0x2cb8, w0
@@ -6514,6 +6813,7 @@ uint8_t spi_transfer(_SPI *self, uint8_t val) {
     30ce:	0c 00 3a    	bra       NZ, 0x30e8 <.L21>
 
 000030d0 <.LSM85>:
+        bitset(self->port, self->bit);
     30d0:	1e 00 78    	mov.w     [w14], w0
     30d2:	10 00 78    	mov.w     [w0], w0
     30d4:	9e 00 78    	mov.w     [w14], w1
@@ -6528,14 +6828,18 @@ uint8_t spi_transfer(_SPI *self, uint8_t val) {
     30e6:	01 08 78    	mov.w     w1, [w0]
 
 000030e8 <.L21>:
+}
     30e8:	00 80 fa    	ulnk      
     30ea:	00 00 06    	return    
 
 000030ec <_pin_clear>:
+
+void pin_clear(_PIN *self) {
     30ec:	02 00 fa    	lnk       #0x2
     30ee:	00 0f 78    	mov.w     w0, [w14]
 
 000030f0 <.LSM88>:
+    if (self->write==__digitalWrite)
     30f0:	1e 00 78    	mov.w     [w14], w0
     30f2:	90 08 90    	mov.w     [w0+18], w1
     30f4:	80 cb 22    	mov.w     #0x2cb8, w0
@@ -6543,6 +6847,7 @@ uint8_t spi_transfer(_SPI *self, uint8_t val) {
     30f8:	0d 00 3a    	bra       NZ, 0x3114 <.L23>
 
 000030fa <.LSM89>:
+        bitclear(self->port, self->bit);
     30fa:	1e 00 78    	mov.w     [w14], w0
     30fc:	10 00 78    	mov.w     [w0], w0
     30fe:	9e 00 78    	mov.w     [w14], w1
@@ -6558,14 +6863,18 @@ uint8_t spi_transfer(_SPI *self, uint8_t val) {
     3112:	01 08 78    	mov.w     w1, [w0]
 
 00003114 <.L23>:
+}
     3114:	00 80 fa    	ulnk      
     3116:	00 00 06    	return    
 
 00003118 <_pin_toggle>:
+
+void pin_toggle(_PIN *self) {
     3118:	02 00 fa    	lnk       #0x2
     311a:	00 0f 78    	mov.w     w0, [w14]
 
 0000311c <.LSM92>:
+    if (self->write==__digitalWrite)
     311c:	1e 00 78    	mov.w     [w14], w0
     311e:	90 08 90    	mov.w     [w0+18], w1
     3120:	80 cb 22    	mov.w     #0x2cb8, w0
@@ -6573,6 +6882,7 @@ uint8_t spi_transfer(_SPI *self, uint8_t val) {
     3124:	0c 00 3a    	bra       NZ, 0x313e <.L25>
 
 00003126 <.LSM93>:
+        bitflip(self->port, self->bit);
     3126:	1e 00 78    	mov.w     [w14], w0
     3128:	10 00 78    	mov.w     [w0], w0
     312a:	9e 00 78    	mov.w     [w14], w1
@@ -6587,21 +6897,26 @@ uint8_t spi_transfer(_SPI *self, uint8_t val) {
     313c:	01 08 78    	mov.w     w1, [w0]
 
 0000313e <.L25>:
+}
     313e:	00 80 fa    	ulnk      
     3140:	00 00 06    	return    
 
 00003142 <_pin_write>:
+
+void pin_write(_PIN *self, uint16_t val) {
     3142:	04 00 fa    	lnk       #0x4
     3144:	00 0f 78    	mov.w     w0, [w14]
     3146:	11 07 98    	mov.w     w1, [w14+2]
 
 00003148 <.LSM96>:
+    if (self->write)
     3148:	1e 00 78    	mov.w     [w14], w0
     314a:	10 08 90    	mov.w     [w0+18], w0
     314c:	00 00 e0    	cp0.w     w0
     314e:	05 00 32    	bra       Z, 0x315a <.L27>
 
 00003150 <.LSM97>:
+        self->write(self, val);
     3150:	1e 00 78    	mov.w     [w14], w0
     3152:	10 09 90    	mov.w     [w0+18], w2
     3154:	9e 00 90    	mov.w     [w14+2], w1
@@ -6609,20 +6924,25 @@ uint8_t spi_transfer(_SPI *self, uint8_t val) {
     3158:	02 00 01    	call      w2
 
 0000315a <.L27>:
+}
     315a:	00 80 fa    	ulnk      
     315c:	00 00 06    	return    
 
 0000315e <_pin_read>:
+
+uint16_t pin_read(_PIN *self) {
     315e:	02 00 fa    	lnk       #0x2
     3160:	00 0f 78    	mov.w     w0, [w14]
 
 00003162 <.LSM100>:
+    if (self->read)
     3162:	1e 00 78    	mov.w     [w14], w0
     3164:	20 08 90    	mov.w     [w0+20], w0
     3166:	00 00 e0    	cp0.w     w0
     3168:	05 00 32    	bra       Z, 0x3174 <.L30>
 
 0000316a <.LSM101>:
+        return self->read(self);
     316a:	1e 00 78    	mov.w     [w14], w0
     316c:	a0 08 90    	mov.w     [w0+20], w1
     316e:	1e 00 78    	mov.w     [w14], w0
@@ -6630,9 +6950,12 @@ uint8_t spi_transfer(_SPI *self, uint8_t val) {
     3172:	01 00 37    	bra       0x3176 <.L31>
 
 00003174 <.L30>:
+    else
+        return 0xFFFF;
     3174:	00 80 eb    	setm.w    w0
 
 00003176 <.L31>:
+}
     3176:	00 80 fa    	ulnk      
     3178:	00 00 06    	return    
 
@@ -7075,9 +7398,15 @@ void postNumber(int number, uint8_t decimal){
     338c:	00 00 06    	return    
 
 0000338e <_init_ui>:
+
+_LED led1, led2, led3;
+_SW sw1, sw2, sw3;
+
+void init_ui(void) {
     338e:	00 00 fa    	lnk       #0x0
 
 00003390 <.LSM1>:
+    led_init(&led1, (uint16_t *)&PORTD, (uint16_t *)&TRISD, 
     3390:	74 c0 b3    	mov.b     #0x7, w4
     3392:	63 4e 20    	mov.w     #0x4e6, w3
     3394:	82 2d 20    	mov.w     #0x2d8, w2
@@ -7086,6 +7415,8 @@ void postNumber(int number, uint8_t decimal){
     339a:	20 00 07    	rcall     0x33dc <_led_init>
 
 0000339c <.LSM2>:
+             (uint16_t *)&ANSD, 7);
+    led_init(&led2, (uint16_t *)&PORTF, (uint16_t *)&TRISF, 
     339c:	00 42 eb    	clr.b     w4
     339e:	a3 4e 20    	mov.w     #0x4ea, w3
     33a0:	82 2e 20    	mov.w     #0x2e8, w2
@@ -7094,6 +7425,8 @@ void postNumber(int number, uint8_t decimal){
     33a6:	1a 00 07    	rcall     0x33dc <_led_init>
 
 000033a8 <.LSM3>:
+             (uint16_t *)&ANSF, 0);
+    led_init(&led3, (uint16_t *)&PORTF, (uint16_t *)&TRISF, 
     33a8:	14 c0 b3    	mov.b     #0x1, w4
     33aa:	a3 4e 20    	mov.w     #0x4ea, w3
     33ac:	82 2e 20    	mov.w     #0x2e8, w2
@@ -7102,6 +7435,8 @@ void postNumber(int number, uint8_t decimal){
     33b2:	14 00 07    	rcall     0x33dc <_led_init>
 
 000033b4 <.LSM4>:
+             (uint16_t *)&ANSF, 1);
+    sw_init(&sw1, (uint16_t *)&PORTC, (uint16_t *)&TRISC, 
     33b4:	f4 c0 b3    	mov.b     #0xf, w4
     33b6:	43 4e 20    	mov.w     #0x4e4, w3
     33b8:	02 2d 20    	mov.w     #0x2d0, w2
@@ -7110,6 +7445,8 @@ void postNumber(int number, uint8_t decimal){
     33be:	ad 00 07    	rcall     0x351a <_sw_init>
 
 000033c0 <.LSM5>:
+            (uint16_t *)&ANSC, 15);
+    sw_init(&sw2, (uint16_t *)&PORTC, (uint16_t *)&TRISC, 
     33c0:	c4 c0 b3    	mov.b     #0xc, w4
     33c2:	43 4e 20    	mov.w     #0x4e4, w3
     33c4:	02 2d 20    	mov.w     #0x2d0, w2
@@ -7118,6 +7455,8 @@ void postNumber(int number, uint8_t decimal){
     33ca:	a7 00 07    	rcall     0x351a <_sw_init>
 
 000033cc <.LSM6>:
+            (uint16_t *)&ANSC, 12);
+    sw_init(&sw3, (uint16_t *)&PORTB, (uint16_t *)&TRISB, 
     33cc:	c4 c0 b3    	mov.b     #0xc, w4
     33ce:	23 4e 20    	mov.w     #0x4e2, w3
     33d0:	82 2c 20    	mov.w     #0x2c8, w2
@@ -7126,10 +7465,15 @@ void postNumber(int number, uint8_t decimal){
     33d6:	a1 00 07    	rcall     0x351a <_sw_init>
 
 000033d8 <.LSM7>:
+            (uint16_t *)&ANSB, 12);
+}
     33d8:	00 80 fa    	ulnk      
     33da:	00 00 06    	return    
 
 000033dc <_led_init>:
+
+void led_init(_LED *self, uint16_t *port, uint16_t *tris, 
+              uint16_t *ans, uint8_t bit) {
     33dc:	0a 00 fa    	lnk       #0xa
     33de:	00 0f 78    	mov.w     w0, [w14]
     33e0:	11 07 98    	mov.w     w1, [w14+2]
@@ -7138,26 +7482,32 @@ void postNumber(int number, uint8_t decimal){
     33e6:	04 4f 98    	mov.b     w4, [w14+8]
 
 000033e8 <.LSM9>:
+    self->port = port;
     33e8:	1e 00 78    	mov.w     [w14], w0
     33ea:	9e 00 90    	mov.w     [w14+2], w1
     33ec:	01 08 78    	mov.w     w1, [w0]
 
 000033ee <.LSM10>:
+    self->tris = tris;
     33ee:	1e 00 78    	mov.w     [w14], w0
     33f0:	ae 00 90    	mov.w     [w14+4], w1
     33f2:	11 00 98    	mov.w     w1, [w0+2]
 
 000033f4 <.LSM11>:
+    self->ans = ans;
     33f4:	1e 00 78    	mov.w     [w14], w0
     33f6:	be 00 90    	mov.w     [w14+6], w1
     33f8:	21 00 98    	mov.w     w1, [w0+4]
 
 000033fa <.LSM12>:
+    self->bit = bit;
     33fa:	1e 00 78    	mov.w     [w14], w0
     33fc:	8e 48 90    	mov.b     [w14+8], w1
     33fe:	61 40 98    	mov.b     w1, [w0+6]
 
 00003400 <.LSM13>:
+
+    bitclear(self->ans, self->bit);
     3400:	1e 00 78    	mov.w     [w14], w0
     3402:	20 00 90    	mov.w     [w0+4], w0
     3404:	9e 00 78    	mov.w     [w14], w1
@@ -7173,6 +7523,7 @@ void postNumber(int number, uint8_t decimal){
     3418:	01 08 78    	mov.w     w1, [w0]
 
 0000341a <.LSM14>:
+    bitclear(self->port, self->bit);
     341a:	1e 00 78    	mov.w     [w14], w0
     341c:	10 00 78    	mov.w     [w0], w0
     341e:	9e 00 78    	mov.w     [w14], w1
@@ -7188,6 +7539,7 @@ void postNumber(int number, uint8_t decimal){
     3432:	01 08 78    	mov.w     w1, [w0]
 
 00003434 <.LSM15>:
+    bitclear(self->tris, self->bit);
     3434:	1e 00 78    	mov.w     [w14], w0
     3436:	10 00 90    	mov.w     [w0+2], w0
     3438:	9e 00 78    	mov.w     [w14], w1
@@ -7203,14 +7555,18 @@ void postNumber(int number, uint8_t decimal){
     344c:	01 08 78    	mov.w     w1, [w0]
 
 0000344e <.LSM16>:
+}
     344e:	00 80 fa    	ulnk      
     3450:	00 00 06    	return    
 
 00003452 <_led_on>:
+
+void led_on(_LED *self) {
     3452:	02 00 fa    	lnk       #0x2
     3454:	00 0f 78    	mov.w     w0, [w14]
 
 00003456 <.LSM18>:
+    bitset(self->port, self->bit);
     3456:	1e 00 78    	mov.w     [w14], w0
     3458:	10 00 78    	mov.w     [w0], w0
     345a:	9e 00 78    	mov.w     [w14], w1
@@ -7225,14 +7581,18 @@ void postNumber(int number, uint8_t decimal){
     346c:	01 08 78    	mov.w     w1, [w0]
 
 0000346e <.LSM19>:
+}
     346e:	00 80 fa    	ulnk      
     3470:	00 00 06    	return    
 
 00003472 <_led_off>:
+
+void led_off(_LED *self) {
     3472:	02 00 fa    	lnk       #0x2
     3474:	00 0f 78    	mov.w     w0, [w14]
 
 00003476 <.LSM21>:
+    bitclear(self->port, self->bit);
     3476:	1e 00 78    	mov.w     [w14], w0
     3478:	10 00 78    	mov.w     [w0], w0
     347a:	9e 00 78    	mov.w     [w14], w1
@@ -7248,14 +7608,18 @@ void postNumber(int number, uint8_t decimal){
     348e:	01 08 78    	mov.w     w1, [w0]
 
 00003490 <.LSM22>:
+}
     3490:	00 80 fa    	ulnk      
     3492:	00 00 06    	return    
 
 00003494 <_led_toggle>:
+
+void led_toggle(_LED *self) {
     3494:	02 00 fa    	lnk       #0x2
     3496:	00 0f 78    	mov.w     w0, [w14]
 
 00003498 <.LSM24>:
+    bitflip(self->port, self->bit);
     3498:	1e 00 78    	mov.w     [w14], w0
     349a:	10 00 78    	mov.w     [w0], w0
     349c:	9e 00 78    	mov.w     [w14], w1
@@ -7270,20 +7634,25 @@ void postNumber(int number, uint8_t decimal){
     34ae:	01 08 78    	mov.w     w1, [w0]
 
 000034b0 <.LSM25>:
+}
     34b0:	00 80 fa    	ulnk      
     34b2:	00 00 06    	return    
 
 000034b4 <_led_write>:
+
+void led_write(_LED *self, uint16_t val) {
     34b4:	04 00 fa    	lnk       #0x4
     34b6:	00 0f 78    	mov.w     w0, [w14]
     34b8:	11 07 98    	mov.w     w1, [w14+2]
 
 000034ba <.LSM27>:
+    if (val)
     34ba:	1e 00 90    	mov.w     [w14+2], w0
     34bc:	00 00 e0    	cp0.w     w0
     34be:	0d 00 32    	bra       Z, 0x34da <.L7>
 
 000034c0 <.LSM28>:
+        bitset(self->port, self->bit);
     34c0:	1e 00 78    	mov.w     [w14], w0
     34c2:	10 00 78    	mov.w     [w0], w0
     34c4:	9e 00 78    	mov.w     [w14], w1
@@ -7299,6 +7668,8 @@ void postNumber(int number, uint8_t decimal){
     34d8:	0d 00 37    	bra       0x34f4 <.L6>
 
 000034da <.L7>:
+    else
+        bitclear(self->port, self->bit);
     34da:	1e 00 78    	mov.w     [w14], w0
     34dc:	10 00 78    	mov.w     [w0], w0
     34de:	9e 00 78    	mov.w     [w14], w1
@@ -7314,14 +7685,18 @@ void postNumber(int number, uint8_t decimal){
     34f2:	01 08 78    	mov.w     w1, [w0]
 
 000034f4 <.L6>:
+}
     34f4:	00 80 fa    	ulnk      
     34f6:	00 00 06    	return    
 
 000034f8 <_led_read>:
+
+uint16_t led_read(_LED *self) {
     34f8:	02 00 fa    	lnk       #0x2
     34fa:	00 0f 78    	mov.w     w0, [w14]
 
 000034fc <.LSM32>:
+    return bitread(self->port, self->bit);
     34fc:	1e 00 78    	mov.w     [w14], w0
     34fe:	10 00 78    	mov.w     [w0], w0
     3500:	90 00 78    	mov.w     [w0], w1
@@ -7337,10 +7712,14 @@ void postNumber(int number, uint8_t decimal){
     3514:	4f 00 de    	lsr.w     w0, #0xf, w0
 
 00003516 <.LSM33>:
+}
     3516:	00 80 fa    	ulnk      
     3518:	00 00 06    	return    
 
 0000351a <_sw_init>:
+
+void sw_init(_SW *self, uint16_t *port, uint16_t *tris, 
+             uint16_t *ans, uint8_t bit) {
     351a:	0a 00 fa    	lnk       #0xa
     351c:	00 0f 78    	mov.w     w0, [w14]
     351e:	11 07 98    	mov.w     w1, [w14+2]
@@ -7349,26 +7728,32 @@ void postNumber(int number, uint8_t decimal){
     3524:	04 4f 98    	mov.b     w4, [w14+8]
 
 00003526 <.LSM35>:
+    self->port = port;
     3526:	1e 00 78    	mov.w     [w14], w0
     3528:	9e 00 90    	mov.w     [w14+2], w1
     352a:	01 08 78    	mov.w     w1, [w0]
 
 0000352c <.LSM36>:
+    self->tris = tris;
     352c:	1e 00 78    	mov.w     [w14], w0
     352e:	ae 00 90    	mov.w     [w14+4], w1
     3530:	11 00 98    	mov.w     w1, [w0+2]
 
 00003532 <.LSM37>:
+    self->ans = ans;
     3532:	1e 00 78    	mov.w     [w14], w0
     3534:	be 00 90    	mov.w     [w14+6], w1
     3536:	21 00 98    	mov.w     w1, [w0+4]
 
 00003538 <.LSM38>:
+    self->bit = bit;
     3538:	1e 00 78    	mov.w     [w14], w0
     353a:	8e 48 90    	mov.b     [w14+8], w1
     353c:	61 40 98    	mov.b     w1, [w0+6]
 
 0000353e <.LSM39>:
+
+    bitclear(self->ans, self->bit);
     353e:	1e 00 78    	mov.w     [w14], w0
     3540:	20 00 90    	mov.w     [w0+4], w0
     3542:	9e 00 78    	mov.w     [w14], w1
@@ -7384,6 +7769,7 @@ void postNumber(int number, uint8_t decimal){
     3556:	01 08 78    	mov.w     w1, [w0]
 
 00003558 <.LSM40>:
+    bitset(self->tris, self->bit);
     3558:	1e 00 78    	mov.w     [w14], w0
     355a:	10 00 90    	mov.w     [w0+2], w0
     355c:	9e 00 78    	mov.w     [w14], w1
@@ -7398,14 +7784,18 @@ void postNumber(int number, uint8_t decimal){
     356e:	01 08 78    	mov.w     w1, [w0]
 
 00003570 <.LSM41>:
+}
     3570:	00 80 fa    	ulnk      
     3572:	00 00 06    	return    
 
 00003574 <_sw_read>:
+
+uint16_t sw_read(_SW *self) {
     3574:	02 00 fa    	lnk       #0x2
     3576:	00 0f 78    	mov.w     w0, [w14]
 
 00003578 <.LSM43>:
+    return bitread(self->port, self->bit);
     3578:	1e 00 78    	mov.w     [w14], w0
     357a:	10 00 78    	mov.w     [w0], w0
     357c:	90 00 78    	mov.w     [w0], w1
@@ -7421,6 +7811,7 @@ void postNumber(int number, uint8_t decimal){
     3590:	4f 00 de    	lsr.w     w0, #0xf, w0
 
 00003592 <.LSM44>:
+}
     3592:	00 80 fa    	ulnk      
     3594:	00 00 06    	return    
 
@@ -7476,27 +7867,30 @@ int16_t main(void) {
     int number = 0;  
     35b2:	00 00 eb    	clr.w     w0
     35b4:	00 0f 78    	mov.w     w0, [w14]
-    35b6:	01 00 37    	bra       0x35ba <.L3>
+    35b6:	01 00 37    	bra       0x35ba <.L4>
 
-000035b8 <.L4>:
+000035b8 <.L5>:
    
     while (1) {
         if (timer_flag(&timer2)) {
             timer_lower(&timer2);
             led_toggle(&led1);
         
-            showNumber(number);
-            number = number + 1;
-            number %= 1000;
+            showNumber(999);
+/*            number = number + 1;
+            number %= 1000;*/
+        }
+        if (sw_read(&sw1) == 0){
+            showNumber(111);  
         }
     }
     35b8:	00 00 00    	nop       
 
-000035ba <.L3>:
+000035ba <.L4>:
     35ba:	40 b2 20    	mov.w     #0xb24, w0
     35bc:	87 f8 07    	rcall     0x26cc <_timer_flag>
     35be:	00 00 e0    	cp0.w     w0
-    35c0:	fb ff 32    	bra       Z, 0x35b8 <.L4>
+    35c0:	06 00 32    	bra       Z, 0x35ce <.L2>
 
 000035c2 <.LSM12>:
     35c2:	40 b2 20    	mov.w     #0xb24, w0
@@ -7507,104 +7901,102 @@ int16_t main(void) {
     35c8:	65 ff 07    	rcall     0x3494 <_led_toggle>
 
 000035ca <.LSM14>:
-    35ca:	1e 00 78    	mov.w     [w14], w0
+    35ca:	70 3e 20    	mov.w     #0x3e7, w0
     35cc:	eb fd 07    	rcall     0x31a4 <_showNumber>
 
-000035ce <.LSM15>:
-    35ce:	1e 0f e8    	inc.w     [w14], [w14]
+000035ce <.L2>:
+    35ce:	80 81 20    	mov.w     #0x818, w0
+    35d0:	d1 ff 07    	rcall     0x3574 <_sw_read>
+    35d2:	00 00 e0    	cp0.w     w0
+    35d4:	f1 ff 3a    	bra       NZ, 0x35b8 <.L5>
 
-000035d0 <.LSM16>:
-    35d0:	9e 00 78    	mov.w     [w14], w1
-    35d2:	80 3e 20    	mov.w     #0x3e8, w0
-    35d4:	00 01 78    	mov.w     w0, w2
-    35d6:	11 00 09    	repeat    #0x11
-    35d8:	82 00 d8    	div.sw    w1, w2
-    35da:	80 00 fd    	exch      w0, w1
-    35dc:	00 0f 78    	mov.w     w0, [w14]
+000035d6 <.LSM16>:
+    35d6:	f0 06 20    	mov.w     #0x6f, w0
+    35d8:	e5 fd 07    	rcall     0x31a4 <_showNumber>
 
-000035de <.LSM17>:
-    35de:	ed ff 37    	bra       0x35ba <.L3>
+000035da <.LSM17>:
+    35da:	ef ff 37    	bra       0x35ba <.L4>
 Disassembly of section .dinit:
 
-000035e0 <.dinit>:
-    35e0:	be 0b 00    	nop       
-    35e2:	10 00 00    	nop       
-    35e4:	82 00 00    	nop       
-    35e6:	bd 37 86    	mov.w     0xc6f6, w13
-    35e8:	33 bd 37    	bra       0xffffb050
-    35ea:	06 35 bd    	subr.w    0x1506
-    35ec:	37 86 36    	bra       LEU, 0xffff425c
-    35ee:	bd 37 86    	mov.w     0xc6f6, w13
-    35f0:	37 00 00    	nop       
-    35f2:	0e 0b 00    	nop       
-    35f4:	6e 00 00    	nop       
-    35f6:	80 00 00    	nop       
-    35f8:	00 08 00    	nop       
-    35fa:	30 00 00    	nop       
-    35fc:	80 00 00    	nop       
-    35fe:	3a 08 00    	nop       
-    3600:	b8 01 00    	nop       
-    3602:	80 00 00    	nop       
-    3604:	f2 09 00    	nop       
-    3606:	1c 01 00    	nop       
-    3608:	80 00 00    	nop       
-    360a:	36 08 00    	nop       
-    360c:	04 00 00    	nop       
-    360e:	80 00 00    	nop       
-    3610:	7c 0b 00    	nop       
-    3612:	42 00 00    	nop       
-    3614:	80 00 00    	nop       
-    3616:	30 08 00    	nop       
-    3618:	06 00 00    	nop       
-    361a:	80 00 00    	nop       
-    361c:	00 00 00    	nop       
+000035dc <.dinit>:
+    35dc:	be 0b 00    	nop       
+    35de:	10 00 00    	nop       
+    35e0:	82 00 00    	nop       
+    35e2:	bd 37 86    	mov.w     0xc6f6, w13
+    35e4:	33 bd 37    	bra       0xffffb04c
+    35e6:	06 35 bd    	subr.w    0x1506
+    35e8:	37 86 36    	bra       LEU, 0xffff4258
+    35ea:	bd 37 86    	mov.w     0xc6f6, w13
+    35ec:	37 00 00    	nop       
+    35ee:	0e 0b 00    	nop       
+    35f0:	6e 00 00    	nop       
+    35f2:	80 00 00    	nop       
+    35f4:	00 08 00    	nop       
+    35f6:	30 00 00    	nop       
+    35f8:	80 00 00    	nop       
+    35fa:	3a 08 00    	nop       
+    35fc:	b8 01 00    	nop       
+    35fe:	80 00 00    	nop       
+    3600:	f2 09 00    	nop       
+    3602:	1c 01 00    	nop       
+    3604:	80 00 00    	nop       
+    3606:	36 08 00    	nop       
+    3608:	04 00 00    	nop       
+    360a:	80 00 00    	nop       
+    360c:	7c 0b 00    	nop       
+    360e:	42 00 00    	nop       
+    3610:	80 00 00    	nop       
+    3612:	30 08 00    	nop       
+    3614:	06 00 00    	nop       
+    3616:	80 00 00    	nop       
+    3618:	00 00 00    	nop       
 Disassembly of section .text:
 
-0000361e <_parity>:
+0000361a <_parity>:
 
 #include "common.h"
 
 uint8_t parity(uint16_t v)
 {
-    361e:	02 00 fa    	lnk       #0x2
-    3620:	00 0f 78    	mov.w     w0, [w14]
+    361a:	02 00 fa    	lnk       #0x2
+    361c:	00 0f 78    	mov.w     w0, [w14]
 
-00003622 <.LSM1>:
+0000361e <.LSM1>:
     v ^= v >> 8;
-    3622:	1e 00 78    	mov.w     [w14], w0
-    3624:	48 00 de    	lsr.w     w0, #0x8, w0
-    3626:	1e 0f 68    	xor.w     w0, [w14], [w14]
+    361e:	1e 00 78    	mov.w     [w14], w0
+    3620:	48 00 de    	lsr.w     w0, #0x8, w0
+    3622:	1e 0f 68    	xor.w     w0, [w14], [w14]
 
-00003628 <.LSM2>:
+00003624 <.LSM2>:
     v ^= v >> 4;
-    3628:	1e 00 78    	mov.w     [w14], w0
-    362a:	44 00 de    	lsr.w     w0, #0x4, w0
-    362c:	1e 0f 68    	xor.w     w0, [w14], [w14]
+    3624:	1e 00 78    	mov.w     [w14], w0
+    3626:	44 00 de    	lsr.w     w0, #0x4, w0
+    3628:	1e 0f 68    	xor.w     w0, [w14], [w14]
 
-0000362e <.LSM3>:
+0000362a <.LSM3>:
     v ^= v >> 2;
-    362e:	1e 00 78    	mov.w     [w14], w0
-    3630:	42 00 de    	lsr.w     w0, #0x2, w0
-    3632:	1e 0f 68    	xor.w     w0, [w14], [w14]
+    362a:	1e 00 78    	mov.w     [w14], w0
+    362c:	42 00 de    	lsr.w     w0, #0x2, w0
+    362e:	1e 0f 68    	xor.w     w0, [w14], [w14]
 
-00003634 <.LSM4>:
+00003630 <.LSM4>:
     v ^= v >> 1;
-    3634:	1e 00 78    	mov.w     [w14], w0
-    3636:	00 00 d1    	lsr.w     w0, w0
-    3638:	1e 0f 68    	xor.w     w0, [w14], [w14]
+    3630:	1e 00 78    	mov.w     [w14], w0
+    3632:	00 00 d1    	lsr.w     w0, w0
+    3634:	1e 0f 68    	xor.w     w0, [w14], [w14]
 
-0000363a <.LSM5>:
+00003636 <.LSM5>:
     return v & 1;
-    363a:	1e 00 78    	mov.w     [w14], w0
-    363c:	00 40 78    	mov.b     w0, w0
-    363e:	61 40 60    	and.b     w0, #0x1, w0
+    3636:	1e 00 78    	mov.w     [w14], w0
+    3638:	00 40 78    	mov.b     w0, w0
+    363a:	61 40 60    	and.b     w0, #0x1, w0
 
-00003640 <.LSM6>:
+0000363c <.LSM6>:
 }
-    3640:	00 80 fa    	ulnk      
-    3642:	00 00 06    	return    
+    363c:	00 80 fa    	ulnk      
+    363e:	00 00 06    	return    
 Disassembly of section .isr:
 
-00003644 <__DefaultInterrupt>:
-    3644:	00 40 da    	.pword 0xda4000
-    3646:	00 00 fe    	reset     
+00003640 <__DefaultInterrupt>:
+    3640:	00 40 da    	.pword 0xda4000
+    3642:	00 00 fe    	reset     
