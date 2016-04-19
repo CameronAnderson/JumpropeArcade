@@ -44,6 +44,9 @@ uint16_t PIDcalc(uint16_t set_point){
         // printf("duty %u\n\r",  duty);
         oc_pwm(&oc1, pwmpin, &timer5, 1e3, duty);
         PIDcalc(set_point);  
+    }
+    else{
+        oc_pwm(&oc1, pwmpin, &timer5, 1e3, 0); 
     } 
 }
 
