@@ -11,6 +11,8 @@ typedef struct {
 
 void init_segment(void);
 
+void showBlank(void);
+
 void showNumber(int value);
 
 void postNumber(int number, uint8_t decimal);

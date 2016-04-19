@@ -20,12 +20,31 @@ void init_segment(void){
     pin_clear(segmentData);	
 }
 
+void showBlank(void){
+
+    volatile uint8_t segments = 0b00000000;
+    volatile uint8_t segmentsZero = 0b00000000;
+
+    int a;
+    for(a = 0; a < 2; a++){
+        int z;
+        for (z = 0 ; z < 8 ; z++){
+            volatile uint8_t transferSegment = segments & (1 << (7 - z));
+            pin_clear(segmentClock);
+            pin_write(segmentData, transferSegment);
+            pin_set(segmentClock); 
+        }
+    } 
+    pin_clear(segmentLatch);
+    pin_set(segmentLatch);     
+}
+
 void showNumber(int value){
 
     int number = abs(value); 
     int x;
 
-    for(x = 0 ; x < 3 ; x++){
+    for(x = 0 ; x < 2 ; x++){
         int remainder1 = number % 10;
         postNumber(remainder1, 0);
         number /= 10;

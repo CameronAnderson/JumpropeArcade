@@ -16,7 +16,7 @@ int16_t main(void) {
     init_spi();
     init_segment();
 
-    timer_setPeriod(&timer2, .01);
+    timer_setPeriod(&timer2, .5);
     timer_start(&timer2);
 
     int number = 0;  
@@ -26,12 +26,13 @@ int16_t main(void) {
             timer_lower(&timer2);
             led_toggle(&led1);
         
-            showNumber(999);
+            showBlank(); 
 /*            number = number + 1;
             number %= 1000;*/
         }
         if (sw_read(&sw1) == 0){
-            showNumber(111);  
+            showNumber(34);
+
         }
     }
 }
