@@ -11,6 +11,7 @@
 
 #define Right 22528
 #define Left 48832
+#define Center 0
 
 //PIN DEFINITIONS   dirpin = &D[8]
 //                  pwmpin = &D[9]
@@ -40,8 +41,6 @@ float period_value;
 
 _LED *green_led, *red_led, *blue_led;
 
-
-
 void pre_game(void){
 
     // Stuff to do when entering the state
@@ -58,6 +57,10 @@ void pre_game(void){
         rope_connected = 1;
         led_on(blue_led);  
     }
+    else{
+        rope_connected = 0;
+    }
+
     if (pin_read(&D[7]) == 0){
         coin_entered = 1;
         led_on(red_led);
@@ -87,7 +90,7 @@ void ready(void){
         last_state = state;
         led_on(blue_led);
         timer_start(&timer1);
-        PIDcalc(48832);
+        PIDcalc(Left);
     }
 
     //Perform State Tasks
@@ -193,7 +196,7 @@ void gameover(void){
     if(timer_flag(&timer3)){
         timer_lower(&timer3);
         led_toggle(red_led);
-        showNumber(000);
+        showBlank();
         gameover_counter ++;
         timer_stop(&timer3);
         timer_start(&timer1);
