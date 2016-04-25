@@ -13,6 +13,11 @@ _PIN *dirpin1, *pwmpin1, *potentiometer1;
 
 uint16_t actual_position1 = 0;
 
+43700
+20600
+33500
+
+
 int16_t main(void) {
     init_clock();
     init_ui();

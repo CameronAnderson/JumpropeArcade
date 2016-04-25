@@ -9,7 +9,7 @@
 #include "motor_swing.h"
 #include "oc.h"
 
-#define Right 2060
+#define Right 20600
 #define Left 43700
 #define Center 33500
 
