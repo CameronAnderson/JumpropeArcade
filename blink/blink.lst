@@ -9,7 +9,7 @@ Disassembly of section .reset:
 Disassembly of section .text:
 
 00001110 <__resetPRI>:
-    1110:	2f c3 20    	mov.w     #0xc32, w15
+    1110:	8f c3 20    	mov.w     #0xc38, w15
     1112:	0e ff 27    	mov.w     #0x7ff0, w14
     1114:	0e 01 88    	mov.w     w14, 0x20
     1116:	00 00 00    	nop       
@@ -31,7 +31,7 @@ Disassembly of section .text:
     1132:	00 00 00 
 
 00001134 <L11>:
-    1134:	82 37 02    	call      0x3782 <_main>
+    1134:	88 37 02    	call      0x3788 <_main>
     1136:	00 00 00 
     1138:	00 40 da    	.pword 0xda4000
     113a:	00 00 fe    	reset     
@@ -196,7 +196,7 @@ Disassembly of section .text:
 0000122e <_sbrk>:
     122e:	88 9f be    	mov.d     w8, [w15++]
     1230:	80 04 78    	mov.w     w0, w9
-    1232:	80 61 80    	mov.w     0xc30, w0
+    1232:	b0 61 80    	mov.w     0xc36, w0
     1234:	00 00 e0    	cp0.w     w0
     1236:	04 00 3a    	bra       NZ, 0x1240 <.L2>
     1238:	0e 00 07    	rcall     0x1256 <_brk>
@@ -205,7 +205,7 @@ Disassembly of section .text:
     123e:	08 00 35    	bra       LT, 0x1250 <.L3>
 
 00001240 <.L2>:
-    1240:	88 61 80    	mov.w     0xc30, w8
+    1240:	b8 61 80    	mov.w     0xc36, w8
     1242:	09 00 e0    	cp0.w     w9
     1244:	05 00 32    	bra       Z, 0x1250 <.L3>
     1246:	09 00 44    	add.w     w8, w9, w0
@@ -224,7 +224,7 @@ Disassembly of section .text:
     1258:	01 00 e0    	cp0.w     w1
     125a:	03 00 3a    	bra       NZ, 0x1262 <.L2>
     125c:	00 00 20    	mov.w     #0x0, w0
-    125e:	80 61 88    	mov.w     w0, 0xc30
+    125e:	b0 61 88    	mov.w     w0, 0xc36
     1260:	00 00 05    	retlw.w   #0x0, w0
 
 00001262 <.L2>:
@@ -232,7 +232,7 @@ Disassembly of section .text:
     1264:	02 00 20    	mov.w     #0x0, w2
     1266:	82 8f 50    	sub.w     w1, w2, [w15]
     1268:	02 00 3e    	bra       GTU, 0x126e <.L3>
-    126a:	81 61 88    	mov.w     w1, 0xc30
+    126a:	b1 61 88    	mov.w     w1, 0xc36
     126c:	00 00 eb    	clr.w     w0
 
 0000126e <.L3>:
@@ -830,7 +830,7 @@ Disassembly of section .text:
     15b0:	00 00 fa    	lnk       #0x0
     15b2:	e8 81 57    	sub.w     w15, #0x8, w3
     15b4:	4f b9 97    	mov.w     [w15-8], w2
-    15b6:	01 b3 20    	mov.w     #0xb30, w1
+    15b6:	61 b3 20    	mov.w     #0xb36, w1
     15b8:	40 59 21    	mov.w     #0x1594, w0
     15ba:	02 00 07    	rcall     0x15c0 <___Printf_s>
     15bc:	00 80 fa    	ulnk      
@@ -895,10 +895,10 @@ Disassembly of section .text:
     1622:	07 00 37    	bra       0x1632 <.L34>
 
 00001624 <.L8>:
-    1624:	21 c1 20    	mov.w     #0xc12, w1
+    1624:	81 c1 20    	mov.w     #0xc18, w1
     1626:	01 00 50    	sub.w     w0, w1, w0
     1628:	00 00 40    	add.w     w0, w0, w0
-    162a:	61 c0 20    	mov.w     #0xc06, w1
+    162a:	c1 c0 20    	mov.w     #0xc0c, w1
     162c:	61 00 78    	mov.w     [w1+w0], w0
     162e:	df 98 97    	mov.w     [w15-70], w1
     1630:	01 00 70    	ior.w     w0, w1, w0
@@ -909,7 +909,7 @@ Disassembly of section .text:
     1636:	09 04 78    	mov.w     w9, w8
     1638:	38 45 78    	mov.b     [w8++], w10
     163a:	8a 00 fb    	se        w10, w1
-    163c:	20 c1 20    	mov.w     #0xc12, w0
+    163c:	80 c1 20    	mov.w     #0xc18, w0
     163e:	06 01 07    	rcall     0x184c <_strchr>
     1640:	00 00 e0    	cp0.w     w0
     1642:	f0 ff 3a    	bra       NZ, 0x1624 <.L8>
@@ -1000,7 +1000,7 @@ Disassembly of section .text:
 000016c2 <.L16>:
     16c2:	98 44 78    	mov.b     [w8], w9
     16c4:	89 00 fb    	se        w9, w1
-    16c6:	e0 bf 20    	mov.w     #0xbfe, w0
+    16c6:	40 c0 20    	mov.w     #0xc04, w0
     16c8:	c1 00 07    	rcall     0x184c <_strchr>
     16ca:	00 00 e0    	cp0.w     w0
     16cc:	02 00 32    	bra       Z, 0x16d2 <.L25>
@@ -1625,7 +1625,7 @@ Disassembly of section .text:
 
 00001a7e <__Closreg>:
     1a7e:	88 1f 78    	mov.w     w8, [w15++]
-    1a80:	c8 c2 20    	mov.w     #0xc2c, w8
+    1a80:	28 c3 20    	mov.w     #0xc32, w8
     1a82:	18 04 e0    	cp0.b     [w8]
     1a84:	03 00 3a    	bra       NZ, 0x1a8c <.L2>
     1a86:	f9 ff 07    	rcall     0x1a7a <_closeallreg>
@@ -1683,7 +1683,7 @@ Disassembly of section .text:
     1ad6:	60 00 b8    	mul.uu    w0, #0x0, w0
 
 00001ad8 <.L12>:
-    1ad8:	03 b8 20    	mov.w     #0xb80, w3
+    1ad8:	63 b8 20    	mov.w     #0xb86, w3
     1ada:	02 02 d0    	sl.w      w2, w4
     1adc:	63 02 7a    	mov.w     [w3+w4], w4
     1ade:	88 0f 52    	sub.w     w4, w8, [w15]
@@ -1737,7 +1737,7 @@ Disassembly of section .text:
     1b26:	e2 ff 2f    	mov.w     #0xfffe, w2
     1b28:	f3 ff 2f    	mov.w     #0xffff, w3
     1b2a:	ed 00 07    	rcall     0x1d06 <___mulp32eds3>
-    1b2c:	e2 b8 20    	mov.w     #0xb8e, w2
+    1b2c:	42 b9 20    	mov.w     #0xb94, w2
     1b2e:	62 00 78    	mov.w     [w2+w0], w0
     1b30:	00 00 e0    	cp0.w     w0
     1b32:	01 00 32    	bra       Z, 0x1b36 <.L17>
@@ -1759,7 +1759,7 @@ Disassembly of section .text:
 
 00001b4a <.L4>:
     1b4a:	88 00 d0    	sl.w      w8, w1
-    1b4c:	00 b8 20    	mov.w     #0xb80, w0
+    1b4c:	60 b8 20    	mov.w     #0xb86, w0
     1b4e:	61 00 78    	mov.w     [w1+w0], w0
     1b50:	00 00 e0    	cp0.w     w0
     1b52:	04 00 32    	bra       Z, 0x1b5c <.L3>
@@ -1854,7 +1854,7 @@ Disassembly of section .text:
     1bd4:	2c 00 36    	bra       LEU, 0x1c2e <.L1>
     1bd6:	03 08 a3    	btst.z    w3, #0x0
     1bd8:	2a 00 3a    	bra       NZ, 0x1c2e <.L1>
-    1bda:	51 61 80    	mov.w     0xc2a, w1
+    1bda:	81 61 80    	mov.w     0xc30, w1
     1bdc:	01 00 e0    	cp0.w     w1
     1bde:	02 00 32    	bra       Z, 0x1be4 <.L3>
     1be0:	81 0f 50    	sub.w     w0, w1, [w15]
@@ -1862,7 +1862,7 @@ Disassembly of section .text:
 
 00001be4 <.L3>:
     1be4:	11 00 98    	mov.w     w1, [w0+2]
-    1be6:	50 61 88    	mov.w     w0, 0xc2a
+    1be6:	80 61 88    	mov.w     w0, 0xc30
     1be8:	16 00 37    	bra       0x1c16 <.L5>
 
 00001bea <.L11>:
@@ -1904,7 +1904,7 @@ Disassembly of section .text:
     1c1c:	10 01 40    	add.w     w0, [w0], w2
     1c1e:	82 8f 50    	sub.w     w1, w2, [w15]
     1c20:	06 00 3a    	bra       NZ, 0x1c2e <.L1>
-    1c22:	82 c2 20    	mov.w     #0xc28, w2
+    1c22:	e2 c2 20    	mov.w     #0xc2e, w2
     1c24:	00 09 eb    	clr.w     [w2]
     1c26:	10 01 78    	mov.w     [w0], w2
     1c28:	11 08 41    	add.w     w2, [w1], [w0]
@@ -1919,15 +1919,15 @@ Disassembly of section .text:
     1c32:	00 04 78    	mov.w     w0, w8
 
 00001c34 <.L14>:
-    1c34:	41 61 80    	mov.w     0xc28, w1
+    1c34:	71 61 80    	mov.w     0xc2e, w1
     1c36:	01 00 e0    	cp0.w     w1
     1c38:	02 00 32    	bra       Z, 0x1c3e <.L2>
     1c3a:	01 00 78    	mov.w     w1, w0
     1c3c:	0d 00 37    	bra       0x1c58 <.L3>
 
 00001c3e <.L2>:
-    1c3e:	51 61 80    	mov.w     0xc2a, w1
-    1c40:	a0 c2 20    	mov.w     #0xc2a, w0
+    1c3e:	81 61 80    	mov.w     0xc30, w1
+    1c40:	00 c3 20    	mov.w     #0xc30, w0
     1c42:	04 00 37    	bra       0x1c4c <.L4>
 
 00001c44 <.L6>:
@@ -1951,8 +1951,8 @@ Disassembly of section .text:
     1c5a:	02 00 e0    	cp0.w     w2
     1c5c:	fa ff 3a    	bra       NZ, 0x1c52 <.L8>
     1c5e:	11 01 78    	mov.w     [w1], w2
-    1c60:	51 61 80    	mov.w     0xc2a, w1
-    1c62:	a0 c2 20    	mov.w     #0xc2a, w0
+    1c60:	81 61 80    	mov.w     0xc30, w1
+    1c62:	00 c3 20    	mov.w     #0xc30, w0
     1c64:	04 00 37    	bra       0x1c6e <.L9>
 
 00001c66 <.L10>:
@@ -1966,7 +1966,7 @@ Disassembly of section .text:
     1c70:	fa ff 3a    	bra       NZ, 0x1c66 <.L10>
 
 00001c72 <.L7>:
-    1c72:	79 61 80    	mov.w     0xc2e, w9
+    1c72:	a9 61 80    	mov.w     0xc34, w9
 
 00001c74 <.L13>:
     1c74:	88 8f 54    	sub.w     w9, w8, [w15]
@@ -2041,7 +2041,7 @@ Disassembly of section .text:
     1cde:	02 80 e8    	inc2.w    w2, w0
 
 00001ce0 <.L21>:
-    1ce0:	40 61 88    	mov.w     w0, 0xc28
+    1ce0:	70 61 88    	mov.w     w0, 0xc2e
     1ce2:	81 80 e8    	inc2.w    w1, w1
 
 00001ce4 <.L17>:
@@ -2095,141 +2095,141 @@ Disassembly of section .application_ivt:
 00001000 <__DEFAULT_VECTOR-0x10c>:
     1000:	10 11 04    	goto      0x1110 <__resetPRI>
     1002:	00 00 00 
-    1004:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    1004:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     1006:	00 00 00 
-    1008:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    1008:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     100a:	00 00 00 
-    100c:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    100c:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     100e:	00 00 00 
-    1010:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    1010:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     1012:	00 00 00 
-    1014:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    1014:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     1016:	00 00 00 
-    1018:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    1018:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     101a:	00 00 00 
-    101c:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    101c:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     101e:	00 00 00 
-    1020:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    1020:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     1022:	00 00 00 
     1024:	38 2b 04    	goto      0x2b38 <__T1Interrupt>
     1026:	00 00 00 
-    1028:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    1028:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     102a:	00 00 00 
-    102c:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    102c:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     102e:	00 00 00 
     1030:	66 2b 04    	goto      0x2b66 <__T2Interrupt>
     1032:	00 00 00 
     1034:	94 2b 04    	goto      0x2b94 <__T3Interrupt>
     1036:	00 00 00 
-    1038:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    1038:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     103a:	00 00 00 
-    103c:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    103c:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     103e:	00 00 00 
     1040:	3a 1f 04    	goto      0x1f3a <__U1RXInterrupt>
     1042:	00 00 00 
     1044:	0c 1f 04    	goto      0x1f0c <__U1TXInterrupt>
     1046:	00 00 00 
-    1048:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    1048:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     104a:	00 00 00 
-    104c:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    104c:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     104e:	00 00 00 
-    1050:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    1050:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     1052:	00 00 00 
-    1054:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    1054:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     1056:	00 00 00 
-    1058:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    1058:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     105a:	00 00 00 
-    105c:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    105c:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     105e:	00 00 00 
-    1060:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    1060:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     1062:	00 00 00 
-    1064:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    1064:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     1066:	00 00 00 
-    1068:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    1068:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     106a:	00 00 00 
-    106c:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    106c:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     106e:	00 00 00 
     1070:	c2 2b 04    	goto      0x2bc2 <__T4Interrupt>
     1072:	00 00 00 
     1074:	f0 2b 04    	goto      0x2bf0 <__T5Interrupt>
     1076:	00 00 00 
-    1078:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    1078:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     107a:	00 00 00 
     107c:	96 1f 04    	goto      0x1f96 <__U2RXInterrupt>
     107e:	00 00 00 
     1080:	68 1f 04    	goto      0x1f68 <__U2TXInterrupt>
     1082:	00 00 00 
-    1084:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    1084:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     1086:	00 00 00 
-    1088:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    1088:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     108a:	00 00 00 
-    108c:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    108c:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     108e:	00 00 00 
-    1090:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    1090:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     1092:	00 00 00 
-    1094:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    1094:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     1096:	00 00 00 
-    1098:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    1098:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     109a:	00 00 00 
-    109c:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    109c:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     109e:	00 00 00 
-    10a0:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    10a0:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     10a2:	00 00 00 
-    10a4:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    10a4:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     10a6:	00 00 00 
-    10a8:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    10a8:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     10aa:	00 00 00 
-    10ac:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    10ac:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     10ae:	00 00 00 
-    10b0:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    10b0:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     10b2:	00 00 00 
-    10b4:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    10b4:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     10b6:	00 00 00 
-    10b8:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    10b8:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     10ba:	00 00 00 
-    10bc:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    10bc:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     10be:	00 00 00 
-    10c0:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    10c0:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     10c2:	00 00 00 
-    10c4:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    10c4:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     10c6:	00 00 00 
-    10c8:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    10c8:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     10ca:	00 00 00 
-    10cc:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    10cc:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     10ce:	00 00 00 
-    10d0:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    10d0:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     10d2:	00 00 00 
-    10d4:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    10d4:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     10d6:	00 00 00 
-    10d8:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    10d8:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     10da:	00 00 00 
     10dc:	f2 1f 04    	goto      0x1ff2 <__U3RXInterrupt>
     10de:	00 00 00 
     10e0:	c4 1f 04    	goto      0x1fc4 <__U3TXInterrupt>
     10e2:	00 00 00 
-    10e4:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    10e4:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     10e6:	00 00 00 
-    10e8:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    10e8:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     10ea:	00 00 00 
-    10ec:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    10ec:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     10ee:	00 00 00 
-    10f0:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    10f0:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     10f2:	00 00 00 
     10f4:	4e 20 04    	goto      0x204e <__U4RXInterrupt>
     10f6:	00 00 00 
     10f8:	20 20 04    	goto      0x2020 <__U4TXInterrupt>
     10fa:	00 00 00 
-    10fc:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    10fc:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     10fe:	00 00 00 
-    1100:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    1100:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     1102:	00 00 00 
-    1104:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    1104:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     1106:	00 00 00 
-    1108:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    1108:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     110a:	00 00 00 
 
 0000110c <__DEFAULT_VECTOR>:
-    110c:	d0 37 04    	goto      0x37d0 <__DefaultInterrupt>
+    110c:	ea 37 04    	goto      0x37ea <__DefaultInterrupt>
     110e:	00 00 00 
 Disassembly of section .ivt:
 
@@ -2795,7 +2795,7 @@ void __attribute__((interrupt, auto_psv)) _U1TXInterrupt(void) {
 
 00001f24 <.LSM45>:
     __serviceTxInterrupt(&uart1);
-    1f24:	c0 9e 20    	mov.w     #0x9ec, w0
+    1f24:	20 9f 20    	mov.w     #0x9f2, w0
     1f26:	51 ff 07    	rcall     0x1dca <___serviceTxInterrupt>
 
 00001f28 <.LSM46>:
@@ -2828,7 +2828,7 @@ void __attribute__((interrupt, auto_psv)) _U1RXInterrupt(void) {
 
 00001f52 <.LSM48>:
     __serviceRxInterrupt(&uart1);
-    1f52:	c0 9e 20    	mov.w     #0x9ec, w0
+    1f52:	20 9f 20    	mov.w     #0x9f2, w0
     1f54:	a1 ff 07    	rcall     0x1e98 <___serviceRxInterrupt>
 
 00001f56 <.LSM49>:
@@ -2861,7 +2861,7 @@ void __attribute__((interrupt, auto_psv)) _U2TXInterrupt(void) {
 
 00001f80 <.LSM51>:
     __serviceTxInterrupt(&uart2);
-    1f80:	80 a2 20    	mov.w     #0xa28, w0
+    1f80:	e0 a2 20    	mov.w     #0xa2e, w0
     1f82:	23 ff 07    	rcall     0x1dca <___serviceTxInterrupt>
 
 00001f84 <.LSM52>:
@@ -2894,7 +2894,7 @@ void __attribute__((interrupt, auto_psv)) _U2RXInterrupt(void) {
 
 00001fae <.LSM54>:
     __serviceRxInterrupt(&uart2);
-    1fae:	80 a2 20    	mov.w     #0xa28, w0
+    1fae:	e0 a2 20    	mov.w     #0xa2e, w0
     1fb0:	73 ff 07    	rcall     0x1e98 <___serviceRxInterrupt>
 
 00001fb2 <.LSM55>:
@@ -2927,7 +2927,7 @@ void __attribute__((interrupt, auto_psv)) _U3TXInterrupt(void) {
 
 00001fdc <.LSM57>:
     __serviceTxInterrupt(&uart3);
-    1fdc:	40 a6 20    	mov.w     #0xa64, w0
+    1fdc:	a0 a6 20    	mov.w     #0xa6a, w0
     1fde:	f5 fe 07    	rcall     0x1dca <___serviceTxInterrupt>
 
 00001fe0 <.LSM58>:
@@ -2960,7 +2960,7 @@ void __attribute__((interrupt, auto_psv)) _U3RXInterrupt(void) {
 
 0000200a <.LSM60>:
     __serviceRxInterrupt(&uart3);
-    200a:	40 a6 20    	mov.w     #0xa64, w0
+    200a:	a0 a6 20    	mov.w     #0xa6a, w0
     200c:	45 ff 07    	rcall     0x1e98 <___serviceRxInterrupt>
 
 0000200e <.LSM61>:
@@ -2993,7 +2993,7 @@ void __attribute__((interrupt, auto_psv)) _U4TXInterrupt(void) {
 
 00002038 <.LSM63>:
     __serviceTxInterrupt(&uart4);
-    2038:	00 aa 20    	mov.w     #0xaa0, w0
+    2038:	60 aa 20    	mov.w     #0xaa6, w0
     203a:	c7 fe 07    	rcall     0x1dca <___serviceTxInterrupt>
 
 0000203c <.LSM64>:
@@ -3026,7 +3026,7 @@ void __attribute__((interrupt, auto_psv)) _U4RXInterrupt(void) {
 
 00002066 <.LSM66>:
     __serviceRxInterrupt(&uart4);
-    2066:	00 aa 20    	mov.w     #0xaa0, w0
+    2066:	60 aa 20    	mov.w     #0xaa6, w0
     2068:	17 ff 07    	rcall     0x1e98 <___serviceRxInterrupt>
 
 0000206a <.LSM67>:
@@ -3086,7 +3086,7 @@ int16_t write(int16_t handle, void *buffer, uint16_t len) {
     209e:	2e 00 90    	mov.w     [w14+4], w0
     20a0:	00 00 e8    	inc.w     w0, w0
     20a2:	20 07 98    	mov.w     w0, [w14+4]
-    20a4:	80 41 80    	mov.w     0x830, w0
+    20a4:	b0 41 80    	mov.w     0x836, w0
     20a6:	4b 04 07    	rcall     0x293e <_uart_putc>
 
 000020a8 <.LSM73>:
@@ -3112,7 +3112,7 @@ int16_t write(int16_t handle, void *buffer, uint16_t len) {
     20be:	2e 00 90    	mov.w     [w14+4], w0
     20c0:	00 00 e8    	inc.w     w0, w0
     20c2:	20 07 98    	mov.w     w0, [w14+4]
-    20c4:	90 41 80    	mov.w     0x832, w0
+    20c4:	c0 41 80    	mov.w     0x838, w0
     20c6:	3b 04 07    	rcall     0x293e <_uart_putc>
 
 000020c8 <.LSM77>:
@@ -3161,7 +3161,7 @@ void init_uart(void) {
     20ec:	80 01 eb    	clr.w     w3
     20ee:	02 2f 20    	mov.w     #0x2f0, w2
     20f0:	21 2f 20    	mov.w     #0x2f2, w1
-    20f2:	c0 ad 20    	mov.w     #0xadc, w0
+    20f2:	20 ae 20    	mov.w     #0xae2, w0
     20f4:	d3 08 07    	rcall     0x329c <_pin_init>
     20f6:	8f 87 e9    	dec2.w    w15, w15
 
@@ -3177,7 +3177,7 @@ void init_uart(void) {
     2104:	80 01 eb    	clr.w     w3
     2106:	02 2f 20    	mov.w     #0x2f0, w2
     2108:	21 2f 20    	mov.w     #0x2f2, w1
-    210a:	20 af 20    	mov.w     #0xaf2, w0
+    210a:	80 af 20    	mov.w     #0xaf8, w0
     210c:	c7 08 07    	rcall     0x329c <_pin_init>
     210e:	8f 87 e9    	dec2.w    w15, w15
 
@@ -3208,7 +3208,7 @@ void init_uart(void) {
     2138:	43 22 20    	mov.w     #0x224, w3
     213a:	22 22 20    	mov.w     #0x222, w2
     213c:	01 22 20    	mov.w     #0x220, w1
-    213e:	c0 9e 20    	mov.w     #0x9ec, w0
+    213e:	20 9f 20    	mov.w     #0x9f2, w0
     2140:	6b 00 07    	rcall     0x2218 <_uart_init>
     2142:	f0 87 57    	sub.w     w15, #0x10, w15
 
@@ -3241,7 +3241,7 @@ void init_uart(void) {
     216c:	43 23 20    	mov.w     #0x234, w3
     216e:	22 23 20    	mov.w     #0x232, w2
     2170:	01 23 20    	mov.w     #0x230, w1
-    2172:	80 a2 20    	mov.w     #0xa28, w0
+    2172:	e0 a2 20    	mov.w     #0xa2e, w0
     2174:	51 00 07    	rcall     0x2218 <_uart_init>
     2176:	f0 87 57    	sub.w     w15, #0x10, w15
 
@@ -3274,7 +3274,7 @@ void init_uart(void) {
     21a0:	43 25 20    	mov.w     #0x254, w3
     21a2:	22 25 20    	mov.w     #0x252, w2
     21a4:	01 25 20    	mov.w     #0x250, w1
-    21a6:	40 a6 20    	mov.w     #0xa64, w0
+    21a6:	a0 a6 20    	mov.w     #0xa6a, w0
     21a8:	37 00 07    	rcall     0x2218 <_uart_init>
     21aa:	f0 87 57    	sub.w     w15, #0x10, w15
 
@@ -3307,7 +3307,7 @@ void init_uart(void) {
     21d4:	43 2b 20    	mov.w     #0x2b4, w3
     21d6:	22 2b 20    	mov.w     #0x2b2, w2
     21d8:	01 2b 20    	mov.w     #0x2b0, w1
-    21da:	00 aa 20    	mov.w     #0xaa0, w0
+    21da:	60 aa 20    	mov.w     #0xaa6, w0
     21dc:	1d 00 07    	rcall     0x2218 <_uart_init>
     21de:	f0 87 57    	sub.w     w15, #0x10, w15
 
@@ -3335,9 +3335,9 @@ void init_uart(void) {
     21fc:	67 69 24    	mov.w     #0x4696, w7
     21fe:	00 02 eb    	clr.w     w4
     2200:	80 01 eb    	clr.w     w3
-    2202:	22 af 20    	mov.w     #0xaf2, w2
-    2204:	c1 ad 20    	mov.w     #0xadc, w1
-    2206:	c0 9e 20    	mov.w     #0x9ec, w0
+    2202:	82 af 20    	mov.w     #0xaf8, w2
+    2204:	21 ae 20    	mov.w     #0xae2, w1
+    2206:	20 9f 20    	mov.w     #0x9f2, w0
     2208:	72 00 07    	rcall     0x22ee <_uart_open>
     220a:	ec 87 57    	sub.w     w15, #0xc, w15
 
@@ -3345,13 +3345,13 @@ void init_uart(void) {
               0, NULL, 0, NULL, 0);
 
     _stdout = &uart1;
-    220c:	c0 9e 20    	mov.w     #0x9ec, w0
-    220e:	80 41 88    	mov.w     w0, 0x830
+    220c:	20 9f 20    	mov.w     #0x9f2, w0
+    220e:	b0 41 88    	mov.w     w0, 0x836
 
 00002210 <.LSM92>:
     _stderr = &uart1;
-    2210:	c0 9e 20    	mov.w     #0x9ec, w0
-    2212:	90 41 88    	mov.w     w0, 0x832
+    2210:	20 9f 20    	mov.w     #0x9f2, w0
+    2212:	c0 41 88    	mov.w     w0, 0x838
 
 00002214 <.LSM93>:
 }
@@ -5383,7 +5383,7 @@ void __attribute__((interrupt, auto_psv)) _T1Interrupt(void) {
 
 00002b50 <.LSM13>:
     timer_serviceInterrupt(&timer1);
-    2b50:	00 b9 20    	mov.w     #0xb90, w0
+    2b50:	60 b9 20    	mov.w     #0xb96, w0
     2b52:	c9 ff 07    	rcall     0x2ae6 <_timer_serviceInterrupt>
 
 00002b54 <.LSM14>:
@@ -5416,7 +5416,7 @@ void __attribute__((interrupt, auto_psv)) _T2Interrupt(void) {
 
 00002b7e <.LSM16>:
     timer_serviceInterrupt(&timer2);
-    2b7e:	60 ba 20    	mov.w     #0xba6, w0
+    2b7e:	c0 ba 20    	mov.w     #0xbac, w0
     2b80:	b2 ff 07    	rcall     0x2ae6 <_timer_serviceInterrupt>
 
 00002b82 <.LSM17>:
@@ -5449,7 +5449,7 @@ void __attribute__((interrupt, auto_psv)) _T3Interrupt(void) {
 
 00002bac <.LSM19>:
     timer_serviceInterrupt(&timer3);
-    2bac:	c0 bb 20    	mov.w     #0xbbc, w0
+    2bac:	20 bc 20    	mov.w     #0xbc2, w0
     2bae:	9b ff 07    	rcall     0x2ae6 <_timer_serviceInterrupt>
 
 00002bb0 <.LSM20>:
@@ -5482,7 +5482,7 @@ void __attribute__((interrupt, auto_psv)) _T4Interrupt(void) {
 
 00002bda <.LSM22>:
     timer_serviceInterrupt(&timer4);
-    2bda:	20 bd 20    	mov.w     #0xbd2, w0
+    2bda:	80 bd 20    	mov.w     #0xbd8, w0
     2bdc:	84 ff 07    	rcall     0x2ae6 <_timer_serviceInterrupt>
 
 00002bde <.LSM23>:
@@ -5515,7 +5515,7 @@ void __attribute__((interrupt, auto_psv)) _T5Interrupt(void) {
 
 00002c08 <.LSM25>:
     timer_serviceInterrupt(&timer5);
-    2c08:	80 be 20    	mov.w     #0xbe8, w0
+    2c08:	e0 be 20    	mov.w     #0xbee, w0
     2c0a:	6d ff 07    	rcall     0x2ae6 <_timer_serviceInterrupt>
 
 00002c0c <.LSM26>:
@@ -5546,7 +5546,7 @@ void init_timer(void) {
     2c2c:	03 10 20    	mov.w     #0x100, w3
     2c2e:	22 10 20    	mov.w     #0x102, w2
     2c30:	41 10 20    	mov.w     #0x104, w1
-    2c32:	00 b9 20    	mov.w     #0xb90, w0
+    2c32:	60 b9 20    	mov.w     #0xb96, w0
     2c34:	33 00 07    	rcall     0x2c9c <_timer_init>
     2c36:	8f 87 e9    	dec2.w    w15, w15
 
@@ -5562,7 +5562,7 @@ void init_timer(void) {
     2c44:	63 10 20    	mov.w     #0x106, w3
     2c46:	c2 10 20    	mov.w     #0x10c, w2
     2c48:	01 11 20    	mov.w     #0x110, w1
-    2c4a:	60 ba 20    	mov.w     #0xba6, w0
+    2c4a:	c0 ba 20    	mov.w     #0xbac, w0
     2c4c:	27 00 07    	rcall     0x2c9c <_timer_init>
     2c4e:	8f 87 e9    	dec2.w    w15, w15
 
@@ -5578,7 +5578,7 @@ void init_timer(void) {
     2c5c:	a3 10 20    	mov.w     #0x10a, w3
     2c5e:	e2 10 20    	mov.w     #0x10e, w2
     2c60:	21 11 20    	mov.w     #0x112, w1
-    2c62:	c0 bb 20    	mov.w     #0xbbc, w0
+    2c62:	20 bc 20    	mov.w     #0xbc2, w0
     2c64:	1b 00 07    	rcall     0x2c9c <_timer_init>
     2c66:	8f 87 e9    	dec2.w    w15, w15
 
@@ -5594,7 +5594,7 @@ void init_timer(void) {
     2c74:	43 11 20    	mov.w     #0x114, w3
     2c76:	a2 11 20    	mov.w     #0x11a, w2
     2c78:	e1 11 20    	mov.w     #0x11e, w1
-    2c7a:	20 bd 20    	mov.w     #0xbd2, w0
+    2c7a:	80 bd 20    	mov.w     #0xbd8, w0
     2c7c:	0f 00 07    	rcall     0x2c9c <_timer_init>
     2c7e:	8f 87 e9    	dec2.w    w15, w15
 
@@ -5610,7 +5610,7 @@ void init_timer(void) {
     2c8c:	83 11 20    	mov.w     #0x118, w3
     2c8e:	c2 11 20    	mov.w     #0x11c, w2
     2c90:	01 12 20    	mov.w     #0x120, w1
-    2c92:	80 be 20    	mov.w     #0xbe8, w0
+    2c92:	e0 be 20    	mov.w     #0xbee, w0
     2c94:	03 00 07    	rcall     0x2c9c <_timer_init>
     2c96:	8f 87 e9    	dec2.w    w15, w15
 
@@ -5921,7 +5921,7 @@ float timer_period(_TIMER *self) {
     return timer_multipliers[prescalar]*((float)peek(self->PRx)+1.);
     2e02:	1e 00 78    	mov.w     [w14], w0
     2e04:	c2 00 dd    	sl.w      w0, #0x2, w1
-    2e06:	80 c1 20    	mov.w     #0xc18, w0
+    2e06:	e0 c1 20    	mov.w     #0xc1e, w0
     2e08:	00 80 40    	add.w     w1, w0, w0
     2e0a:	10 04 be    	mov.d     [w0], w8
     2e0c:	1e 00 90    	mov.w     [w14+2], w0
@@ -6008,7 +6008,7 @@ float timer_time(_TIMER *self) {
     return timer_multipliers[prescalar]*((float)peek(self->PRx)+1.);
     2e6c:	1e 00 78    	mov.w     [w14], w0
     2e6e:	c2 00 dd    	sl.w      w0, #0x2, w1
-    2e70:	80 c1 20    	mov.w     #0xc18, w0
+    2e70:	e0 c1 20    	mov.w     #0xc1e, w0
     2e72:	00 80 40    	add.w     w1, w0, w0
     2e74:	10 04 be    	mov.d     [w0], w8
     2e76:	1e 00 90    	mov.w     [w14+2], w0
@@ -6497,7 +6497,7 @@ void init_pin(void) {
     3082:	80 01 eb    	clr.w     w3
     3084:	82 2d 20    	mov.w     #0x2d8, w2
     3086:	a1 2d 20    	mov.w     #0x2da, w1
-    3088:	40 83 20    	mov.w     #0x834, w0
+    3088:	a0 83 20    	mov.w     #0x83a, w0
     308a:	08 01 07    	rcall     0x329c <_pin_init>
     308c:	8f 87 e9    	dec2.w    w15, w15
 
@@ -6513,7 +6513,7 @@ void init_pin(void) {
     309a:	80 01 eb    	clr.w     w3
     309c:	82 2d 20    	mov.w     #0x2d8, w2
     309e:	a1 2d 20    	mov.w     #0x2da, w1
-    30a0:	a0 84 20    	mov.w     #0x84a, w0
+    30a0:	00 85 20    	mov.w     #0x850, w0
     30a2:	fc 00 07    	rcall     0x329c <_pin_init>
     30a4:	8f 87 e9    	dec2.w    w15, w15
 
@@ -6529,7 +6529,7 @@ void init_pin(void) {
     30b2:	80 01 eb    	clr.w     w3
     30b4:	82 2e 20    	mov.w     #0x2e8, w2
     30b6:	a1 2e 20    	mov.w     #0x2ea, w1
-    30b8:	00 86 20    	mov.w     #0x860, w0
+    30b8:	60 86 20    	mov.w     #0x866, w0
     30ba:	f0 00 07    	rcall     0x329c <_pin_init>
     30bc:	8f 87 e9    	dec2.w    w15, w15
 
@@ -6545,7 +6545,7 @@ void init_pin(void) {
     30ca:	80 01 eb    	clr.w     w3
     30cc:	82 2e 20    	mov.w     #0x2e8, w2
     30ce:	a1 2e 20    	mov.w     #0x2ea, w1
-    30d0:	60 87 20    	mov.w     #0x876, w0
+    30d0:	c0 87 20    	mov.w     #0x87c, w0
     30d2:	e4 00 07    	rcall     0x329c <_pin_init>
     30d4:	8f 87 e9    	dec2.w    w15, w15
 
@@ -6561,7 +6561,7 @@ void init_pin(void) {
     30e2:	23 4e 20    	mov.w     #0x4e2, w3
     30e4:	82 2c 20    	mov.w     #0x2c8, w2
     30e6:	a1 2c 20    	mov.w     #0x2ca, w1
-    30e8:	c0 88 20    	mov.w     #0x88c, w0
+    30e8:	20 89 20    	mov.w     #0x892, w0
     30ea:	d8 00 07    	rcall     0x329c <_pin_init>
     30ec:	8f 87 e9    	dec2.w    w15, w15
 
@@ -6577,7 +6577,7 @@ void init_pin(void) {
     30fa:	80 01 eb    	clr.w     w3
     30fc:	82 2e 20    	mov.w     #0x2e8, w2
     30fe:	a1 2e 20    	mov.w     #0x2ea, w1
-    3100:	20 8a 20    	mov.w     #0x8a2, w0
+    3100:	80 8a 20    	mov.w     #0x8a8, w0
     3102:	cc 00 07    	rcall     0x329c <_pin_init>
     3104:	8f 87 e9    	dec2.w    w15, w15
 
@@ -6593,7 +6593,7 @@ void init_pin(void) {
     3112:	80 01 eb    	clr.w     w3
     3114:	82 2d 20    	mov.w     #0x2d8, w2
     3116:	a1 2d 20    	mov.w     #0x2da, w1
-    3118:	80 8b 20    	mov.w     #0x8b8, w0
+    3118:	e0 8b 20    	mov.w     #0x8be, w0
     311a:	c0 00 07    	rcall     0x329c <_pin_init>
     311c:	8f 87 e9    	dec2.w    w15, w15
 
@@ -6609,7 +6609,7 @@ void init_pin(void) {
     312a:	80 01 eb    	clr.w     w3
     312c:	82 2d 20    	mov.w     #0x2d8, w2
     312e:	a1 2d 20    	mov.w     #0x2da, w1
-    3130:	e0 8c 20    	mov.w     #0x8ce, w0
+    3130:	40 8d 20    	mov.w     #0x8d4, w0
     3132:	b4 00 07    	rcall     0x329c <_pin_init>
     3134:	8f 87 e9    	dec2.w    w15, w15
 
@@ -6625,7 +6625,7 @@ void init_pin(void) {
     3142:	80 01 eb    	clr.w     w3
     3144:	82 2d 20    	mov.w     #0x2d8, w2
     3146:	a1 2d 20    	mov.w     #0x2da, w1
-    3148:	40 8e 20    	mov.w     #0x8e4, w0
+    3148:	a0 8e 20    	mov.w     #0x8ea, w0
     314a:	a8 00 07    	rcall     0x329c <_pin_init>
     314c:	8f 87 e9    	dec2.w    w15, w15
 
@@ -6641,7 +6641,7 @@ void init_pin(void) {
     315a:	80 01 eb    	clr.w     w3
     315c:	82 2d 20    	mov.w     #0x2d8, w2
     315e:	a1 2d 20    	mov.w     #0x2da, w1
-    3160:	a0 8f 20    	mov.w     #0x8fa, w0
+    3160:	00 90 20    	mov.w     #0x900, w0
     3162:	9c 00 07    	rcall     0x329c <_pin_init>
     3164:	8f 87 e9    	dec2.w    w15, w15
 
@@ -6657,7 +6657,7 @@ void init_pin(void) {
     3172:	80 01 eb    	clr.w     w3
     3174:	82 2d 20    	mov.w     #0x2d8, w2
     3176:	a1 2d 20    	mov.w     #0x2da, w1
-    3178:	00 91 20    	mov.w     #0x910, w0
+    3178:	60 91 20    	mov.w     #0x916, w0
     317a:	90 00 07    	rcall     0x329c <_pin_init>
     317c:	8f 87 e9    	dec2.w    w15, w15
 
@@ -6673,7 +6673,7 @@ void init_pin(void) {
     318a:	80 01 eb    	clr.w     w3
     318c:	82 2d 20    	mov.w     #0x2d8, w2
     318e:	a1 2d 20    	mov.w     #0x2da, w1
-    3190:	60 92 20    	mov.w     #0x926, w0
+    3190:	c0 92 20    	mov.w     #0x92c, w0
     3192:	84 00 07    	rcall     0x329c <_pin_init>
     3194:	8f 87 e9    	dec2.w    w15, w15
 
@@ -6689,7 +6689,7 @@ void init_pin(void) {
     31a2:	80 01 eb    	clr.w     w3
     31a4:	82 2d 20    	mov.w     #0x2d8, w2
     31a6:	a1 2d 20    	mov.w     #0x2da, w1
-    31a8:	c0 93 20    	mov.w     #0x93c, w0
+    31a8:	20 94 20    	mov.w     #0x942, w0
     31aa:	78 00 07    	rcall     0x329c <_pin_init>
     31ac:	8f 87 e9    	dec2.w    w15, w15
 
@@ -6705,7 +6705,7 @@ void init_pin(void) {
     31ba:	80 01 eb    	clr.w     w3
     31bc:	82 2d 20    	mov.w     #0x2d8, w2
     31be:	a1 2d 20    	mov.w     #0x2da, w1
-    31c0:	20 95 20    	mov.w     #0x952, w0
+    31c0:	80 95 20    	mov.w     #0x958, w0
     31c2:	6c 00 07    	rcall     0x329c <_pin_init>
     31c4:	8f 87 e9    	dec2.w    w15, w15
 
@@ -6721,7 +6721,7 @@ void init_pin(void) {
     31d2:	23 4e 20    	mov.w     #0x4e2, w3
     31d4:	82 2c 20    	mov.w     #0x2c8, w2
     31d6:	a1 2c 20    	mov.w     #0x2ca, w1
-    31d8:	60 9d 20    	mov.w     #0x9d6, w0
+    31d8:	c0 9d 20    	mov.w     #0x9dc, w0
     31da:	60 00 07    	rcall     0x329c <_pin_init>
     31dc:	8f 87 e9    	dec2.w    w15, w15
 
@@ -6737,7 +6737,7 @@ void init_pin(void) {
     31ea:	23 4e 20    	mov.w     #0x4e2, w3
     31ec:	82 2c 20    	mov.w     #0x2c8, w2
     31ee:	a1 2c 20    	mov.w     #0x2ca, w1
-    31f0:	00 9c 20    	mov.w     #0x9c0, w0
+    31f0:	60 9c 20    	mov.w     #0x9c6, w0
     31f2:	54 00 07    	rcall     0x329c <_pin_init>
     31f4:	8f 87 e9    	dec2.w    w15, w15
 
@@ -6753,7 +6753,7 @@ void init_pin(void) {
     3202:	23 4e 20    	mov.w     #0x4e2, w3
     3204:	82 2c 20    	mov.w     #0x2c8, w2
     3206:	a1 2c 20    	mov.w     #0x2ca, w1
-    3208:	a0 9a 20    	mov.w     #0x9aa, w0
+    3208:	00 9b 20    	mov.w     #0x9b0, w0
     320a:	48 00 07    	rcall     0x329c <_pin_init>
     320c:	8f 87 e9    	dec2.w    w15, w15
 
@@ -6769,7 +6769,7 @@ void init_pin(void) {
     321a:	23 4e 20    	mov.w     #0x4e2, w3
     321c:	82 2c 20    	mov.w     #0x2c8, w2
     321e:	a1 2c 20    	mov.w     #0x2ca, w1
-    3220:	40 99 20    	mov.w     #0x994, w0
+    3220:	a0 99 20    	mov.w     #0x99a, w0
     3222:	3c 00 07    	rcall     0x329c <_pin_init>
     3224:	8f 87 e9    	dec2.w    w15, w15
 
@@ -6785,7 +6785,7 @@ void init_pin(void) {
     3232:	23 4e 20    	mov.w     #0x4e2, w3
     3234:	82 2c 20    	mov.w     #0x2c8, w2
     3236:	a1 2c 20    	mov.w     #0x2ca, w1
-    3238:	e0 97 20    	mov.w     #0x97e, w0
+    3238:	40 98 20    	mov.w     #0x984, w0
     323a:	30 00 07    	rcall     0x329c <_pin_init>
     323c:	8f 87 e9    	dec2.w    w15, w15
 
@@ -6801,7 +6801,7 @@ void init_pin(void) {
     324a:	23 4e 20    	mov.w     #0x4e2, w3
     324c:	82 2c 20    	mov.w     #0x2c8, w2
     324e:	a1 2c 20    	mov.w     #0x2ca, w1
-    3250:	80 96 20    	mov.w     #0x968, w0
+    3250:	e0 96 20    	mov.w     #0x96e, w0
     3252:	24 00 07    	rcall     0x329c <_pin_init>
     3254:	8f 87 e9    	dec2.w    w15, w15
 
@@ -6817,7 +6817,7 @@ void init_pin(void) {
     325c:	1e 00 78    	mov.w     [w14], w0
     325e:	76 00 b9    	mul.su    w0, #0x16, w0
     3260:	80 00 78    	mov.w     w0, w1
-    3262:	40 83 20    	mov.w     #0x834, w0
+    3262:	a0 83 20    	mov.w     #0x83a, w0
     3264:	00 80 40    	add.w     w1, w0, w0
     3266:	46 00 07    	rcall     0x32f4 <_pin_digitalIn>
 
@@ -6840,7 +6840,7 @@ void init_pin(void) {
     3276:	1e 00 78    	mov.w     [w14], w0
     3278:	76 00 b9    	mul.su    w0, #0x16, w0
     327a:	80 00 78    	mov.w     w0, w1
-    327c:	80 96 20    	mov.w     #0x968, w0
+    327c:	e0 96 20    	mov.w     #0x96e, w0
     327e:	00 80 40    	add.w     w1, w0, w0
     3280:	95 00 07    	rcall     0x33ac <_pin_analogIn>
 
@@ -7758,194 +7758,222 @@ uint16_t sw_read(_SW *self) {
 Disassembly of section .dinit:
 
 000036bc <.dinit>:
-    36bc:	18 0c 00    	nop       
-    36be:	10 00 00    	nop       
-    36c0:	82 00 00    	nop       
-    36c2:	bd 37 86    	mov.w     0xc6f6, w13
-    36c4:	33 bd 37    	bra       0xffffb12c
-    36c6:	06 35 bd    	subr.w    0x1506
-    36c8:	37 86 36    	bra       LEU, 0xffff4338
-    36ca:	bd 37 86    	mov.w     0xc6f6, w13
-    36cc:	37 00 00    	nop       
-    36ce:	90 0b 00    	nop       
-    36d0:	6e 00 00    	nop       
-    36d2:	80 00 00    	nop       
-    36d4:	00 08 00    	nop       
-    36d6:	30 00 00    	nop       
+    36bc:	30 08 00    	nop       
+    36be:	06 00 00    	nop       
+    36c0:	80 00 00    	nop       
+    36c2:	1e 0c 00    	nop       
+    36c4:	10 00 00    	nop       
+    36c6:	82 00 00    	nop       
+    36c8:	bd 37 86    	mov.w     0xc6f6, w13
+    36ca:	33 bd 37    	bra       0xffffb132
+    36cc:	06 35 bd    	subr.w    0x1506
+    36ce:	37 86 36    	bra       LEU, 0xffff433e
+    36d0:	bd 37 86    	mov.w     0xc6f6, w13
+    36d2:	37 00 00    	nop       
+    36d4:	96 0b 00    	nop       
+    36d6:	6e 00 00    	nop       
     36d8:	80 00 00    	nop       
-    36da:	34 08 00    	nop       
-    36dc:	b8 01 00    	nop       
+    36da:	00 08 00    	nop       
+    36dc:	30 00 00    	nop       
     36de:	80 00 00    	nop       
-    36e0:	ec 09 00    	nop       
-    36e2:	1c 01 00    	nop       
+    36e0:	3a 08 00    	nop       
+    36e2:	b8 01 00    	nop       
     36e4:	80 00 00    	nop       
-    36e6:	30 08 00    	nop       
-    36e8:	04 00 00    	nop       
+    36e6:	f2 09 00    	nop       
+    36e8:	1c 01 00    	nop       
     36ea:	80 00 00    	nop       
-    36ec:	fe 0b 00    	nop       
-    36ee:	1a 00 00    	nop       
-    36f0:	82 00 00    	nop       
-    36f2:	68 6a 6c    	xor.b     w8, #0x8, [++w4]
-    36f4:	74 7a 4c    	.pword 0x4c7a74
-    36f6:	00 00 01    	call      w0
-    36f8:	00 02 00    	nop       
-    36fa:	04 00 08    	do        #0x4, 0x56fe
-    36fc:	00 10 00 
-    36fe:	00 00 20    	mov.w     #0x0, w0
-    3700:	2b 2d 23    	mov.w     #0x32d2, w11
-    3702:	30 00 00    	nop       
-    3704:	08 0b 00    	nop       
-    3706:	88 00 00    	nop       
-    3708:	82 00 00    	nop       
-    370a:	01 00 00    	nop       
-    370c:	00 2e 0b    	.pword 0x0b2e00
-    370e:	2f 0b 2e    	mov.w     #0xe0b2, w15
-    3710:	0b 2e 0b    	.pword 0x0b2e0b
-    3712:	2e 0b 2e    	mov.w     #0xe0b2, w14
-    3714:	0b 1e 0b    	.pword 0x0b1e0b
+    36ec:	36 08 00    	nop       
+    36ee:	04 00 00    	nop       
+    36f0:	80 00 00    	nop       
+    36f2:	04 0c 00    	nop       
+    36f4:	1a 00 00    	nop       
+    36f6:	82 00 00    	nop       
+    36f8:	68 6a 6c    	xor.b     w8, #0x8, [++w4]
+    36fa:	74 7a 4c    	.pword 0x4c7a74
+    36fc:	00 00 01    	call      w0
+    36fe:	00 02 00    	nop       
+    3700:	04 00 08    	do        #0x4, 0x5704
+    3702:	00 10 00 
+    3704:	00 00 20    	mov.w     #0x0, w0
+    3706:	2b 2d 23    	mov.w     #0x32d2, w11
+    3708:	30 00 00    	nop       
+    370a:	0e 0b 00    	nop       
+    370c:	88 00 00    	nop       
+    370e:	82 00 00    	nop       
+    3710:	01 00 00    	nop       
+    3712:	00 34 0b    	.pword 0x0b3400
+    3714:	35 0b 34    	bra       LE, 0x4d80
+    3716:	0b 34 0b    	.pword 0x0b340b
+    3718:	34 0b 34    	bra       LE, 0x4d82
+    371a:	0b 24 0b    	.pword 0x0b240b
 	...
-    3724:	00 02 08    	do        #0x200, 0x392a
-    3726:	01 01 56 
-    3728:	0b 57 0b    	.pword 0x0b570b
-    372a:	56 0b 56    	sub.w     w12, [++w6], [w6]
-    372c:	0b 56 0b    	.pword 0x0b560b
-    372e:	56 0b 46    	add.w     w12, [++w6], [w6]
-    3730:	0b 00 00    	nop       
+    372a:	00 02 08    	do        #0x200, 0x3930
+    372c:	01 01 5c 
+    372e:	0b 5d 0b    	.pword 0x0b5d0b
+    3730:	5c 0b 5c    	subb.w    w8, [++w12], [w6]
+    3732:	0b 5c 0b    	.pword 0x0b5c0b
+    3734:	5c 0b 4c    	addc.w    w8, [++w12], [w6]
+    3736:	0b 00 00    	nop       
 	...
-    373e:	00 00 02    	call      0x2080000 <__DefaultInterrupt+0x207c830>
-    3740:	08 02 02 
-    3742:	7e 0b 7f    	.pword 0x7f0b7e
-    3744:	0b 7e 0b    	.pword 0x0b7e0b
-    3746:	7e 0b 7e    	.pword 0x7e0b7e
-    3748:	0b 7e 0b    	.pword 0x0b7e0b
-    374a:	6e 0b 00    	nop       
+    3744:	00 00 02    	call      0x2080000 <__DefaultInterrupt+0x207c816>
+    3746:	08 02 02 
+    3748:	84 0b 85    	mov.w     0xa170, w4
+    374a:	0b 84 0b    	.pword 0x0b840b
+    374c:	84 0b 84    	mov.w     0x8170, w4
+    374e:	0b 84 0b    	.pword 0x0b840b
+    3750:	74 0b 00    	nop       
 	...
-    375a:	08 0b 30    	bra       OV, 0x4d6c
-    375c:	0b 58 0b    	.pword 0x0b580b
+    3760:	0e 0b 36    	bra       LEU, 0x4d7e
+    3762:	0b 5e 0b    	.pword 0x0b5e0b
 	...
-    3766:	2c 0c 00    	nop       
-    3768:	02 00 00    	nop       
-    376a:	80 00 00    	nop       
-    376c:	2e 0c 00    	nop       
+    376c:	32 0c 00    	nop       
     376e:	02 00 00    	nop       
-    3770:	82 00 00    	nop       
-    3772:	04 00 00    	nop       
-    3774:	28 0c 00    	nop       
-    3776:	04 00 00    	nop       
-    3778:	80 00 00    	nop       
-    377a:	30 0c 00    	nop       
-    377c:	02 00 00    	nop       
+    3770:	80 00 00    	nop       
+    3772:	34 0c 00    	nop       
+    3774:	02 00 00    	nop       
+    3776:	82 00 00    	nop       
+    3778:	04 00 00    	nop       
+    377a:	2e 0c 00    	nop       
+    377c:	04 00 00    	nop       
     377e:	80 00 00    	nop       
-    3780:	00 00 00    	nop       
+    3780:	36 0c 00    	nop       
+    3782:	02 00 00    	nop       
+    3784:	80 00 00    	nop       
+    3786:	00 00 00    	nop       
 Disassembly of section .text:
 
-00003782 <_main>:
-#include "timer.h"
-#include "pin.h"
+00003788 <_main>:
 #include "uart.h"
 
+_LED *green_led, *red_led, *blue_led;
+
 int16_t main(void) {
-    3782:	04 00 fa    	lnk       #0x4
+    3788:	06 00 fa    	lnk       #0x6
 
-00003784 <.LSM1>:
+0000378a <.LSM1>:
     init_clock();
-    3784:	00 10 20    	mov.w     #0x100, w0
-    3786:	20 3a 88    	mov.w     w0, 0x744
+    378a:	00 10 20    	mov.w     #0x100, w0
+    378c:	20 3a 88    	mov.w     w0, 0x744
 
-00003788 <.LSM2>:
+0000378e <.LSM2>:
     init_ui();
-    3788:	95 fe 07    	rcall     0x34b4 <_init_ui>
+    378e:	92 fe 07    	rcall     0x34b4 <_init_ui>
 
-0000378a <.LSM3>:
+00003790 <.LSM3>:
     init_timer();
-    378a:	49 fa 07    	rcall     0x2c1e <_init_timer>
+    3790:	46 fa 07    	rcall     0x2c1e <_init_timer>
 
-0000378c <.LSM4>:
+00003792 <.LSM4>:
     init_pin();
-    378c:	73 fc 07    	rcall     0x3074 <_init_pin>
+    3792:	70 fc 07    	rcall     0x3074 <_init_pin>
 
-0000378e <.LSM5>:
+00003794 <.LSM5>:
     init_uart();
-    378e:	a6 f4 07    	rcall     0x20dc <_init_uart>
+    3794:	a3 f4 07    	rcall     0x20dc <_init_uart>
 
-00003790 <.LSM6>:
+00003796 <.LSM6>:
 
     uint16_t rope = &D[13];
-    3790:	20 95 20    	mov.w     #0x952, w0
-    3792:	00 0f 78    	mov.w     w0, [w14]
+    3796:	80 95 20    	mov.w     #0x958, w0
+    3798:	00 0f 78    	mov.w     w0, [w14]
 
-00003794 <.LSM7>:
+0000379a <.LSM7>:
     pin_digitalIn(rope);
-    3794:	1e 00 78    	mov.w     [w14], w0
-    3796:	ae fd 07    	rcall     0x32f4 <_pin_digitalIn>
-    3798:	01 00 37    	bra       0x379c <.L4>
+    379a:	1e 00 78    	mov.w     [w14], w0
+    379c:	ab fd 07    	rcall     0x32f4 <_pin_digitalIn>
 
-0000379a <.L5>:
+0000379e <.LSM8>:
+    uint16_t button = &D[4];
+    379e:	20 89 20    	mov.w     #0x892, w0
+    37a0:	10 07 98    	mov.w     w0, [w14+2]
 
+000037a2 <.LSM9>:
+    pin_digitalIn(button);
+    37a2:	1e 00 90    	mov.w     [w14+2], w0
+    37a4:	a7 fd 07    	rcall     0x32f4 <_pin_digitalIn>
+
+000037a6 <.LSM10>:
+
+    green_led = &led2;
+    37a6:	80 80 20    	mov.w     #0x808, w0
+    37a8:	80 41 88    	mov.w     w0, 0x830
+
+000037aa <.LSM11>:
+    red_led = &led1;
+    37aa:	00 80 20    	mov.w     #0x800, w0
+    37ac:	90 41 88    	mov.w     w0, 0x832
+
+000037ae <.LSM12>:
+    blue_led = &led3;
+    37ae:	00 81 20    	mov.w     #0x810, w0
+    37b0:	a0 41 88    	mov.w     w0, 0x834
+    37b2:	01 00 37    	bra       0x37b6 <.L4>
+
+000037b4 <.L5>:
 // test for Saarth
    
     while (1) {
-        uint16_t value = pin_read(rope);
+        uint16_t value = pin_read(button);
         if(value == 0){
-            led_on(&led1);
-            led_off(&led2);
+            led_on(green_led);
+            led_off(red_led);
             printf("Low%s\n\r");
         }
         if(value == 1){
-            led_on(&led2);
-            led_off(&led1);
+            led_on(red_led);
+            led_off(green_led);
             printf("High%s\n\r");
         }
         }
-    379a:	00 00 00    	nop       
+    37b4:	00 00 00    	nop       
 
-0000379c <.L4>:
-    379c:	1e 00 78    	mov.w     [w14], w0
-    379e:	7c fe 07    	rcall     0x3498 <_pin_read>
-    37a0:	10 07 98    	mov.w     w0, [w14+2]
+000037b6 <.L4>:
+    37b6:	1e 00 90    	mov.w     [w14+2], w0
+    37b8:	6f fe 07    	rcall     0x3498 <_pin_read>
+    37ba:	20 07 98    	mov.w     w0, [w14+4]
 
-000037a2 <.LSM10>:
-    37a2:	1e 00 90    	mov.w     [w14+2], w0
-    37a4:	00 00 e0    	cp0.w     w0
-    37a6:	08 00 3a    	bra       NZ, 0x37b8 <.L2>
-
-000037a8 <.LSM11>:
-    37a8:	00 80 20    	mov.w     #0x800, w0
-    37aa:	e6 fe 07    	rcall     0x3578 <_led_on>
-
-000037ac <.LSM12>:
-    37ac:	80 80 20    	mov.w     #0x808, w0
-    37ae:	f4 fe 07    	rcall     0x3598 <_led_off>
-
-000037b0 <.LSM13>:
-    37b0:	20 d1 29    	mov.w     #0x9d12, w0
-    37b2:	80 1f 78    	mov.w     w0, [w15++]
-    37b4:	fd ee 07    	rcall     0x15b0 <__printf_0>
-    37b6:	8f 87 e9    	dec2.w    w15, w15
-
-000037b8 <.L2>:
-    37b8:	1e 00 90    	mov.w     [w14+2], w0
-    37ba:	e1 0f 50    	sub.w     w0, #0x1, [w15]
-    37bc:	ee ff 3a    	bra       NZ, 0x379a <.L5>
-
-000037be <.LSM15>:
-    37be:	80 80 20    	mov.w     #0x808, w0
-    37c0:	db fe 07    	rcall     0x3578 <_led_on>
+000037bc <.LSM15>:
+    37bc:	2e 00 90    	mov.w     [w14+4], w0
+    37be:	00 00 e0    	cp0.w     w0
+    37c0:	08 00 3a    	bra       NZ, 0x37d2 <.L2>
 
 000037c2 <.LSM16>:
-    37c2:	00 80 20    	mov.w     #0x800, w0
-    37c4:	e9 fe 07    	rcall     0x3598 <_led_off>
+    37c2:	80 41 80    	mov.w     0x830, w0
+    37c4:	d9 fe 07    	rcall     0x3578 <_led_on>
 
 000037c6 <.LSM17>:
-    37c6:	a0 d1 29    	mov.w     #0x9d1a, w0
-    37c8:	80 1f 78    	mov.w     w0, [w15++]
-    37ca:	f2 ee 07    	rcall     0x15b0 <__printf_0>
-    37cc:	8f 87 e9    	dec2.w    w15, w15
+    37c6:	90 41 80    	mov.w     0x832, w0
+    37c8:	e7 fe 07    	rcall     0x3598 <_led_off>
 
-000037ce <.LBE2>:
-    37ce:	e6 ff 37    	bra       0x379c <.L4>
+000037ca <.LSM18>:
+    37ca:	20 d1 29    	mov.w     #0x9d12, w0
+    37cc:	80 1f 78    	mov.w     w0, [w15++]
+    37ce:	f0 ee 07    	rcall     0x15b0 <__printf_0>
+    37d0:	8f 87 e9    	dec2.w    w15, w15
+
+000037d2 <.L2>:
+    37d2:	2e 00 90    	mov.w     [w14+4], w0
+    37d4:	e1 0f 50    	sub.w     w0, #0x1, [w15]
+    37d6:	ee ff 3a    	bra       NZ, 0x37b4 <.L5>
+
+000037d8 <.LSM20>:
+    37d8:	90 41 80    	mov.w     0x832, w0
+    37da:	ce fe 07    	rcall     0x3578 <_led_on>
+
+000037dc <.LSM21>:
+    37dc:	80 41 80    	mov.w     0x830, w0
+    37de:	dc fe 07    	rcall     0x3598 <_led_off>
+
+000037e0 <.LSM22>:
+    37e0:	a0 d1 29    	mov.w     #0x9d1a, w0
+    37e2:	80 1f 78    	mov.w     w0, [w15++]
+    37e4:	e5 ee 07    	rcall     0x15b0 <__printf_0>
+    37e6:	8f 87 e9    	dec2.w    w15, w15
+
+000037e8 <.LBE2>:
+    37e8:	e6 ff 37    	bra       0x37b6 <.L4>
 Disassembly of section .isr:
 
-000037d0 <__DefaultInterrupt>:
-    37d0:	00 40 da    	.pword 0xda4000
-    37d2:	00 00 fe    	reset     
+000037ea <__DefaultInterrupt>:
+    37ea:	00 40 da    	.pword 0xda4000
+    37ec:	00 00 fe    	reset     

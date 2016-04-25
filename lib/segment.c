@@ -26,7 +26,7 @@ void showBlank(void){
     volatile uint8_t segmentsZero = 0b00000000;
 
     int a;
-    for(a = 0; a < 2; a++){
+    for(a = 0; a < 3; a++){
         int z;
         for (z = 0 ; z < 8 ; z++){
             volatile uint8_t transferSegment = segments & (1 << (7 - z));
@@ -44,7 +44,7 @@ void showNumber(int value){
     int number = abs(value); 
     int x;
 
-    for(x = 0 ; x < 2 ; x++){
+    for(x = 0 ; x < 3; x++){
         int remainder1 = number % 10;
         postNumber(remainder1, 0);
         number /= 10;

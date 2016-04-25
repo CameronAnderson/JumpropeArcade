@@ -6,6 +6,23 @@
 #include "timer.h"
 #include "pin.h"
 #include "segment.h"
+#include "motor_swing.h"
+#include "oc.h"
+
+int number = 0;
+// int period_value = 1;  
+
+// void delay(void){
+//     if (period_value > .1){
+//         period_value = (period_value - .1);
+//         wait_period(period_value);
+//         timer_start(&timer2);
+//     }
+//     else{
+//         wait_period(.1);
+//         timer_start(&timer2);
+//     } 
+// }
 
 int16_t main(void) {
 
@@ -16,24 +33,19 @@ int16_t main(void) {
     init_spi();
     init_segment();
 
-    timer_setPeriod(&timer2, .5);
+    timer_setPeriod(&timer2, 1);
     timer_start(&timer2);
 
-    int number = 0;  
-   
     while (1) {
-        if (timer_flag(&timer2)) {
-            timer_lower(&timer2);
-            led_toggle(&led1);
-        
-            showBlank(); 
-/*            number = number + 1;
-            number %= 1000;*/
-        }
-        if (sw_read(&sw1) == 0){
-            showNumber(34);
 
+        if (timer_flag(&timer2)){
+            timer_lower(&timer2);
+            number ++;
         }
+        showNumber(number);
+
+        
+        
     }
 }
 

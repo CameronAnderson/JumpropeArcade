@@ -9,9 +9,13 @@
 #include "motor_swing.h"
 #include "oc.h"
 
-#define Right 22528
-#define Left 48832
-#define Center 0
+#define Right 2060
+#define Left 43700
+#define Center 33500
+
+rope = &D[13];
+coin = &D[7];
+button = &D[4];
 
 //PIN DEFINITIONS   dirpin = &D[8]
 //                  pwmpin = &D[9]
@@ -19,6 +23,10 @@
 //                  segmentClock = &D[0];
 //                  segmentLatch = &D[1];
 //                  segmentData = &D[2];  
+//                  rope = &D[13];
+//                  coin = &D[7];
+//                  button = &D[4];
+
 
 typedef void (*STATE_HANDLER_T)(void);
 
@@ -53,15 +61,16 @@ void pre_game(void){
 
     //State Tasks
 
-    if (pin_read(&D[13]) != 0){
+    if (pin_read(rope) == 0){
         rope_connected = 1;
         led_on(blue_led);  
     }
     else{
         rope_connected = 0;
+        led_off(blue_led);
     }
 
-    if (pin_read(&D[7]) == 0){
+    if (pin_read(coin) == 0){
         coin_entered = 1;
         led_on(red_led);
     }
@@ -90,7 +99,8 @@ void ready(void){
         last_state = state;
         led_on(blue_led);
         timer_start(&timer1);
-        PIDcalc(Left);
+        showNumber(000);
+    //    PIDcalc(Left);
     }
 
     //Perform State Tasks
@@ -102,7 +112,7 @@ void ready(void){
 
     //State Transistion
 
-    if (sw_read(&sw3) == 0){
+    if (pin_read(button) != 0){
         state = gameplay;  
     }
 
@@ -119,47 +129,33 @@ void gameplay(void){
     // Stuff to do when entering the state
 
     if (state != last_state){
+        last_state = state;
         led_on(green_led);
     }
 
     //Perform State Tasks
 
-    // period_value = .5;
+    period_value = .5;
     if (direction_flag1 == 0){
         clear_dirpin();
-        PIDcalc(Left);
+        //PIDcalc(Left);
         direction_flag1 = 1;
         score_counter ++;
         showNumber(score_counter);
         wait_period(.5);        
-        // if (period_value){
-        //     period_value = (period_value - .25);
-        //     wait_period(period_value);   
-        // }
-        // else{
-        //     wait_period(.5);
-        // }
+ 
     }
     if (direction_flag1 == 1){;
         set_dirpin();
-        PIDcalc(Right);
+        //PIDcalc(Right);
         direction_flag1 = 0;
         score_counter ++;
         showNumber(score_counter);
         wait_period(.5);  
-        // if (period_value > 1){
-        //     period_value = (period_value - .25);
-        //     wait_period(period_value);   
-        // }
-        // else{
-        //     wait_period(.5);
-        // } 
+
     }
 
-
-    //State Transistion
-
-    if(pin_read(&D[13]) == 0){
+    if(pin_read(rope) != 0){
         state = gameover;
 
     }
@@ -179,6 +175,7 @@ void gameover(void){
         last_state = state;
         led_on(red_led);
         timer_start(&timer1);
+        gameover_counter = 0;
     }
 
     //Perform State Tasks
@@ -204,7 +201,7 @@ void gameover(void){
     //State Transistion
 
     if (gameover_counter == 10){
-        state = pre_game;  
+        state = pre_game;
     }
 
     //Leaving State
