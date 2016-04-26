@@ -43,13 +43,13 @@ _PIN *dirpin, *pwmpin;
          while (!sw_read(&sw2)){
              led_on(&led2);
              pin_clear(dirpin);
-             oc_pwm(&oc2, pwmpin, NULL, freq, duty);
+             pin_write(pwmpin, duty);
          }
  
          while (!sw_read(&sw3)){
              led_on(&led3);
              pin_set(dirpin);
-             oc_pwm(&oc2, pwmpin, NULL, freq, duty);
+             pin_write(pwmpin, duty);
          }
  
          // oc_pwm(&oc1, &D[9], &timer5, freq, 0);
