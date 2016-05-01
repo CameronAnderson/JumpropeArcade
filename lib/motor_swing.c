@@ -3,17 +3,18 @@
 #include <time.h>
 #include "pin.h"
 #include "oc.h"
+#include "ui.h"
 #include "motor_swing.h"
 
 _PIN *dirpin, *pwmpin, *potentiometer;
 
-#define Kp .5
-#define Right 22528
-#define Left 48832
+#define Kp .25
+#define Right 44800
+#define Left 26400
 
 uint8_t direction_flag = 0;
 uint16_t actual_position = 0;
-uint16_t duty = 0xffff;
+uint16_t duty = 0;
 
 void init_motor_swing(void){
     dirpin = &D[8];  //set direction control pin as pin 8
@@ -29,6 +30,8 @@ void init_motor_swing(void){
 
     pin_clear(dirpin);
     pin_clear(pwmpin);
+
+    oc_pwm(&oc1, pwmpin, &timer5, 1e3, 0);
 }
 
 uint16_t PIDcalc(uint16_t set_point){
@@ -42,13 +45,42 @@ uint16_t PIDcalc(uint16_t set_point){
     if (error > threshold){
         duty = (Kp * error);
         // printf("duty %u\n\r",  duty);
-        oc_pwm(&oc1, pwmpin, &timer5, 1e3, duty);
+        pin_write(pwmpin, duty);
         PIDcalc(set_point);  
     }
     else{
-        oc_pwm(&oc1, pwmpin, &timer5, 1e3, 0); 
+        pin_write(pwmpin, 0); 
     } 
 }
+
+void move(uint16_t set_point, uint16_t duty){
+    actual_position = pin_read(potentiometer);
+    uint16_t error;
+    uint16_t threshold = 500;
+
+    error = abs((set_point - actual_position));
+
+    // set the direction of motor swing based on difference between set point and actual position
+    if (set_point > actual_position){
+        pin_clear(dirpin);
+        led_on(&led2);
+    }
+    else{
+        pin_set(dirpin);
+        led_on(&led3);
+    }
+
+    if (error > threshold){
+        led_on(&led1);
+        pin_write(pwmpin, 0x8000);
+        move(set_point, duty);
+    }
+    else{
+        led_off(&led1);
+        pin_write(pwmpin, 0);
+    }
+}
+
 
 void clear_dirpin(void){
     pin_clear(dirpin);    

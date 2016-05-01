@@ -9,9 +9,9 @@
 #include "motor_swing.h"
 #include "oc.h"
 
-#define Right 20600
-#define Left 43700
-#define Center 33500
+#define Right 44800
+#define Left 26400
+#define Center 35600
 
 rope = &D[13];
 coin = &D[7];
@@ -100,7 +100,7 @@ void ready(void){
         led_on(blue_led);
         timer_start(&timer1);
         showNumber(000);
-    //    PIDcalc(Left);
+        PIDcalc(Left);
     }
 
     //Perform State Tasks
@@ -138,7 +138,7 @@ void gameplay(void){
     period_value = .5;
     if (direction_flag1 == 0){
         clear_dirpin();
-        //PIDcalc(Left);
+        PIDcalc(Left);
         direction_flag1 = 1;
         score_counter ++;
         showNumber(score_counter);
@@ -147,7 +147,7 @@ void gameplay(void){
     }
     if (direction_flag1 == 1){;
         set_dirpin();
-        //PIDcalc(Right);
+        PIDcalc(Right);
         direction_flag1 = 0;
         score_counter ++;
         showNumber(score_counter);

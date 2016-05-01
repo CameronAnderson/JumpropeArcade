@@ -9,7 +9,7 @@
 #include "oc.h"
 // #include "uart.h"
 
-_PIN *dirpin, *pwmpin;
+_PIN *dirpin, *pwmpin, *rope;
  
  int16_t main(void) {
      init_clock();
@@ -20,10 +20,13 @@ _PIN *dirpin, *pwmpin;
  
      dirpin = &D[8];  //set direction control pin as pin 8
      pwmpin = &D[9];  //set PWM pin as pin 9 
+     rope = &D[13];   //set rope connection to be sensed on pin 13
+
  
      //initialize the two pins as digital outputs and then clear them
      pin_digitalOut(dirpin);
      pin_digitalOut(pwmpin);
+     pin_digitalIn(rope);
  
      pin_clear(dirpin);
      pin_clear(pwmpin);
@@ -34,23 +37,25 @@ _PIN *dirpin, *pwmpin;
      uint16_t duty = 0x8000;
      float freq = 1000;
  
-     while (1) {
+     while(1) {
+        while (pin_read(rope) == 0){
+
+            led_on(&led1);
+            led_off(&led2);
+            led_off(&led3);
+            oc_pwm(&oc2, pwmpin, NULL, freq, 0);
  
-         led_off(&led2);
-         led_off(&led3);
-         oc_pwm(&oc2, pwmpin, NULL, freq, 0);
+            while (!sw_read(&sw2)){
+                led_on(&led2);
+                pin_clear(dirpin);
+                pin_write(pwmpin, duty);
+            }
  
-         while (!sw_read(&sw2)){
-             led_on(&led2);
-             pin_clear(dirpin);
-             pin_write(pwmpin, duty);
-         }
- 
-         while (!sw_read(&sw3)){
-             led_on(&led3);
-             pin_set(dirpin);
-             pin_write(pwmpin, duty);
-         }
+            while (!sw_read(&sw3)){
+                led_on(&led3);
+                pin_set(dirpin);
+                pin_write(pwmpin, duty);
+            }
  
          // oc_pwm(&oc1, &D[9], &timer5, freq, 0);
          // pin_write(&D[9], duty);
@@ -62,6 +67,10 @@ _PIN *dirpin, *pwmpin;
  
          //     pin_toggle(dirpin);
  
-         // }
+        }
+        while (pin_read(rope) != 0) {
+            pin_write(pwmpin, 0);
+            led_off(&led1);
+        }
      }
  } 
