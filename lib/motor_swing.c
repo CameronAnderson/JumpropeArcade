@@ -53,33 +53,33 @@ uint16_t PIDcalc(uint16_t set_point){
     } 
 }
 
-void move(uint16_t set_point, uint16_t duty){
-    actual_position = pin_read(potentiometer);
-    uint16_t error;
-    uint16_t threshold = 500;
+// void moveArm(_TIMER *self){
+//     actual_position = pin_read(potentiometer);
+//     uint16_t error;
+//     uint16_t threshold = 500;
 
-    error = abs((set_point - actual_position));
+//     error = abs((set_point - actual_position));
 
-    // set the direction of motor swing based on difference between set point and actual position
-    if (set_point > actual_position){
-        pin_clear(dirpin);
-        led_on(&led2);
-    }
-    else{
-        pin_set(dirpin);
-        led_on(&led3);
-    }
+//     // set the direction of motor swing based on difference between set point and actual position
+//     if (set_point > actual_position){
+//         pin_clear(dirpin);
+//         led_on(&led2);
+//     }
+//     else{
+//         pin_set(dirpin);
+//         led_on(&led3);
+//     }
 
-    if (error > threshold){
-        led_on(&led1);
-        pin_write(pwmpin, 0x8000);
-        move(set_point, duty);
-    }
-    else{
-        led_off(&led1);
-        pin_write(pwmpin, 0);
-    }
-}
+//     if (error > threshold){
+//         led_on(&led1);
+//         pin_write(pwmpin, 0x8000);
+//         moveArm(set_point, duty);
+//     }
+//     else{
+//         led_off(&led1);
+//         pin_write(pwmpin, 0);
+//     }
+// }
 
 
 void clear_dirpin(void){

@@ -2,6 +2,7 @@
 #define _MOTORSWING_H_
 
 #include <stdint.h>
+#include "timer.h"
 
 typedef struct {
 	uint16_t set_point; 
@@ -20,6 +21,6 @@ void clear_dirpin(void);
 
 void set_dirpin(void);
 
-void move(uint16_t set_point, uint16_t duty);
+// void moveArm(_TIMER *self);
 
 #endif

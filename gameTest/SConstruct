@@ -1,6 +1,4 @@
-#Uncommment the line below to automatically load code after building
 import bootloadercmd as b
-
 
 env = Environment(PIC = '24FJ128GB206',
                   CC = 'xc16-gcc',
@@ -18,16 +16,16 @@ list = Builder(action = 'xc16-objdump -S -D $SOURCE > $TARGET',
                src_suffix = 'elf')
 env.Append(BUILDERS = {'List' : list})
 
-env.Program('swingTest', ['swingTest.c',
+env.Program('gameTest', ['gameTest.c',
                       '../lib/timer.c',
                       '../lib/ui.c',
                       '../lib/pin.c',
                       '../lib/uart.c',
-                      '../lib/spi.c',
+                      # '../lib/spi.c',
                       '../lib/oc.c',
                       '../lib/common.c',
+                      '../lib/segment.c',
                       '../lib/arm.c'])
-                      # '../lib/motor_swing.c'])
 
 print('Creating builder to load hex file via bootloader...')
 def load_function(target, source, env):
@@ -45,7 +43,6 @@ load = Builder(action=load_function,
 env.Append(BUILDERS = {'Load' : load})
 
 
-env.Hex('swingTest')
-env.List('swingTest')
-
-env.Load('swingTest')
+env.Hex('gameTest')
+env.List('gameTest')
+env.Load('gameTest')
