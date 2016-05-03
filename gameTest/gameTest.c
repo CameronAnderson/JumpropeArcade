@@ -16,7 +16,7 @@
 #define RIGHT    4
 #define FAILURE  5
 
-_PIN *rope, *coin, *button;
+_PIN *rope, *coin, *button, *button_led;
 
 //PIN DEFINITIONS   dirpin = &D[8]
 //                  pwmpin = &D[9]
@@ -27,6 +27,7 @@ _PIN *rope, *coin, *button;
 //                  rope = &D[13];
 //                  coin = &D[7];
 //                  button = &D[4];
+//                  button_led = &D[10];
 
 
 typedef void (*STATE_HANDLER_T)(void);
@@ -53,6 +54,38 @@ uint16_t magnet_flag = 0;
 
 _LED *green_led, *red_led, *blue_led;
 
+void swing_loop(void){
+
+    arm_move(RIGHT);
+ 
+    showNumber(score_counter);
+
+    wait_period(swing_time);
+
+    if(pin_read(rope) != 0){
+        return;
+    }
+
+    score_counter ++;      
+ 
+    arm_move(LEFT);
+
+    showNumber(score_counter);
+
+    wait_period(swing_time); 
+
+    if(pin_read(rope) != 0){
+        return;
+    }
+  
+    score_counter ++;
+
+    if((score_counter >= 20) && (swing_time >= 50)){
+        swing_time --;
+    }
+
+}
+
 void pre_game(void){
 
     // Stuff to do when entering the state
@@ -60,8 +93,9 @@ void pre_game(void){
     if (state != last_state){
         last_state = state;
         led_on(green_led);
+        showNumber(888);
         arm_move(STANDBY);
-        showNumber(000);
+
     }
 
     //State Tasks
@@ -113,19 +147,27 @@ void ready(void){
         last_state = state;
         led_on(blue_led);
         timer_start(&timer2);
-        showNumber(000);
         wait_period(100);
         arm_move(LEFT);
+        showNumber(003);
+        wait_period(100);
+        showNumber(002);
+        wait_period(100);
+        showNumber(001);
+        wait_period(100);
+        showNumber(000);
     }
 
     //Perform State Tasks
 
     if (timer_flag(&timer2)) {
         timer_lower(&timer2);
-        led_toggle(blue_led);
+        showNumber(000);
+        pin_toggle(button_led);
     }
 
     if (pin_read(rope) != 0){
+        showBlank();
         coin_entered = 1;
         state = pre_game; 
     }
@@ -133,12 +175,14 @@ void ready(void){
     //State Transistion
 
     if (pin_read(button) != 0){
+        showNumber(000);
         state = gameplay;  
     }
 
     //Leaving State
 
     if (state != last_state){
+        showNumber(000);
         led_off(blue_led);
         timer_stop(&timer2);
     }
@@ -166,25 +210,7 @@ void gameplay(void){
 
     // period_value = .5;
 
-    arm_move(RIGHT);
- 
-    showNumber(score_counter);
-
-    wait_period(swing_time);  
-
-    score_counter ++;      
- 
-    arm_move(LEFT);
-
-    showNumber(score_counter);
-
-    wait_period(swing_time);  
-
-    score_counter ++;
-
-    if((score_counter >= 20) && (swing_time >= 50)){
-        swing_time --;
-    }
+    swing_loop();
 
     if(pin_read(rope) != 0){
         state = gameover;
@@ -232,7 +258,7 @@ void gameover(void){
     }
     //State Transistion
 
-    if (gameover_counter == 16){
+    if (gameover_counter == 12){
         state = pre_game;
     }
 
@@ -261,10 +287,13 @@ int16_t main(void) {
     rope = &D[13];
     coin = &D[7];
     button = &D[4];
+    button_led = &D[10];
 
     pin_digitalIn(rope);
     pin_digitalIn(coin);
     pin_digitalIn(button);
+
+    pin_digitalOut(button_led);
 
     green_led = &led2;
     red_led = &led1;

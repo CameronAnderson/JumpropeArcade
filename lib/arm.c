@@ -38,6 +38,7 @@
 
 #define ARM_CENTER 35600
 #define ARM_LEFT   20000
+#define ARM_READY  20001
 #define ARM_RIGHT  48000
 #define ARM_MAGNET 41000
 
@@ -68,7 +69,7 @@ void arm_move(uint16_t mode) {
             arm.duty = 0x3000;
             break;
         case ARM_MODE_READY:
-            arm.set_point = ARM_LEFT;
+            arm.set_point = ARM_READY;
             arm.duty = 0x5000;
             break;
         case ARM_MODE_LEFT:
@@ -93,19 +94,27 @@ void __arm_swing(_TIMER *timer){
 
     if (arm.set_point > arm.position){
         pin_clear(dirpin);
-        led_on(&led2);
+        // led_on(&led2);
     }
     else{
         pin_set(dirpin);
-        led_on(&led3);
+        // led_on(&led3);
     }
 
     if (arm.error > 500){
         led_on(&led1);
         pin_write(pwmpin, arm.duty);
+
+        if (arm.set_point == ARM_LEFT || arm.set_point == ARM_RIGHT){
+            if(pin_read(&D[13]) != 0){
+                pin_write(pwmpin, 0);
+                timer_cancel(arm.timer);
+            }
+            
+        }
     }
     else{
-        led_off(&led1);
+        // led_off(&led1);
         pin_write(pwmpin, 0);
         timer_cancel(arm.timer);
     }
