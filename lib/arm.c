@@ -86,81 +86,6 @@ void arm_move(uint16_t mode) {
     }
 }
 
-// void __arm_standby(_ARM *self){
-//     self->position = pin_read(potentiometer);
-//     self->set_point = ARM_CENTER;
-//     self->error = abs((self->set_point - self->position));
-
-//     if (self->set_point > self->position){
-//         pin_clear(dirpin);
-//         led_on(&led2);
-//     }
-//     else{
-//         pin_set(dirpin);
-//         led_on(&led3);
-//     }
-
-//     if (self->error > 1000){
-//         led_on(&led1);
-//         self->duty = 0x2000;
-//         pin_write(pwmpin, self->duty);
-//     }
-//     else{
-//         led_off(&led1);
-//         pin_write(pwmpin, 0);
-//     }
-// }
-
-// void __arm_magnet(_ARM *self){
-//     self->position = pin_read(potentiometer);
-//     self->set_point = ARM_RIGHT;
-//     self->error = abs((self->set_point - self->position));
-
-//     if (self->set_point > self->position){
-//         pin_clear(dirpin);
-//         led_on(&led2);
-//     }
-//     else{
-//         pin_set(dirpin);
-//         led_on(&led3);
-//     }
-
-//     if (self->error > 500){
-//         led_on(&led1);
-//         self->duty = 0x4000;
-//         pin_write(pwmpin, self->duty);
-//     }
-//     else{
-//         led_off(&led1);
-//         pin_write(pwmpin, 0);
-//     }
-// }
-
-// void __arm_ready(_ARM *self){
-//     self->position = pin_read(potentiometer);
-//     self->set_point = ARM_LEFT;
-//     self->error = abs((self->set_point - self->position));
-
-//     if (self->set_point > self->position){
-//         pin_clear(dirpin);
-//         led_on(&led2);
-//     }
-//     else{
-//         pin_set(dirpin);
-//         led_on(&led3);
-//     }
-
-//     if (self->error > 500){
-//         led_on(&led1);
-//         self->duty = 0x4000;
-//         pin_write(pwmpin, self->duty);
-//     }
-//     else{
-//         led_off(&led1);
-//         pin_write(pwmpin, 0);
-//     }
-// }
-
 void __arm_swing(_TIMER *timer){
     arm.position = pin_read(potentiometer);
     
@@ -235,14 +160,20 @@ void arm_init(_ARM *self, _TIMER *timer) {
     // timer_every(self->timer, ARM_T, *__arm_loop);
 }
 
-void wait_period(float period){
-    timer_setPeriod(&timer4, period);
+void wait_period(uint16_t time_count){
+    timer_setPeriod(&timer4, 0.01);
     timer_start(&timer4);
 
     while(1){
         if (timer_flag(&timer4)) {
-        timer_lower(&timer4);
-        break;
+            time_count --; 
+            timer_lower(&timer4);
         }
-    }  
+
+        if (time_count == 0){
+            timer_stop(&timer4);
+            break; 
+        }
+
+    }
 }

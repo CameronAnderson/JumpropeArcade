@@ -60,7 +60,7 @@ typedef struct {
 
     _TIMER *timer;
 
-    float period;
+    uint16_t time_count;
 } _ARM;
 
 extern _ARM arm;
@@ -69,6 +69,6 @@ void arm_init(_ARM *self, _TIMER *timer);
 
 void arm_move(uint16_t mode);
 
-void wait_period(float period);
+void wait_period(uint16_t time_count);
 
 #endif

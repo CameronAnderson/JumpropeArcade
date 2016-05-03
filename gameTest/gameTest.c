@@ -46,7 +46,10 @@ uint16_t coin_entered;
 uint16_t button_pressed;
 uint16_t direction_flag1 = 1;
 uint16_t gameover_counter;
+uint16_t swing_time = 100;
 float period_value;
+uint16_t magnet_flag = 0;
+
 
 _LED *green_led, *red_led, *blue_led;
 
@@ -70,6 +73,7 @@ void pre_game(void){
     else{
         rope_connected = 0;
         led_off(blue_led);
+        // arm_move(MAGNET);
     }
 
     if (pin_read(coin) == 0){
@@ -77,8 +81,11 @@ void pre_game(void){
         led_on(red_led);
     }
     
-    if (coin_entered == 1 && rope_connected == 0){
+    if ((coin_entered == 1) && (rope_connected == 0) && (magnet_flag == 0)){
+        led_on(blue_led);
+        magnet_flag = 1;
         arm_move(MAGNET);
+
     }
 
     //State Transistion?
@@ -94,6 +101,7 @@ void pre_game(void){
         led_off(red_led);
         rope_connected = 0;
         coin_entered = 0;
+        magnet_flag = 0;
     }
 }
 
@@ -106,7 +114,7 @@ void ready(void){
         led_on(blue_led);
         timer_start(&timer2);
         showNumber(000);
-        wait_period(1);
+        wait_period(100);
         arm_move(LEFT);
     }
 
@@ -115,6 +123,11 @@ void ready(void){
     if (timer_flag(&timer2)) {
         timer_lower(&timer2);
         led_toggle(blue_led);
+    }
+
+    if (pin_read(rope) != 0){
+        coin_entered = 1;
+        state = pre_game; 
     }
 
     //State Transistion
@@ -138,25 +151,40 @@ void gameplay(void){
     if (state != last_state){
         last_state = state;
         led_on(green_led);
+
+        showNumber(003);
+        wait_period(100);
+        showNumber(002);
+        wait_period(100);
+        showNumber(001);
+        wait_period(100);
+        showNumber(000);
+
     }
 
     //Perform State Tasks
 
-    period_value = .5;
+    // period_value = .5;
 
     arm_move(RIGHT);
-
-    score_counter ++;
+ 
     showNumber(score_counter);
 
-    wait_period(2);        
+    wait_period(swing_time);  
+
+    score_counter ++;      
  
     arm_move(LEFT);
 
-    score_counter ++;
     showNumber(score_counter);
 
-    wait_period(2);  
+    wait_period(swing_time);  
+
+    score_counter ++;
+
+    if((score_counter >= 20) && (swing_time >= 50)){
+        swing_time --;
+    }
 
     if(pin_read(rope) != 0){
         state = gameover;
@@ -166,6 +194,7 @@ void gameplay(void){
 
     if (state != last_state){
         led_off(green_led);
+        swing_time = 100;
     }
 }
 
@@ -203,7 +232,7 @@ void gameover(void){
     }
     //State Transistion
 
-    if (gameover_counter == 10){
+    if (gameover_counter == 16){
         state = pre_game;
     }
 
@@ -241,8 +270,8 @@ int16_t main(void) {
     red_led = &led1;
     blue_led = &led3;
 
-    timer_setPeriod(&timer2, .5);
-    timer_setPeriod(&timer3, .5);
+    timer_setPeriod(&timer2, .75);
+    timer_setPeriod(&timer3, .75);
 
     state = pre_game;
     last_state = (STATE_HANDLER_T)NULL;
