@@ -147,7 +147,7 @@ void ready(void){
         last_state = state;
         led_on(blue_led);
         timer_start(&timer2);
-        wait_period(100);
+        wait_period(300);
         arm_move(LEFT);
         showNumber(003);
         wait_period(100);
